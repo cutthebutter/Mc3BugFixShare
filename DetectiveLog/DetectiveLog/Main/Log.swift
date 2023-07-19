@@ -8,15 +8,18 @@
 import Foundation
 import CloudKit
 
-struct LogList {
+struct Log {
     let id: CKRecord.ID
     let category: LogCategory
     let title: String
     let latestMemo: [String]
+    let isBookmarked: Bool
     let isLocked: Bool
     let isPinned: Bool
     let createdAt: Date
     let updatedAt: Date
+    let logMemoDates: [Date]
+    let logMemoId: [CKRecord.ID]
 }
 
 enum LogCategory: Int {
