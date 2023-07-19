@@ -8,10 +8,32 @@
 import SwiftUI
 
 struct MainView: View {
+    @State var selection = "진행 중"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            CategoryPickerView(selection: $selection)
+            Text(selection)
+        }
     }
 }
+
+struct CategoryPickerView: View {
+    @Binding var selection: String
+    var category = ["진행 중", "완결", "미완결"]
+    
+    var body: some View {
+        Picker("Hi", selection: $selection) {
+            ForEach(category, id: \.self) {
+                Text($0)
+            }
+        }
+        .pickerStyle(.segmented)
+        .padding()
+    }
+}
+
+
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
