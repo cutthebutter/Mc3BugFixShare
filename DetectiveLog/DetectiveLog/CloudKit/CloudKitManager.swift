@@ -21,7 +21,7 @@ final class CloudKitManager {
     
     /// func fetchLog: Cloudkit에 저장된 LogList(Main) 데이터를 불러옵니다.
     /// - Parameter: (LogList) -> ()
-    func fetchLog(_ completion: @escaping (([Log]) -> ())) {
+    func fetchLogRecord(_ completion: @escaping (([Log]) -> ())) {
         var logList: [Log] = []
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "LogList", predicate: predicate)
@@ -49,21 +49,13 @@ final class CloudKitManager {
                                    category: logCategory,
                                    title: title,
                                    latestMemo: latestMemo,
-                                   isBookmarked: isBookmarked == 1,
-                                   isLocked: isLocked == 1,
-                                   isPinned: isPinned == 1,
+                                   isBookmarked: isBookmarked,
+                                   isLocked: isLocked,
+                                   isPinned: isPinned,
                                    createdAt: createdAt,
                                    updatedAt: updatedAt,
                                    logMemoDates: logMemoDates,
                                    logMemoId: logMemoId))
-//                Log(id: record.recordID,
-//                                       category: logCategory,
-//                                       title: title,
-//                                       latestMemo: latestMemo,
-//                                       isLocked: isLocked == 1,
-//                                       isPinned: isPinned == 1,
-//                                       createdAt: createdAt,
-//                                       updatedAt: updatedAt)
                 
             case .failure(let error):
                 print("@Log error - \(error.localizedDescription)")
@@ -83,5 +75,31 @@ final class CloudKitManager {
     }
     
     /// func 디테일데이터패치
+    
+    /// func createLogRecord: CloudKit에 디테일뷰로 가기 이전의 데이터를 저장합니다.
+    /// - Parameter: Log
+    func createLogRecord(log: Log) {
+        let record = CKRecord(recordType: "Log")
+        record.setValue(log.title, forKey: "title")
+        record.setValue(log.category.rawValue, forKey: "category")
+        record.setValue(log.createdAt, forKey: "createdAt")
+        record.setValue(log.updatedAt, forKey: "updatedAt")
+        record.setValue(log.isBookmarked, forKey: "isBookmarked")
+        record.setValue(log.isLocked, forKey: "isLocked")
+        record.setValue(log.isPinned, forKey: "isPinned")
+        record.setValue(log.latestMemo, forKey: "latestMemo")
+        record.setValue(log.logMemoId, forKey: "logMemoId")
+        record.setValue(log.logMemoDates, forKey: "logMemoDates")
+        container.save(record) { record, error in
+            if let error = error {
+                print("@Log createLogRecord Error - \(error.localizedDescription)")
+            }
+            print("@Log - Save 완료!")
+        }
+    }
+    
+    /// func createLogMemoRecord
+
+    
     
 }
