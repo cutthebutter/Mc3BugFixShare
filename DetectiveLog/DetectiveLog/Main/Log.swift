@@ -18,8 +18,8 @@ struct Log {
     let isPinned: Bool
     let createdAt: Date
     let updatedAt: Date
-    let logMemoDates: [Date]
-    let logMemoId: [CKRecord.ID]
+    let logMemoDates: [Date] // 데이터베이스에 저장된 날짜 불러오기 위함
+    let logMemoId: [CKRecord.ID] // 연관 테이블, Id로 서로 연관됨
 }
 
 enum LogCategory: Int {
