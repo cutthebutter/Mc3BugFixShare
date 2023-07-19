@@ -76,7 +76,7 @@ final class CloudKitManager {
     
     /// func 디테일데이터패치
     
-    /// func createLogRecord: CloudKit에 디테일뷰로 가기 이전의 데이터를 저장합니다.
+    /// func createLogRecord: CloudKit Database에 디테일뷰로 가기 이전의 데이터를 저장합니다.
     /// - Parameter: Log
     func createLogRecord(log: Log) {
         let record = CKRecord(recordType: "Log")
@@ -94,12 +94,22 @@ final class CloudKitManager {
             if let error = error {
                 print("@Log createLogRecord Error - \(error.localizedDescription)")
             }
-            print("@Log - Save 완료!")
+            print("@Log - \(log.title) Save 완료!")
         }
     }
     
     /// func createLogMemoRecord
 
-    
+    /// func deleteLogRecord: CloudKit Database에서 Log Record를 삭제합니다.
+    /// - Parameter: Log
+    func deleteLogRecord(log: Log) {
+        let recordId = log.id
+        container.delete(withRecordID: recordId) { recordId, error in
+            if let error = error {
+                print("@Log deleteLogRecord Error - \(error.localizedDescription)")
+            }
+            print("@Log - \(log.title) 삭제 완료!")
+        }
+    }
     
 }
