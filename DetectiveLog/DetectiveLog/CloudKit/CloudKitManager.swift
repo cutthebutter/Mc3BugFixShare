@@ -19,10 +19,10 @@ final class CloudKitManager {
     
     //MARK: Methods
     
-    /// func fetchMemo: Cloudkit에 저장된 LogList(Main) 데이터를 불러옵니다.
+    /// func fetchLog: Cloudkit에 저장된 LogList(Main) 데이터를 불러옵니다.
     /// - Parameter: (LogList) -> ()
-    func fetchLogList(_ completion: @escaping (([LogList]) -> ())) {
-        var logList: [LogList] = []
+    func fetchLog(_ completion: @escaping (([Log]) -> ())) {
+        var logList: [Log] = []
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "LogList", predicate: predicate)
         query.sortDescriptors = [NSSortDescriptor(key: "updatedAt", ascending: false)]
@@ -37,19 +37,33 @@ final class CloudKitManager {
                       let latestMemo = record["latestMemo"] as? [String],
                       let createdAt = record["createdAt"] as? Date,
                       let updatedAt = record["updatedAt"] as? Date,
+                      let isBookmarked = record["isBookmarked"] as? Int,
                       let isLocked = record["isLocked"] as? Int,
                       let isPinned = record["isPinned"] as? Int,
+                      let logMemoDates = record["logMemoDates"] as? [Date],
+                      let logMemoId = record["logMemoId"] as? [CKRecord.ID],
                       let logCategory = LogCategory(rawValue: category)
                 else { return }
                 
-                logList.append(LogList(id: record.recordID,
-                                       category: logCategory,
-                                       title: title,
-                                       latestMemo: latestMemo,
-                                       isLocked: isLocked == 1,
-                                       isPinned: isPinned == 1,
-                                       createdAt: createdAt,
-                                       updatedAt: updatedAt))
+                logList.append(Log(id: record.recordID,
+                                   category: logCategory,
+                                   title: title,
+                                   latestMemo: latestMemo,
+                                   isBookmarked: isBookmarked == 1,
+                                   isLocked: isLocked == 1,
+                                   isPinned: isPinned == 1,
+                                   createdAt: createdAt,
+                                   updatedAt: updatedAt,
+                                   logMemoDates: logMemoDates,
+                                   logMemoId: logMemoId))
+//                Log(id: record.recordID,
+//                                       category: logCategory,
+//                                       title: title,
+//                                       latestMemo: latestMemo,
+//                                       isLocked: isLocked == 1,
+//                                       isPinned: isPinned == 1,
+//                                       createdAt: createdAt,
+//                                       updatedAt: updatedAt)
                 
             case .failure(let error):
                 print("@Log error - \(error.localizedDescription)")
