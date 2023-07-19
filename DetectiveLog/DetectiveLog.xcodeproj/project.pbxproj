@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */; };
+		AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5AE2A67CFD3004AFD1A /* Persistence.swift */; };
+		AFEFF5B22A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5B02A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld */; };
+		AFEFF5B62A67CFD4004AFD1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFEFF5B52A67CFD4004AFD1A /* Assets.xcassets */; };
+		AFEFF5BA2A67CFD4004AFD1A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFEFF5B92A67CFD4004AFD1A /* Preview Assets.xcassets */; };
+		AFEFF5C72A67D001004AFD1A /* DetectiveLogWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5C62A67D001004AFD1A /* DetectiveLogWatchApp.swift */; };
+		AFEFF5C92A67D001004AFD1A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5C82A67D001004AFD1A /* ContentView.swift */; };
+		AFEFF5CB2A67D002004AFD1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFEFF5CA2A67D002004AFD1A /* Assets.xcassets */; };
+		AFEFF5CE2A67D002004AFD1A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFEFF5CD2A67D002004AFD1A /* Preview Assets.xcassets */; };
+		AFEFF5D12A67D002004AFD1A /* DetectiveLogWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AFEFF5C42A67D001004AFD1A /* DetectiveLogWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AFEFF5D92A67D112004AFD1A /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5D82A67D112004AFD1A /* LogListView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AFEFF5CF2A67D002004AFD1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AFEFF5A12A67CFD3004AFD1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFEFF5C32A67D001004AFD1A;
+			remoteInfo = "DetectiveLogWatch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AFEFF5D52A67D002004AFD1A /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				AFEFF5D12A67D002004AFD1A /* DetectiveLogWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AFEFF5A92A67CFD3004AFD1A /* DetectiveLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DetectiveLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectiveLogApp.swift; sourceTree = "<group>"; };
+		AFEFF5AE2A67CFD3004AFD1A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		AFEFF5B12A67CFD3004AFD1A /* DetectiveLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DetectiveLog.xcdatamodel; sourceTree = "<group>"; };
+		AFEFF5B52A67CFD4004AFD1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AFEFF5B72A67CFD4004AFD1A /* DetectiveLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DetectiveLog.entitlements; sourceTree = "<group>"; };
+		AFEFF5B92A67CFD4004AFD1A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AFEFF5C42A67D001004AFD1A /* DetectiveLogWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DetectiveLogWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFEFF5C62A67D001004AFD1A /* DetectiveLogWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectiveLogWatchApp.swift; sourceTree = "<group>"; };
+		AFEFF5C82A67D001004AFD1A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AFEFF5CA2A67D002004AFD1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AFEFF5CD2A67D002004AFD1A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AFEFF5D82A67D112004AFD1A /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AFEFF5A62A67CFD3004AFD1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFEFF5C12A67D001004AFD1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AFEFF5A02A67CFD3004AFD1A = {
+			isa = PBXGroup;
+			children = (
+				AFEFF5AB2A67CFD3004AFD1A /* DetectiveLog */,
+				AFEFF5C52A67D001004AFD1A /* DetectiveLogWatch Watch App */,
+				AFEFF5AA2A67CFD3004AFD1A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AFEFF5AA2A67CFD3004AFD1A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AFEFF5A92A67CFD3004AFD1A /* DetectiveLog.app */,
+				AFEFF5C42A67D001004AFD1A /* DetectiveLogWatch Watch App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AFEFF5AB2A67CFD3004AFD1A /* DetectiveLog */ = {
+			isa = PBXGroup;
+			children = (
+				AFEFF5D72A67D0C5004AFD1A /* Detail */,
+				AFEFF5D62A67D0B9004AFD1A /* Main */,
+				AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */,
+				AFEFF5AE2A67CFD3004AFD1A /* Persistence.swift */,
+				AFEFF5B52A67CFD4004AFD1A /* Assets.xcassets */,
+				AFEFF5B72A67CFD4004AFD1A /* DetectiveLog.entitlements */,
+				AFEFF5B02A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld */,
+				AFEFF5B82A67CFD4004AFD1A /* Preview Content */,
+			);
+			path = DetectiveLog;
+			sourceTree = "<group>";
+		};
+		AFEFF5B82A67CFD4004AFD1A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AFEFF5B92A67CFD4004AFD1A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AFEFF5C52A67D001004AFD1A /* DetectiveLogWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				AFEFF5C62A67D001004AFD1A /* DetectiveLogWatchApp.swift */,
+				AFEFF5C82A67D001004AFD1A /* ContentView.swift */,
+				AFEFF5CA2A67D002004AFD1A /* Assets.xcassets */,
+				AFEFF5CC2A67D002004AFD1A /* Preview Content */,
+			);
+			path = "DetectiveLogWatch Watch App";
+			sourceTree = "<group>";
+		};
+		AFEFF5CC2A67D002004AFD1A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AFEFF5CD2A67D002004AFD1A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AFEFF5D62A67D0B9004AFD1A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AFEFF5D82A67D112004AFD1A /* LogListView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		AFEFF5D72A67D0C5004AFD1A /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AFEFF5A82A67CFD3004AFD1A /* DetectiveLog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFEFF5BD2A67CFD4004AFD1A /* Build configuration list for PBXNativeTarget "DetectiveLog" */;
+			buildPhases = (
+				AFEFF5A52A67CFD3004AFD1A /* Sources */,
+				AFEFF5A62A67CFD3004AFD1A /* Frameworks */,
+				AFEFF5A72A67CFD3004AFD1A /* Resources */,
+				AFEFF5D52A67D002004AFD1A /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AFEFF5D02A67D002004AFD1A /* PBXTargetDependency */,
+			);
+			name = DetectiveLog;
+			productName = DetectiveLog;
+			productReference = AFEFF5A92A67CFD3004AFD1A /* DetectiveLog.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AFEFF5C32A67D001004AFD1A /* DetectiveLogWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFEFF5D22A67D002004AFD1A /* Build configuration list for PBXNativeTarget "DetectiveLogWatch Watch App" */;
+			buildPhases = (
+				AFEFF5C02A67D001004AFD1A /* Sources */,
+				AFEFF5C12A67D001004AFD1A /* Frameworks */,
+				AFEFF5C22A67D001004AFD1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DetectiveLogWatch Watch App";
+			productName = "DetectiveLogWatch Watch App";
+			productReference = AFEFF5C42A67D001004AFD1A /* DetectiveLogWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AFEFF5A12A67CFD3004AFD1A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					AFEFF5A82A67CFD3004AFD1A = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					AFEFF5C32A67D001004AFD1A = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = AFEFF5A42A67CFD3004AFD1A /* Build configuration list for PBXProject "DetectiveLog" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AFEFF5A02A67CFD3004AFD1A;
+			productRefGroup = AFEFF5AA2A67CFD3004AFD1A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AFEFF5A82A67CFD3004AFD1A /* DetectiveLog */,
+				AFEFF5C32A67D001004AFD1A /* DetectiveLogWatch Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AFEFF5A72A67CFD3004AFD1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFEFF5BA2A67CFD4004AFD1A /* Preview Assets.xcassets in Resources */,
+				AFEFF5B62A67CFD4004AFD1A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFEFF5C22A67D001004AFD1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFEFF5CE2A67D002004AFD1A /* Preview Assets.xcassets in Resources */,
+				AFEFF5CB2A67D002004AFD1A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AFEFF5A52A67CFD3004AFD1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFEFF5B22A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld in Sources */,
+				AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */,
+				AFEFF5D92A67D112004AFD1A /* LogListView.swift in Sources */,
+				AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFEFF5C02A67D001004AFD1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFEFF5C92A67D001004AFD1A /* ContentView.swift in Sources */,
+				AFEFF5C72A67D001004AFD1A /* DetectiveLogWatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AFEFF5D02A67D002004AFD1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFEFF5C32A67D001004AFD1A /* DetectiveLogWatch Watch App */;
+			targetProxy = AFEFF5CF2A67D002004AFD1A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AFEFF5BB2A67CFD4004AFD1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AFEFF5BC2A67CFD4004AFD1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		AFEFF5BE2A67CFD4004AFD1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DetectiveLog/DetectiveLog.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DetectiveLog/Preview Content\"";
+				DEVELOPMENT_TEAM = 8R3N359429;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kozi.DetectiveLog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AFEFF5BF2A67CFD4004AFD1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DetectiveLog/DetectiveLog.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DetectiveLog/Preview Content\"";
+				DEVELOPMENT_TEAM = 8R3N359429;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kozi.DetectiveLog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		AFEFF5D32A67D002004AFD1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DetectiveLogWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 8R3N359429;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DetectiveLogWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.kozi.DetectiveLog;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kozi.DetectiveLog.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		AFEFF5D42A67D002004AFD1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DetectiveLogWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 8R3N359429;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DetectiveLogWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.kozi.DetectiveLog;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kozi.DetectiveLog.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AFEFF5A42A67CFD3004AFD1A /* Build configuration list for PBXProject "DetectiveLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFEFF5BB2A67CFD4004AFD1A /* Debug */,
+				AFEFF5BC2A67CFD4004AFD1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFEFF5BD2A67CFD4004AFD1A /* Build configuration list for PBXNativeTarget "DetectiveLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFEFF5BE2A67CFD4004AFD1A /* Debug */,
+				AFEFF5BF2A67CFD4004AFD1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFEFF5D22A67D002004AFD1A /* Build configuration list for PBXNativeTarget "DetectiveLogWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFEFF5D32A67D002004AFD1A /* Debug */,
+				AFEFF5D42A67D002004AFD1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AFEFF5B02A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AFEFF5B12A67CFD3004AFD1A /* DetectiveLog.xcdatamodel */,
+			);
+			currentVersion = AFEFF5B12A67CFD3004AFD1A /* DetectiveLog.xcdatamodel */;
+			path = DetectiveLog.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AFEFF5A12A67CFD3004AFD1A /* Project object */;
+}
