@@ -13,9 +13,9 @@ struct Log {
     let category: LogCategory
     let title: String
     let latestMemo: [String]
-    let isBookmarked: Bool
-    let isLocked: Bool
-    let isPinned: Bool
+    let isBookmarked: Int // 0 == false <-> 1 == true
+    let isLocked: Int
+    let isPinned: Int
     let createdAt: Date
     let updatedAt: Date
     let logMemoDates: [Date] // 데이터베이스에 저장된 날짜 불러오기 위함
