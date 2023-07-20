@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF773DFB2A69825E00EF9E1D /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF773DFA2A69825E00EF9E1D /* CategoryView.swift */; };
 		AFE38EA02A683B0500B4FF9E /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE38E9F2A683B0500B4FF9E /* LogCell.swift */; };
 		AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */; };
 		AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5AE2A67CFD3004AFD1A /* Persistence.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AF773DFA2A69825E00EF9E1D /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		AFE38E9F2A683B0500B4FF9E /* LogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
 		AFEFF5A92A67CFD3004AFD1A /* DetectiveLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DetectiveLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectiveLogApp.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				AFEFF5B72A67CFD4004AFD1A /* DetectiveLog.entitlements */,
 				AFEFF5B02A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld */,
 				AFEFF5B82A67CFD4004AFD1A /* Preview Content */,
+				AF773DFA2A69825E00EF9E1D /* CategoryView.swift */,
 			);
 			path = DetectiveLog;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				AFEFF5D92A67D112004AFD1A /* LogView.swift in Sources */,
 				AFE38EA02A683B0500B4FF9E /* LogCell.swift in Sources */,
 				AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */,
+				AF773DFB2A69825E00EF9E1D /* CategoryView.swift in Sources */,
 				AFEFF5DC2A67D765004AFD1A /* CloudKitManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
