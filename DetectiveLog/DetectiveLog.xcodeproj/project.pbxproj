@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AFE38EA02A683B0500B4FF9E /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE38E9F2A683B0500B4FF9E /* LogCell.swift */; };
 		AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */; };
 		AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5AE2A67CFD3004AFD1A /* Persistence.swift */; };
 		AFEFF5B22A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5B02A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld */; };
@@ -17,7 +18,9 @@
 		AFEFF5CB2A67D002004AFD1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFEFF5CA2A67D002004AFD1A /* Assets.xcassets */; };
 		AFEFF5CE2A67D002004AFD1A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFEFF5CD2A67D002004AFD1A /* Preview Assets.xcassets */; };
 		AFEFF5D12A67D002004AFD1A /* DetectiveLogWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AFEFF5C42A67D001004AFD1A /* DetectiveLogWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		AFEFF5D92A67D112004AFD1A /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5D82A67D112004AFD1A /* LogListView.swift */; };
+		AFEFF5D92A67D112004AFD1A /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5D82A67D112004AFD1A /* LogView.swift */; };
+		AFEFF5DC2A67D765004AFD1A /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5DB2A67D765004AFD1A /* CloudKitManager.swift */; };
+		AFEFF5DE2A67F436004AFD1A /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5DD2A67F436004AFD1A /* Log.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AFE38E9F2A683B0500B4FF9E /* LogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
 		AFEFF5A92A67CFD3004AFD1A /* DetectiveLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DetectiveLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectiveLogApp.swift; sourceTree = "<group>"; };
 		AFEFF5AE2A67CFD3004AFD1A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -57,7 +61,9 @@
 		AFEFF5C82A67D001004AFD1A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AFEFF5CA2A67D002004AFD1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFEFF5CD2A67D002004AFD1A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		AFEFF5D82A67D112004AFD1A /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
+		AFEFF5D82A67D112004AFD1A /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
+		AFEFF5DB2A67D765004AFD1A /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		AFEFF5DD2A67F436004AFD1A /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +105,7 @@
 		AFEFF5AB2A67CFD3004AFD1A /* DetectiveLog */ = {
 			isa = PBXGroup;
 			children = (
-				AFEFF5D72A67D0C5004AFD1A /* Detail */,
+				AFEFF5DA2A67D757004AFD1A /* CloudKit */,
 				AFEFF5D62A67D0B9004AFD1A /* Main */,
 				AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */,
 				AFEFF5AE2A67CFD3004AFD1A /* Persistence.swift */,
@@ -141,16 +147,19 @@
 		AFEFF5D62A67D0B9004AFD1A /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				AFEFF5D82A67D112004AFD1A /* LogListView.swift */,
+				AFEFF5D82A67D112004AFD1A /* LogView.swift */,
+				AFEFF5DD2A67F436004AFD1A /* Log.swift */,
+				AFE38E9F2A683B0500B4FF9E /* LogCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		AFEFF5D72A67D0C5004AFD1A /* Detail */ = {
+		AFEFF5DA2A67D757004AFD1A /* CloudKit */ = {
 			isa = PBXGroup;
 			children = (
+				AFEFF5DB2A67D765004AFD1A /* CloudKitManager.swift */,
 			);
-			path = Detail;
+			path = CloudKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +266,11 @@
 			files = (
 				AFEFF5B22A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld in Sources */,
 				AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */,
-				AFEFF5D92A67D112004AFD1A /* LogListView.swift in Sources */,
+				AFEFF5DE2A67F436004AFD1A /* Log.swift in Sources */,
+				AFEFF5D92A67D112004AFD1A /* LogView.swift in Sources */,
+				AFE38EA02A683B0500B4FF9E /* LogCell.swift in Sources */,
 				AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */,
+				AFEFF5DC2A67D765004AFD1A /* CloudKitManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
