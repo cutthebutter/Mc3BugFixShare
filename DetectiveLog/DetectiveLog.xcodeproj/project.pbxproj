@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AFE38EA02A683B0500B4FF9E /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE38E9F2A683B0500B4FF9E /* LogCell.swift */; };
 		AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */; };
 		AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5AE2A67CFD3004AFD1A /* Persistence.swift */; };
 		AFEFF5B22A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5B02A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld */; };
@@ -47,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AFE38E9F2A683B0500B4FF9E /* LogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
 		AFEFF5A92A67CFD3004AFD1A /* DetectiveLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DetectiveLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectiveLogApp.swift; sourceTree = "<group>"; };
 		AFEFF5AE2A67CFD3004AFD1A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -104,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				AFEFF5DA2A67D757004AFD1A /* CloudKit */,
-				AFEFF5D72A67D0C5004AFD1A /* Detail */,
 				AFEFF5D62A67D0B9004AFD1A /* Main */,
 				AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */,
 				AFEFF5AE2A67CFD3004AFD1A /* Persistence.swift */,
@@ -148,15 +149,9 @@
 			children = (
 				AFEFF5D82A67D112004AFD1A /* LogView.swift */,
 				AFEFF5DD2A67F436004AFD1A /* Log.swift */,
+				AFE38E9F2A683B0500B4FF9E /* LogCell.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		AFEFF5D72A67D0C5004AFD1A /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Detail;
 			sourceTree = "<group>";
 		};
 		AFEFF5DA2A67D757004AFD1A /* CloudKit */ = {
@@ -273,6 +268,7 @@
 				AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */,
 				AFEFF5DE2A67F436004AFD1A /* Log.swift in Sources */,
 				AFEFF5D92A67D112004AFD1A /* LogView.swift in Sources */,
+				AFE38EA02A683B0500B4FF9E /* LogCell.swift in Sources */,
 				AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */,
 				AFEFF5DC2A67D765004AFD1A /* CloudKitManager.swift in Sources */,
 			);
