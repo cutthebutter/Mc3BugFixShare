@@ -7,16 +7,17 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct LogView: View {
     
     @Environment(\.editMode) private var editMode
     @State var isPresented = false
     @State var isEditing = false
     @State var selection = 0
     @State var multiSelection = Set<UUID>()
+    @State var temp: [TempLog] = []
     var category = ["진행 중", "완결", "미완결"]
     
-    var tempLog: [TempLog] = [
+    @State var tempLog: [TempLog] = [
         TempLog(id: UUID(), title: "질곡동 사건", createdAt: "7.17", updatedAt: "7.29", latestMemo: ["자라 한마리에 가격이 수백만원. 주변의 가게도 모두", "남자한테 좋다."], isPinned: true, category: LogCategory(rawValue: 0)!),
         TempLog(id: UUID(), title: "자라 절도 사건", createdAt: "7.17", updatedAt: "7.17", latestMemo: ["방이 어지럽혀져 있고 문이 열려있다. 황금 파리가 꼬인 것으로 보아 사망한지 6일정도 지난듯 함"], isPinned: true, category: LogCategory(rawValue: 1)!),
         TempLog(id: UUID(), title: "구소산 추락사건", createdAt: "7.17", updatedAt: "7.29", latestMemo: ["자라 한마리에 가격이 수백만원. 주변의 가게도 모두", "남자한테 좋다."], isPinned: false, category: LogCategory(rawValue: 1)!),
@@ -78,6 +79,9 @@ struct MainView: View {
                         Image(systemName: "ellipsis")
                     }
                 }
+            }
+            .sheet(isPresented: $isPresented) {
+                CategoryView(tempLog: $tempLog, temp: $temp, isPresented: $isPresented)
             }
         }
     }
@@ -145,13 +149,16 @@ struct MainView: View {
     var bottomToolbarItemIsEditing: some View {
         Group {
             Button("이동") {
+                temp = []
                 for selection in multiSelection {
                     print("@Log - \(selection)")
-                    print("@Log - \(tempLog[tempLog.firstIndex(where: { $0.id == selection })!].title)")
+                    temp.append(tempLog[tempLog.firstIndex(where: { $0.id == selection })!])
                 }
+                self.isPresented.toggle()
             }
             Button {
                 print("글쓰기")
+                // 데이터베이스
             } label: {
                 Text("삭제")
             }
@@ -162,6 +169,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        LogView()
     }
 }

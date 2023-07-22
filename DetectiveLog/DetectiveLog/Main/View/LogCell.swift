@@ -42,17 +42,18 @@ struct LogCell: View {
     }
 }
 
-struct TempLog: Identifiable {
+struct TempLog: Identifiable, Equatable {
     let id: UUID
     let title: String
     let createdAt: String
     let updatedAt: String
     let latestMemo: [String]
     let isPinned: Bool
+    var category: LogCategory
 }
 
 struct LogCell_Previews: PreviewProvider {
     static var previews: some View {
-        LogCell(tempLog: TempLog(id: UUID(), title: "질곡동 사건", createdAt: "7.17", updatedAt: "7.29", latestMemo: ["자라 한마리에 가격이 수백만원. 주변의 가게도 모두", "남자한테 좋다."], isPinned: true))
+        LogCell(tempLog: TempLog(id: UUID(), title: "질곡동 사건", createdAt: "7.17", updatedAt: "7.29", latestMemo: ["자라 한마리에 가격이 수백만원. 주변의 가게도 모두", "남자한테 좋다."], isPinned: true, category: LogCategory(rawValue: 0)!))
     }
 }
