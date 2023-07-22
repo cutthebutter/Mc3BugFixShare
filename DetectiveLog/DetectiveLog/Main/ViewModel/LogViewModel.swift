@@ -12,6 +12,7 @@ final class LogViewModel: ObservableObject {
     let cloudKitManager = CloudKitManager.shared
     
     @Published var log: [Log] = []
+    @Published var logForCategoryChange: [Log] = []
     
     init() {
         fetchLog()
@@ -22,7 +23,23 @@ final class LogViewModel: ObservableObject {
             DispatchQueue.main.async {
                 self.log = log
                 print("@Log init - \(self.log)")
+                print("@Log init - \(log)")
             }
+        }
+    }
+    
+    func changeLogCategory(category: LogCategory) {
+        for i in 0..<log.count {
+            for j in 0..<logForCategoryChange.count {
+                if log[i] == logForCategoryChange[j] {
+                    log[i].category = category
+                    
+                }
+            }
+        }
+        
+        for i in 0..<logForCategoryChange.count {
+            cloudKitManager.changeLogRecordCategory(log: logForCategoryChange[i], category: category)
         }
     }
     
