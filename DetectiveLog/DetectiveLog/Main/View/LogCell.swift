@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LogCell: View {
     
-//    var log: Log
+    var log: Log
 
     var tempLog: TempLog
     
@@ -19,19 +19,19 @@ struct LogCell: View {
                 Text("")
                     .frame(width: 0, height: 0)
                 Image(systemName: "pin")
-                    .opacity(tempLog.isPinned ? 1 : 0)
+                    .opacity(log.isPinned == 1 ? 1 : 0)
                     .padding(.leading)
-                Text(tempLog.title)
+                Text(log.title)
                     .font(Font.system(size: 18, weight: .bold))
-                Text("\(tempLog.createdAt) ~ \(tempLog.updatedAt)")
+                Text("\(formatDateToString(date: log.createdAt)) ~ \(formatDateToString(date: log.updatedAt))")
                     .foregroundColor(.gray)
                     .font(Font.system(size: 13))
                 Spacer()
             }
             .padding(.bottom, 2)
             VStack(alignment: .leading, spacing: 3) {
-                ForEach(tempLog.latestMemo.indices, id: \.self) { index in
-                    Text("•  \(tempLog.latestMemo[index])")
+                ForEach(log.latestMemo.indices, id: \.self) { index in
+                    Text("•  \(log.latestMemo[index])")
                         .font(Font.system(size: 13))
                         .padding(.leading, 45)
                 }
@@ -39,6 +39,12 @@ struct LogCell: View {
         }
         .frame(height: 117)
         .frame(maxWidth: .infinity)
+    }
+    
+    func formatDateToString(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "M.d"
+        return dateFormatter.string(from: date)
     }
 }
 
@@ -52,8 +58,8 @@ struct TempLog: Identifiable, Equatable {
     var category: LogCategory
 }
 
-struct LogCell_Previews: PreviewProvider {
-    static var previews: some View {
-        LogCell(tempLog: TempLog(id: UUID(), title: "질곡동 사건", createdAt: "7.17", updatedAt: "7.29", latestMemo: ["자라 한마리에 가격이 수백만원. 주변의 가게도 모두", "남자한테 좋다."], isPinned: true, category: LogCategory(rawValue: 0)!))
-    }
-}
+//struct LogCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LogCell(tempLog: TempLog(id: UUID(), title: "질곡동 사건", createdAt: "7.17", updatedAt: "7.29", latestMemo: ["자라 한마리에 가격이 수백만원. 주변의 가게도 모두", "남자한테 좋다."], isPinned: true, category: LogCategory(rawValue: 0)!))
+//    }
+//}
