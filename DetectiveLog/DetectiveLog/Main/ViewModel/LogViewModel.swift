@@ -29,17 +29,12 @@ final class LogViewModel: ObservableObject {
     }
     
     func changeLogCategory(category: LogCategory) {
-        for i in 0..<log.count {
-            for j in 0..<logForCategoryChange.count {
-                if log[i] == logForCategoryChange[j] {
-                    log[i].category = category
-                    
-                }
-            }
-        }
-        
         for i in 0..<logForCategoryChange.count {
-            cloudKitManager.changeLogRecordCategory(log: logForCategoryChange[i], category: category)
+            guard let changeIndex = log.firstIndex(where: { $0.id == logForCategoryChange[i].id }) else {
+                return
+            }
+            log[changeIndex].category = category
+            cloudKitManager.changeLogRecordCategory(log: log[changeIndex], category: category)
         }
     }
     
