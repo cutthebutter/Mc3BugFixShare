@@ -8,9 +8,9 @@
 import Foundation
 import CloudKit
 
-struct Log {
+struct Log: Identifiable, Equatable {
     let id: CKRecord.ID
-    let category: LogCategory
+    var category: LogCategory
     let title: String
     let latestMemo: [String]
     let isBookmarked: Int // 0 == false <-> 1 == true
@@ -19,7 +19,7 @@ struct Log {
     let createdAt: Date
     let updatedAt: Date
     let logMemoDates: [Date] // 데이터베이스에 저장된 날짜 불러오기 위함
-    let logMemoId: [CKRecord.ID] // 연관 테이블, Id로 서로 연관됨
+    let logMemoId: [CKRecord.Reference] // 연관 테이블, Id로 서로 연관됨
 }
 
 enum LogCategory: Int {
