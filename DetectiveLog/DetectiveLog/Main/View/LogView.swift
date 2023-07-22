@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CloudKit
 
 struct LogView: View {
     
@@ -13,7 +14,7 @@ struct LogView: View {
     @State var isPresented = false
     @State var isEditing = false
     @State var selection = 0
-    @State var multiSelection = Set<UUID>()
+    @State var multiSelection = Set<CKRecord.ID>()
     @State var temp: [TempLog] = []
     var category = ["진행 중", "완결", "미완결"]
     
@@ -24,6 +25,9 @@ struct LogView: View {
         TempLog(id: UUID(), title: "구소산 추락사건", createdAt: "7.17", updatedAt: "7.29", latestMemo: ["자라 한마리에 가격이 수백만원. 주변의 가게도 모두", "남자한테 좋다."], isPinned: false, category: LogCategory(rawValue: 2)!),
         TempLog(id: UUID(), title: "정제명 장염사건", createdAt: "7.17", updatedAt: "7.29", latestMemo: ["부산 갔다와서 배아프다고 자꾸 찡찡댐", "노란 장화를 사려고 함"], isPinned: false, category: LogCategory(rawValue: 0)!)
     ]
+    
+    
+    @ObservedObject var viewModel = LogViewModel()
     
     var body: some View {
         NavigationView {
@@ -81,7 +85,8 @@ struct LogView: View {
                 }
             }
             .sheet(isPresented: $isPresented) {
-                CategoryView(tempLog: $tempLog, temp: $temp, isPresented: $isPresented)
+//                CategoryView(tempLog: $tempLog, temp: $temp, isPresented: $isPresented)
+                CategoryView(viewModel: viewModel, isPresented: $isPresented)
             }
         }
     }
@@ -98,9 +103,9 @@ struct LogView: View {
     
     var inProgressLogList: some View{
         List(selection: $multiSelection) {
-            ForEach(tempLog) { log in
+            ForEach(viewModel.log) { log in
                 if log.category == .inProgress {
-                    LogCell(tempLog: log)
+                    LogCell(log: log, tempLog: tempLog[0])
                         .listRowInsets(EdgeInsets())
                 }
             }
@@ -110,9 +115,9 @@ struct LogView: View {
     
     var completeLogList: some View {
         List(selection: $multiSelection) {
-            ForEach(tempLog) { log in
+            ForEach(viewModel.log) { log in
                 if log.category == .complete {
-                    LogCell(tempLog: log)
+                    LogCell(log: log, tempLog: tempLog[0])
                         .listRowInsets(EdgeInsets())
                 }
             }
@@ -122,16 +127,16 @@ struct LogView: View {
     
     var incompleteLogList: some View {
         List(selection: $multiSelection) {
-            ForEach(tempLog) { log in
+            ForEach(viewModel.log) { log in
                 if log.category == .incomplete {
-                    LogCell(tempLog: log)
+                    LogCell(log: log, tempLog: tempLog[0])
                         .listRowInsets(EdgeInsets())
                 }
             }
         }
         .listStyle(.inset)
     }
-    
+//
     var bottomToolbarItem: some View {
         Group {
             Button("") {
@@ -149,10 +154,12 @@ struct LogView: View {
     var bottomToolbarItemIsEditing: some View {
         Group {
             Button("이동") {
-                temp = []
+                viewModel.logForCategoryChange = []
                 for selection in multiSelection {
                     print("@Log - \(selection)")
-                    temp.append(tempLog[tempLog.firstIndex(where: { $0.id == selection })!])
+                    viewModel.logForCategoryChange.append(
+                        viewModel.log[viewModel.log.firstIndex(where: { $0.id == selection })!]
+                    )
                 }
                 self.isPresented.toggle()
             }
