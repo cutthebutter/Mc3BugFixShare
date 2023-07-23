@@ -10,8 +10,6 @@ import SwiftUI
 struct LogCell: View {
     
     var log: Log
-
-    var tempLog: TempLog
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -37,6 +35,7 @@ struct LogCell: View {
                 }
             }
         }
+
         .frame(height: 117)
         .frame(maxWidth: .infinity)
     }
@@ -46,16 +45,6 @@ struct LogCell: View {
         dateFormatter.dateFormat = "M.d"
         return dateFormatter.string(from: date)
     }
-}
-
-struct TempLog: Identifiable, Equatable {
-    let id: UUID
-    let title: String
-    let createdAt: String
-    let updatedAt: String
-    let latestMemo: [String]
-    let isPinned: Bool
-    var category: LogCategory
 }
 
 //struct LogCell_Previews: PreviewProvider {
