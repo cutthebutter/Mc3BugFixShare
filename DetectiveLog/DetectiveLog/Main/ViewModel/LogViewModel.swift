@@ -21,9 +21,8 @@ final class LogViewModel: ObservableObject {
     func fetchLog() {
         cloudKitManager.fetchLogRecord { log in
             DispatchQueue.main.async {
-                self.log = log
+                self.log = log.sorted(by: { $0.isPinned > $1.isPinned })
                 print("@Log init - \(self.log)")
-                print("@Log init - \(log)")
             }
         }
     }
@@ -36,6 +35,18 @@ final class LogViewModel: ObservableObject {
             log[changeIndex].category = category
             cloudKitManager.changeLogRecordCategory(log: log[changeIndex], category: category)
         }
+    }
+    
+    func setPinned(selectedLog: Log, isPinned: Int) {
+        guard let changeIndex = log.firstIndex(where: { $0.id == selectedLog.id }) else { return }
+        cloudKitManager.changeLogRecordIsPinned(log: selectedLog,
+                                                isPinned: isPinned == 0 ? 1 : 0)
+        log[changeIndex].isPinned = isPinned == 0 ? 1 : 0
+        
+        // 시간순으로 먼저 정렬(내림차순-최신순)
+        log.sort(by: { $0.createdAt > $1.createdAt })
+        // 고정된 메모 상단으로 정렬(내림차순-최신순)
+        log.sort { $0.isPinned > $1.isPinned }
     }
     
 }
