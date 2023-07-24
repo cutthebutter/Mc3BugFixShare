@@ -54,7 +54,6 @@ final class CloudKitManager {
                 else {
                     print("@Log return")
                     return }
-                
                 logList.append(Log(id: record.recordID,
                                    category: logCategory,
                                    title: title,
@@ -84,7 +83,48 @@ final class CloudKitManager {
         
         operation.start()
     }
-    /// func 디테일데이터패치
+    
+    /// func fetchLogMemoRecord: CloudKit에 저장된 LogMemo(Detail) 데이터를 불러옵니다.
+    func fetchLogMemoRecord(log: Log, _ completion: @escaping (([LogMemo]) -> ())) {
+        var logMemoList: [LogMemo] = []
+        let logRecordId = log.id
+        let predicate = NSPredicate(format: "id == %@", logRecordId)
+        let query = CKQuery(recordType: "LogMemo", predicate: predicate)
+        let operation = CKQueryOperation(query: query)
+        operation.database = container
+        
+        operation.recordMatchedBlock = { recordId, result in
+            switch result {
+            case .success(let record):
+                guard let referenceId = record["id"] as? CKRecord.Reference,
+                      let memo = record["memo"] as? String,
+                      let logMemoDate = record["logMemoDate"] as? Date,
+                      let createdAt = record["createdAt"] as? Date
+                else {
+                    return
+                }
+                logMemoList.append(LogMemo(id: logRecordId,
+                                           referenceId: referenceId,
+                                           memo: memo,
+                                           logMemoDate: logMemoDate,
+                                           createdAt: createdAt))
+            case .failure(let error):
+                print("@Log fetchLogMemoRecord - \(error.localizedDescription)")
+            }
+        }
+        
+        operation.queryResultBlock = { result in
+            switch result {
+            case .success(_):
+                completion(logMemoList)
+            case .failure(let error):
+                print("@Log queryResultBlokc error - \(error.localizedDescription)")
+            }
+        }
+        
+        operation.start()
+        
+    }
     
     //MARK: Create
     
@@ -110,13 +150,27 @@ final class CloudKitManager {
         }
     }
     
+    func createLogMemoRecord(log: Log, logMemo: LogMemo) {
+        let record = CKRecord(recordType: "LogMemo")
+        record.setValue(CKRecord.Reference(recordID: log.id, action: .none), forKey: "id") // 데이터 연관을 위함. 
+        record.setValue(logMemo.memo, forKey: "memo")
+        record.setValue(logMemo.logMemoDate, forKey: "logMemoDate")
+        record.setValue(logMemo.createdAt, forKey: "createdAt")
+        container.save(record) { record, error in
+            if let error = error {
+                print("@Log createLogMemoRecord Error - \(error.localizedDescription)")
+            }
+            print("@Log createLogMemoRecord 완료!")
+        }
+    }
+    
     /// func createLogMemoRecord
     
     //MARK: Update
     
-    /// func changeLogRecordCategory: 메인 뷰에서 Log의 카테고리를 이동할 때 사용합니다.
+    /// func updateLogRecordCategory: 메인 뷰에서 Log의 카테고리를 이동할 때 사용합니다.
     /// - Parameter: [Log], LogCategory
-    func changeLogRecordCategory(log: Log, category: LogCategory) {
+    func updateLogRecordCategory(log: Log, category: LogCategory) {
         let recordId = log.id
         container.fetch(withRecordID: recordId) { record, error in
             guard let record = record else {
@@ -151,6 +205,27 @@ final class CloudKitManager {
                     print("@Log changeLogRecordIsPinnedSave - \(error.localizedDescription)")
                 } else {
                     print("@Log changeLogRecordIsPinned 완료!")
+                }
+            }
+        }
+    }
+    
+    func updateLogMemoRecord(logMemo: LogMemo) {
+        let recordId = logMemo.id
+        container.fetch(withRecordID: recordId) { record, error in
+            guard let record = record else {
+                if let error = error {
+                    print("@Log updateLogMemoRecord - \(error.localizedDescription)")
+                }
+                return
+            }
+            record["logMemo"] = logMemo.memo
+//            record["createdAt"] = logMemo.createdAt
+            self.container.save(record) { record, error in
+                if let error = error {
+                    print("@Log updateLogMemoRecord - \(error.localizedDescription)")
+                } else {
+                    print("@Log updateLogMemoRecord 완료!")
                 }
             }
         }
