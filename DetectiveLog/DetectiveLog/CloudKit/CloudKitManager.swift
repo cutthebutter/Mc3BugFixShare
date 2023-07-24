@@ -42,30 +42,27 @@ final class CloudKitManager {
             case .success(let record):
                 guard let category = record["category"] as? Int,
                       let title = record["title"] as? String,
-                      let latestMemo = record["latestMemo"] as? [String],
                       let createdAt = record["createdAt"] as? Date,
                       let updatedAt = record["updatedAt"] as? Date,
                       let isBookmarked = record["isBookmarked"] as? Int,
                       let isLocked = record["isLocked"] as? Int,
                       let isPinned = record["isPinned"] as? Int,
-                      let logMemoDates = record["logMemoDates"] as? [Date],
-//                      let logMemoId = record["logMemoId"] as? [CKRecord.Reference] ?? [],
                       let logCategory = LogCategory(rawValue: category)
                 else {
-                    print("@Log return")
+                    print("@fetchLogRecord return")
                     return }
                 logList.append(Log(id: record.recordID,
                                    category: logCategory,
                                    title: title,
-                                   latestMemo: latestMemo,
+                                   latestMemo: record["latestMemo"] as? [String] ?? [],
                                    isBookmarked: isBookmarked,
                                    isLocked: isLocked,
                                    isPinned: isPinned,
                                    createdAt: createdAt,
                                    updatedAt: updatedAt,
-                                   logMemoDates: logMemoDates,
+                                   logMemoDates: record["logMemoDates"] as? [Date] ?? [],
                                    logMemoId: record["logMemoId"] as? [CKRecord.Reference] ?? [])) // 아직 디테일 작성 안되었을경우?
-                print("@Log - \(logList)")
+//                print("@Log - \(logList)")
                 
             case .failure(let error):
                 print("@Log recordMtachedBlock error - \(error.localizedDescription)")
@@ -87,7 +84,7 @@ final class CloudKitManager {
     /// func fetchLogMemoRecord: CloudKit에 저장된 LogMemo(Detail) 데이터를 불러옵니다.
     func fetchLogMemoRecord(log: Log, _ completion: @escaping (([LogMemo]) -> ())) {
         var logMemoList: [LogMemo] = []
-        let logRecordId = log.id
+        guard let logRecordId = log.id else { return }
         let predicate = NSPredicate(format: "id == %@", logRecordId)
         let query = CKQuery(recordType: "LogMemo", predicate: predicate)
         let operation = CKQueryOperation(query: query)
@@ -126,6 +123,8 @@ final class CloudKitManager {
         
     }
     
+//    func fetch
+    
     //MARK: Create
     
     /// func createLogRecord: CloudKit Database에 디테일뷰로 가기 이전의 데이터를 저장합니다.
@@ -151,8 +150,9 @@ final class CloudKitManager {
     }
     
     func createLogMemoRecord(log: Log, logMemo: LogMemo) {
+        guard let logId = log.id else { return }
         let record = CKRecord(recordType: "LogMemo")
-        record.setValue(CKRecord.Reference(recordID: log.id, action: .none), forKey: "id") // 데이터 연관을 위함. 
+        record.setValue(CKRecord.Reference(recordID: logId, action: .none), forKey: "id") // 데이터 연관을 위함.
         record.setValue(logMemo.memo, forKey: "memo")
         record.setValue(logMemo.logMemoDate, forKey: "logMemoDate")
         record.setValue(logMemo.createdAt, forKey: "createdAt")
@@ -168,10 +168,32 @@ final class CloudKitManager {
     
     //MARK: Update
     
+    /// func updateLogRecord: LogMemo를 작성할 경우 Log에 일부 업데이트를 해주는 메소드입니다.
+    /// - Parameter: log: Log, latestMemo: [string], updatedAt: Date
+    func updateLogRecord(log: Log, latestMemo: [String], updatedAt: Date) {
+        guard let recordId = log.id else { return }
+        container.fetch(withRecordID: recordId) { record, error in
+            guard let record = record else {
+                if let error = error {
+                    print("@Log updateLogRecord - \(error)")
+                }
+                return
+            }
+            record["latestMemo"] = latestMemo
+            record["updatedAt"] = updatedAt
+            self.container.save(record) { record, error in
+                if let error = error {
+                    print("@Log updateLogRecord - \(error)")
+                    print("@Log updateLogRecord 완료!")
+                }
+            }
+        }
+    }
+    
     /// func updateLogRecordCategory: 메인 뷰에서 Log의 카테고리를 이동할 때 사용합니다.
     /// - Parameter: [Log], LogCategory
     func updateLogRecordCategory(log: Log, category: LogCategory) {
-        let recordId = log.id
+        guard let recordId = log.id else { return }
         container.fetch(withRecordID: recordId) { record, error in
             guard let record = record else {
                 if let error = error {
@@ -190,8 +212,8 @@ final class CloudKitManager {
         }
     }
     
-    func changeLogRecordIsPinned(log: Log, isPinned: Int) {
-        let recordId = log.id
+    func updateLogRecordIsPinned(log: Log, isPinned: Int) {
+        guard let recordId = log.id else { return }
         container.fetch(withRecordID: recordId) { record, error in
             guard let record = record else {
                 if let error = error {
@@ -237,7 +259,7 @@ final class CloudKitManager {
     /// func deleteLogRecord: CloudKit Database에서 Log Record를 삭제합니다.
     /// - Parameter: Log
     func deleteLogRecord(log: Log) {
-        let recordId = log.id
+        guard let recordId = log.id else { return }
         container.delete(withRecordID: recordId) { recordId, error in
             if let error = error {
                 print("@Log deleteLogRecord Error - \(error.localizedDescription)")
