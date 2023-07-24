@@ -9,22 +9,30 @@ import Foundation
 
 import CloudKit
 
+protocol CloudKitManagerInterface {
+    // Create Methods
+    // Read Methods
+    // Update Methods
+    // Delete Methods
+}
+
 final class CloudKitManager {
     
     //MARK: Properties
+    // 싱글톤
     static let shared = CloudKitManager()
     
     // 유저 개인 privateDatabase
     private var container = CKContainer(identifier: "iCloud.com.kozi.detectiveLog").privateCloudDatabase
     
-    //MARK: Methods
+    //MARK: Read
     
-    /// func fetchLog: Cloudkit에 저장된 LogList(Main) 데이터를 불러옵니다.
+    /// func fetchLog: Cloudkit에 저장된 Log(Main) 데이터를 불러옵니다.
     /// - Parameter: (LogList) -> ()
     func fetchLogRecord(_ completion: @escaping (([Log]) -> ())) {
         var logList: [Log] = []
         let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: "LogList", predicate: predicate)
+        let query = CKQuery(recordType: "Log", predicate: predicate)
         query.sortDescriptors = [NSSortDescriptor(key: "updatedAt", ascending: false)]
         let operation = CKQueryOperation(query: query)
         operation.database = container
@@ -41,9 +49,11 @@ final class CloudKitManager {
                       let isLocked = record["isLocked"] as? Int,
                       let isPinned = record["isPinned"] as? Int,
                       let logMemoDates = record["logMemoDates"] as? [Date],
-                      let logMemoId = record["logMemoId"] as? [CKRecord.ID],
+//                      let logMemoId = record["logMemoId"] as? [CKRecord.Reference] ?? [],
                       let logCategory = LogCategory(rawValue: category)
-                else { return }
+                else {
+                    print("@Log return")
+                    return }
                 
                 logList.append(Log(id: record.recordID,
                                    category: logCategory,
@@ -55,10 +65,11 @@ final class CloudKitManager {
                                    createdAt: createdAt,
                                    updatedAt: updatedAt,
                                    logMemoDates: logMemoDates,
-                                   logMemoId: logMemoId))
+                                   logMemoId: record["logMemoId"] as? [CKRecord.Reference] ?? [])) // 아직 디테일 작성 안되었을경우?
+                print("@Log - \(logList)")
                 
             case .failure(let error):
-                print("@Log error - \(error.localizedDescription)")
+                print("@Log recordMtachedBlock error - \(error.localizedDescription)")
             }
         }
         
@@ -67,14 +78,15 @@ final class CloudKitManager {
             case .success(_):
                 completion(logList)
             case .failure(let error):
-                print("@Log error - \(error.localizedDescription)")
+                print("@Log queryResultBlokc error - \(error.localizedDescription)")
             }
         }
         
         operation.start()
     }
-    
     /// func 디테일데이터패치
+    
+    //MARK: Create
     
     /// func createLogRecord: CloudKit Database에 디테일뷰로 가기 이전의 데이터를 저장합니다.
     /// - Parameter: Log
@@ -99,6 +111,53 @@ final class CloudKitManager {
     }
     
     /// func createLogMemoRecord
+    
+    //MARK: Update
+    
+    /// func changeLogRecordCategory: 메인 뷰에서 Log의 카테고리를 이동할 때 사용합니다.
+    /// - Parameter: [Log], LogCategory
+    func changeLogRecordCategory(log: Log, category: LogCategory) {
+        let recordId = log.id
+        container.fetch(withRecordID: recordId) { record, error in
+            guard let record = record else {
+                if let error = error {
+                    print("@Log changeLogRecordCategoryError - \(error.localizedDescription)")
+                }
+                return
+            }
+            record["category"] = category.rawValue
+            self.container.save(record) { record, error in
+                if let error = error {
+                    print("@Log changeLogRecordCategoryErrorSave - \(error.localizedDescription)")
+                } else {
+                    print("@Log changeLogRecordCategory 완료!")
+                }
+            }
+        }
+    }
+    
+    func changeLogRecordIsPinned(log: Log, isPinned: Int) {
+        let recordId = log.id
+        container.fetch(withRecordID: recordId) { record, error in
+            guard let record = record else {
+                if let error = error {
+                    print("@Log changeLogRecordIsPinned - \(error.localizedDescription)")
+                }
+                return
+            }
+            record["isPinned"] = isPinned
+            self.container.save(record) { record, error in
+                if let error = error {
+                    print("@Log changeLogRecordIsPinnedSave - \(error.localizedDescription)")
+                } else {
+                    print("@Log changeLogRecordIsPinned 완료!")
+                }
+            }
+        }
+    }
+    
+    
+    //MARK: Delete
 
     /// func deleteLogRecord: CloudKit Database에서 Log Record를 삭제합니다.
     /// - Parameter: Log

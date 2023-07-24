@@ -6,23 +6,19 @@
 //
 
 import SwiftUI
+import CloudKit
 
-struct MainView: View {
+struct LogView: View {
     
     @Environment(\.editMode) private var editMode
     @State var isPresented = false
     @State var isEditing = false
     @State var selection = 0
-    @State var multiSelection = Set<UUID>()
+    @State var multiSelection = Set<CKRecord.ID>()
     var category = ["진행 중", "완결", "미완결"]
     
-    var tempLog: [TempLog] = [
-        TempLog(id: UUID(), title: "질곡동 사건", createdAt: "7.17", updatedAt: "7.29", latestMemo: ["자라 한마리에 가격이 수백만원. 주변의 가게도 모두", "남자한테 좋다."], isPinned: true, category: LogCategory(rawValue: 0)!),
-        TempLog(id: UUID(), title: "자라 절도 사건", createdAt: "7.17", updatedAt: "7.17", latestMemo: ["방이 어지럽혀져 있고 문이 열려있다. 황금 파리가 꼬인 것으로 보아 사망한지 6일정도 지난듯 함"], isPinned: true, category: LogCategory(rawValue: 1)!),
-        TempLog(id: UUID(), title: "구소산 추락사건", createdAt: "7.17", updatedAt: "7.29", latestMemo: ["자라 한마리에 가격이 수백만원. 주변의 가게도 모두", "남자한테 좋다."], isPinned: false, category: LogCategory(rawValue: 1)!),
-        TempLog(id: UUID(), title: "구소산 추락사건", createdAt: "7.17", updatedAt: "7.29", latestMemo: ["자라 한마리에 가격이 수백만원. 주변의 가게도 모두", "남자한테 좋다."], isPinned: false, category: LogCategory(rawValue: 2)!),
-        TempLog(id: UUID(), title: "정제명 장염사건", createdAt: "7.17", updatedAt: "7.29", latestMemo: ["부산 갔다와서 배아프다고 자꾸 찡찡댐", "노란 장화를 사려고 함"], isPinned: false, category: LogCategory(rawValue: 0)!)
-    ]
+    
+    @ObservedObject var viewModel = LogViewModel()
     
     var body: some View {
         NavigationView {
@@ -79,6 +75,10 @@ struct MainView: View {
                     }
                 }
             }
+            .sheet(isPresented: $isPresented) {
+//                CategoryView(tempLog: $tempLog, temp: $temp, isPresented: $isPresented)
+                CategoryView(viewModel: viewModel, isPresented: $isPresented)
+            }
         }
     }
     
@@ -93,23 +93,36 @@ struct MainView: View {
     }
     
     var inProgressLogList: some View{
+        
         List(selection: $multiSelection) {
-            ForEach(tempLog) { log in
+            ForEach(viewModel.log) { log in
                 if log.category == .inProgress {
-                    LogCell(tempLog: log)
+                    LogCell(log: log)
                         .listRowInsets(EdgeInsets())
+                        .contextMenu {
+                            Button {
+                                viewModel.setPinned(selectedLog: log, isPinned: log.isPinned)
+                            } label: {
+                                Text(log.isPinned == 0 ? "상단에 고정하기" : "상단 고정 해제")
+                            }
+                            contextMenuItems
+                        }
                 }
             }
         }
         .listStyle(.inset)
+
     }
     
     var completeLogList: some View {
         List(selection: $multiSelection) {
-            ForEach(tempLog) { log in
+            ForEach(viewModel.log) { log in
                 if log.category == .complete {
-                    LogCell(tempLog: log)
+                    LogCell(log: log)
                         .listRowInsets(EdgeInsets())
+                        .contextMenu {
+                            contextMenuItems
+                        }
                 }
             }
         }
@@ -118,16 +131,24 @@ struct MainView: View {
     
     var incompleteLogList: some View {
         List(selection: $multiSelection) {
-            ForEach(tempLog) { log in
+            ForEach(viewModel.log) { log in
                 if log.category == .incomplete {
-                    LogCell(tempLog: log)
+                    LogCell(log: log)
                         .listRowInsets(EdgeInsets())
+                        .contextMenu {
+                            Button {
+                                viewModel.setPinned(selectedLog: log, isPinned: log.isPinned)
+                            } label: {
+                                Text("상단에 고정하기")
+                            }
+                            contextMenuItems
+                        }
                 }
             }
         }
         .listStyle(.inset)
     }
-    
+//
     var bottomToolbarItem: some View {
         Group {
             Button("") {
@@ -145,15 +166,36 @@ struct MainView: View {
     var bottomToolbarItemIsEditing: some View {
         Group {
             Button("이동") {
+                viewModel.logForCategoryChange = []
                 for selection in multiSelection {
                     print("@Log - \(selection)")
-                    print("@Log - \(tempLog[tempLog.firstIndex(where: { $0.id == selection })!].title)")
+                    viewModel.logForCategoryChange.append(
+                        viewModel.log[viewModel.log.firstIndex(where: { $0.id == selection })!]
+                    )
                 }
+                self.isPresented.toggle()
             }
             Button {
                 print("글쓰기")
+                // 데이터베이스
             } label: {
                 Text("삭제")
+            }
+        }
+    }
+    
+    var contextMenuItems: some View {
+        Group {
+            
+            Button {
+                print("메모 잠그기")
+            } label: {
+                Text("메모 잠그기")
+            }
+            Button {
+                print("이동하기")
+            } label: {
+                Text("이동하기")
             }
         }
     }
@@ -162,6 +204,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        LogView()
     }
 }

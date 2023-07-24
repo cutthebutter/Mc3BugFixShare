@@ -13,7 +13,8 @@ struct DetectiveLogApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainView()
+//            CategoryView()
+            LogView()
         }
     }
 }

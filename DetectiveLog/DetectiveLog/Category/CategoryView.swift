@@ -11,8 +11,7 @@ import CloudKit
 struct CategoryView: View {
     
 //    @State var recordId: [CKRecord.ID] = []
-    @Binding var tempLog: [TempLog]
-    @Binding var temp: [TempLog]
+    @ObservedObject var viewModel: LogViewModel
     @Binding var isPresented: Bool
     
     var body: some View {
@@ -48,8 +47,8 @@ struct CategoryView: View {
                 }
             }
             .onAppear {
-                print("@Log - \(tempLog.count)")
-                print("@Log - \(temp.count)")
+                print("@Log log - \(viewModel.log)")
+                print("@Log logForCategoryChange - \(viewModel.logForCategoryChange)")
             }
         }
         
@@ -58,21 +57,24 @@ struct CategoryView: View {
     var categoryButton: some View {
         Group {
             Button {
-                changeCategory(category: .inProgress)
+                viewModel.changeLogCategory(category: .inProgress)
+                self.isPresented.toggle()
             } label: {
                 RoundedRectangle(cornerRadius: 10)
                     .buttonText("진행 중인\n사건")
             }
             
             Button {
-                changeCategory(category: .complete)
+                viewModel.changeLogCategory(category: .complete)
+                self.isPresented.toggle()
             } label: {
                 RoundedRectangle(cornerRadius: 10)
                     .buttonText("완결된\n사건")
             }
             
             Button {
-                changeCategory(category: .incomplete)
+                viewModel.changeLogCategory(category: .incomplete)
+                self.isPresented.toggle()
             } label: {
                 RoundedRectangle(cornerRadius: 10)
                     .buttonText("미완결된\n사건")
@@ -81,13 +83,13 @@ struct CategoryView: View {
     }
     
     func changeCategory(category: LogCategory) {
-        for i in 0..<tempLog.count {
-            for j in 0..<temp.count {
-                if tempLog[i] == temp[j] {
-                    tempLog[i].category = category
-                }
-            }
-        }
+//        for i in 0..<tempLog.count {
+//            for j in 0..<temp.count {
+//                if tempLog[i] == temp[j] {
+//                    tempLog[i].category = category
+//                }
+//            }
+//        }
         isPresented.toggle()
     }
     
