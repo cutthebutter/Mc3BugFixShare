@@ -15,7 +15,7 @@ struct Log: Identifiable, Equatable {
     let latestMemo: [String]
     let isBookmarked: Int // 0 == false <-> 1 == true
     let isLocked: Int
-    let isPinned: Int
+    var isPinned: Int
     let createdAt: Date
     let updatedAt: Date
     let logMemoDates: [Date] // 데이터베이스에 저장된 날짜 불러오기 위함
