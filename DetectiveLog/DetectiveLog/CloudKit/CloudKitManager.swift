@@ -123,6 +123,44 @@ final class CloudKitManager {
         
     }
     
+    /// func fetchLogOpinionRecord: CloudKit Datebase에서 사견을 불러옵니다.
+    ///
+    func fetchLogOpinionRecord(log: Log, _ completion: @escaping (([LogOpinion]) -> ())) {
+        var logOpinion: [LogOpinion] = []
+        guard let logRecordId = log.id else { return }
+        let predicate = NSPredicate(format: "id == %@", logRecordId)
+        let query = CKQuery(recordType: "LogMemo", predicate: predicate)
+        let operation = CKQueryOperation(query: query)
+        operation.database = container
+        
+        operation.recordMatchedBlock = { recordId, result in
+            switch result {
+            case .success(let record):
+                guard let referenceId = record["id"] as? CKRecord.Reference,
+                      let opinion = record["opinion"] as? String,
+                      let createdAt = record["createdAt"] as? Date
+                else { return }
+                logOpinion.append(LogOpinion(id: record.recordID,
+                                             referenceId: referenceId,
+                                             opinion: opinion,
+                                             createdAt: createdAt))
+            case .failure(let error):
+                print("@Log fetchLogOpinionRecord error - \(error.localizedDescription)")
+            }
+        }
+        
+        operation.queryResultBlock = { result in
+            switch result {
+            case .success(_):
+                completion(logOpinion)
+            case .failure(let error):
+                print("@Log fetchLogOpinionRecord error - \(error.localizedDescription)")
+            }
+        }
+        
+        operation.start()
+    }
+    
 //    func fetch
     
     //MARK: Create
