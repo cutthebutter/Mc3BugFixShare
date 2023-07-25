@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0115DA2A6FA54C0021E462 /* AppleSDGothicNeoH.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF0115D12A6FA54B0021E462 /* AppleSDGothicNeoH.ttf */; };
+		AF0115DB2A6FA54C0021E462 /* AppleSDGothicNeoT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF0115D22A6FA54C0021E462 /* AppleSDGothicNeoT.ttf */; };
+		AF0115DC2A6FA54C0021E462 /* AppleSDGothicNeoL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF0115D32A6FA54C0021E462 /* AppleSDGothicNeoL.ttf */; };
+		AF0115DD2A6FA54C0021E462 /* AppleSDGothicNeoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF0115D42A6FA54C0021E462 /* AppleSDGothicNeoM.ttf */; };
+		AF0115DE2A6FA54C0021E462 /* AppleSDGothicNeoEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF0115D52A6FA54C0021E462 /* AppleSDGothicNeoEB.ttf */; };
+		AF0115DF2A6FA54C0021E462 /* AppleSDGothicNeoR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF0115D62A6FA54C0021E462 /* AppleSDGothicNeoR.ttf */; };
+		AF0115E02A6FA54C0021E462 /* AppleSDGothicNeoSB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF0115D72A6FA54C0021E462 /* AppleSDGothicNeoSB.ttf */; };
+		AF0115E12A6FA54C0021E462 /* AppleSDGothicNeoUL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF0115D82A6FA54C0021E462 /* AppleSDGothicNeoUL.ttf */; };
+		AF0115E22A6FA54C0021E462 /* AppleSDGothicNeoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF0115D92A6FA54C0021E462 /* AppleSDGothicNeoB.ttf */; };
 		AF73FA2F2A6A705A00213DBE /* LogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA2E2A6A705A00213DBE /* LogViewModel.swift */; };
 		AF73FA332A6E5E5E00213DBE /* LogMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA322A6E5E5E00213DBE /* LogMemo.swift */; };
 		AF73FA352A6E6B7E00213DBE /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA342A6E6B7E00213DBE /* TempView.swift */; };
@@ -60,6 +69,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AF0115D12A6FA54B0021E462 /* AppleSDGothicNeoH.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoH.ttf; sourceTree = "<group>"; };
+		AF0115D22A6FA54C0021E462 /* AppleSDGothicNeoT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoT.ttf; sourceTree = "<group>"; };
+		AF0115D32A6FA54C0021E462 /* AppleSDGothicNeoL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoL.ttf; sourceTree = "<group>"; };
+		AF0115D42A6FA54C0021E462 /* AppleSDGothicNeoM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoM.ttf; sourceTree = "<group>"; };
+		AF0115D52A6FA54C0021E462 /* AppleSDGothicNeoEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoEB.ttf; sourceTree = "<group>"; };
+		AF0115D62A6FA54C0021E462 /* AppleSDGothicNeoR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoR.ttf; sourceTree = "<group>"; };
+		AF0115D72A6FA54C0021E462 /* AppleSDGothicNeoSB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoSB.ttf; sourceTree = "<group>"; };
+		AF0115D82A6FA54C0021E462 /* AppleSDGothicNeoUL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoUL.ttf; sourceTree = "<group>"; };
+		AF0115D92A6FA54C0021E462 /* AppleSDGothicNeoB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoB.ttf; sourceTree = "<group>"; };
+		AF0115E32A6FA5830021E462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AF73FA2E2A6A705A00213DBE /* LogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModel.swift; sourceTree = "<group>"; };
 		AF73FA322A6E5E5E00213DBE /* LogMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMemo.swift; sourceTree = "<group>"; };
 		AF73FA342A6E6B7E00213DBE /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
@@ -108,6 +127,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF0115D02A6FA5380021E462 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AF0115D92A6FA54C0021E462 /* AppleSDGothicNeoB.ttf */,
+				AF0115D52A6FA54C0021E462 /* AppleSDGothicNeoEB.ttf */,
+				AF0115D12A6FA54B0021E462 /* AppleSDGothicNeoH.ttf */,
+				AF0115D32A6FA54C0021E462 /* AppleSDGothicNeoL.ttf */,
+				AF0115D42A6FA54C0021E462 /* AppleSDGothicNeoM.ttf */,
+				AF0115D62A6FA54C0021E462 /* AppleSDGothicNeoR.ttf */,
+				AF0115D72A6FA54C0021E462 /* AppleSDGothicNeoSB.ttf */,
+				AF0115D22A6FA54C0021E462 /* AppleSDGothicNeoT.ttf */,
+				AF0115D82A6FA54C0021E462 /* AppleSDGothicNeoUL.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		AF73FA2B2A6A703B00213DBE /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,12 +222,14 @@
 		AFEFF5AB2A67CFD3004AFD1A /* DetectiveLog */ = {
 			isa = PBXGroup;
 			children = (
+				AF0115E32A6FA5830021E462 /* Info.plist */,
 				AF73FA302A6C25FE00213DBE /* Category */,
 				AFEFF5DA2A67D757004AFD1A /* CloudKit */,
 				AFEFF5D62A67D0B9004AFD1A /* Main */,
 				AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */,
 				AFEFF5AE2A67CFD3004AFD1A /* Persistence.swift */,
 				AFEFF5B52A67CFD4004AFD1A /* Assets.xcassets */,
+				AF0115D02A6FA5380021E462 /* fonts */,
 				AFEFF5B72A67CFD4004AFD1A /* DetectiveLog.entitlements */,
 				AFEFF5B02A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld */,
 				AFEFF5B82A67CFD4004AFD1A /* Preview Content */,
@@ -327,8 +364,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF0115E02A6FA54C0021E462 /* AppleSDGothicNeoSB.ttf in Resources */,
 				AFEFF5BA2A67CFD4004AFD1A /* Preview Assets.xcassets in Resources */,
+				AF0115DC2A6FA54C0021E462 /* AppleSDGothicNeoL.ttf in Resources */,
 				AFEFF5B62A67CFD4004AFD1A /* Assets.xcassets in Resources */,
+				AF0115E12A6FA54C0021E462 /* AppleSDGothicNeoUL.ttf in Resources */,
+				AF0115DB2A6FA54C0021E462 /* AppleSDGothicNeoT.ttf in Resources */,
+				AF0115DF2A6FA54C0021E462 /* AppleSDGothicNeoR.ttf in Resources */,
+				AF0115DA2A6FA54C0021E462 /* AppleSDGothicNeoH.ttf in Resources */,
+				AF0115DD2A6FA54C0021E462 /* AppleSDGothicNeoM.ttf in Resources */,
+				AF0115DE2A6FA54C0021E462 /* AppleSDGothicNeoEB.ttf in Resources */,
+				AF0115E22A6FA54C0021E462 /* AppleSDGothicNeoB.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +559,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DetectiveLog/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -554,6 +601,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DetectiveLog/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
