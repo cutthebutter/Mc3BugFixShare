@@ -32,11 +32,12 @@ struct CommentCellModel: Identifiable {
 struct DetailView: View {
     
     @State var newnote: String = ""
-    @State var isShowingModal = false
+    @State var presentSheet = false
     @State var text: String = ""
     @FocusState private var isFocused: Bool
     @State var isButtonToggled = false
     @State private var islogMemoTextFieldHidden = false
+//    @State var presentSheet = false
 
     
     
@@ -150,7 +151,9 @@ struct DetailView: View {
     }
     
     @ViewBuilder
+
     var logCell: some View {
+        
         ScrollView {
             VStack {
                 dateCell
@@ -263,6 +266,40 @@ struct DetailView: View {
         .opacity(islogMemoTextFieldHidden ? 0 : 1)
     }
     
+    var dateCell: some View {
+        
+        return VStack{
+            Rectangle()
+                .frame(height: 0.4)
+                .frame(width: UIScreen.main.bounds.width)
+                .opacity(0.5)
+            
+            HStack {
+                
+                Text("2023.07.24")
+                    .font(.system(size: 17))
+                    .bold()
+                    .fixedSize(horizontal: false, vertical: true)
+                
+                Spacer()
+                
+                presentMenuModal()
+              
+            }
+            .padding(.horizontal,20)
+            .padding(.vertical, 7)
+            
+            Rectangle()
+                .frame(height: 0.4)
+                .frame(width: UIScreen.main.bounds.width)
+                .opacity(0.5)
+            
+        }
+        .padding(.vertical,5)
+
+    }
+
+    
 }
 
 
@@ -276,46 +313,7 @@ extension View {
 }
 
 // 날짜 적히는 칸(날짜 데이터 받아와야함...)
-var dateCell: some View {
-    
-    @State var isShowingModal = false
-    
-    return VStack{
-        Rectangle()
-            .frame(height: 0.4)
-            .frame(width: UIScreen.main.bounds.width)
-            .opacity(0.5)
-        
-        HStack {
-            
-            Text("2023.07.24")
-                .font(.system(size: 17))
-                .bold()
-                .fixedSize(horizontal: false, vertical: true)
-            
-            Spacer()
-            
-            Button(action: {
-                isShowingModal = true
-            }) {
-                Image(systemName: "ellipsis")
-                    .foregroundColor(.black)
-                    .font(.system(size:25))
-                    .opacity(0.2)
-            }
-            
-        }
-        .padding(.horizontal,20)
-        .padding(.vertical, 7)
-        
-        Rectangle()
-            .frame(height: 0.4)
-            .frame(width: UIScreen.main.bounds.width)
-            .opacity(0.5)
-        
-    }
-    .padding(.vertical,5)
-}
+
 
 
 @available(iOS 16.0, *)
@@ -326,3 +324,64 @@ struct DetailView_Previews: PreviewProvider {
 }
 
 
+@available(iOS 16.0, *)
+struct presentMenuModal: View {
+    @State var presentSheet = false
+    var body: some View {
+        Button(action: {
+            self.presentSheet.toggle()
+        }) {
+            Image(systemName: "ellipsis")
+                .foregroundColor(.black)
+                .font(.system(size:25))
+                .opacity(0.2)
+        }
+        .sheet(isPresented: $presentSheet, onDismiss: {
+            
+        }) {
+            menuListModal()
+        }
+    }
+}
+
+@available(iOS 16.0, *)
+struct menuListModal: View {
+    var body: some View {
+        List{
+            Button {
+                
+            } label: {
+                HStack{
+                    Text("복사하기")
+                        .font(.system(size:20))
+                    Spacer()
+                    Image(systemName: "doc.plaintext")
+                }
+            }
+            
+            Button {
+                
+            } label: {
+                HStack{
+                    Text("선택 삭제하기")
+                    Spacer()
+                    Image(systemName: "trash")
+                }
+            }
+            
+            Button {
+                
+            } label: {
+                HStack{
+                    Text("다른 사건으로 옯기기")
+                    Spacer()
+                    Image(systemName: "rectangle.portrait.and.arrow.right")
+                }
+            }
+        }
+        .ignoresSafeArea(.all)
+        .listStyle(.inset)
+        .presentationDetents([.fraction(0.35)])
+        .presentationDragIndicator(.visible)
+    }
+}
