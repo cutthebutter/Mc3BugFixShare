@@ -42,9 +42,7 @@ extension CloudKitManager {
                                    isLocked: isLocked,
                                    isPinned: isPinned,
                                    createdAt: createdAt,
-                                   updatedAt: updatedAt,
-                                   logMemoDates: record["logMemoDates"] as? [Date] ?? [],
-                                   logMemoId: record["logMemoId"] as? [CKRecord.Reference] ?? [])) // 아직 디테일 작성 안되었을경우?
+                                   updatedAt: updatedAt))
                 
             case .failure(let error):
                 print("@Log recordMtachedBlock error - \(error.localizedDescription)")
@@ -61,6 +59,37 @@ extension CloudKitManager {
         }
         
         operation.start()
+    }
+    
+    /// func fetchDetailLogRecord
+    /// - Parameter : CKRecord.ID
+    func fetchDetailLogRecord(id: CKRecord.ID, _ completion: @escaping ((Log) -> ())) {
+        container.fetch(withRecordID: id) { record, error in
+            guard let record = record,
+                  let category = record["category"] as? Int,
+                  let title = record["title"] as? String,
+                  let createdAt = record["createdAt"] as? Date,
+                  let updatedAt = record["updatedAt"] as? Date,
+                  let isBookmarked = record["isBookmarked"] as? Int,
+                  let isLocked = record["isLocked"] as? Int,
+                  let isPinned = record["isPinned"] as? Int,
+                  let logCategory = LogCategory(rawValue: category)
+            else { return }
+            if let error = error {
+                print("@Log fetchDetailLogRecord error - \(error.localizedDescription)")
+            }
+            let log = Log(id: UUID(),
+                          recordId: record.recordID,
+                          category: logCategory,
+                          title: title,
+                          latestMemo: record["latestMemo"] as? [String] ?? [],
+                          isBookmarked: isBookmarked,
+                          isLocked: isLocked,
+                          isPinned: isPinned,
+                          createdAt: createdAt,
+                          updatedAt: updatedAt)
+            completion(log)
+        }
     }
     
     /// func fetchLogMemoRecord: CloudKit에 저장된 LogMemo(Detail) 데이터를 불러옵니다.
