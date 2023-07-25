@@ -12,6 +12,8 @@
 		66D176592A6F507D00194690 /* FakeEachLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176582A6F507D00194690 /* FakeEachLog.swift */; };
 		66D1765B2A6F526200194690 /* LogListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1765A2A6F526200194690 /* LogListViewModel.swift */; };
 		66D1765D2A6F557800194690 /* LogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1765C2A6F557800194690 /* LogDetailView.swift */; };
+		66D176732A6F658D00194690 /* OpenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176722A6F658D00194690 /* OpenApp.swift */; };
+		66D176742A6F658D00194690 /* OpenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176722A6F658D00194690 /* OpenApp.swift */; };
 		66E066772A6E4F8E00BE3751 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5DB2A67D765004AFD1A /* CloudKitManager.swift */; };
 		66E0667B2A6E5C9700BE3751 /* LogRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E0667A2A6E5C9700BE3751 /* LogRecordView.swift */; };
 		66E0667D2A6E5CA400BE3751 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E0667C2A6E5CA400BE3751 /* MainTabView.swift */; };
@@ -47,6 +49,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		66D1766F2A6F5FCA00194690 /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFEFF5D52A67D002004AFD1A /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,6 +77,7 @@
 		66D176582A6F507D00194690 /* FakeEachLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEachLog.swift; sourceTree = "<group>"; };
 		66D1765A2A6F526200194690 /* LogListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListViewModel.swift; sourceTree = "<group>"; };
 		66D1765C2A6F557800194690 /* LogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetailView.swift; sourceTree = "<group>"; };
+		66D176722A6F658D00194690 /* OpenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenApp.swift; sourceTree = "<group>"; };
 		66E0667A2A6E5C9700BE3751 /* LogRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRecordView.swift; sourceTree = "<group>"; };
 		66E0667C2A6E5CA400BE3751 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		66E0667E2A6E5CCE00BE3751 /* LogTitleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTitleSelectionView.swift; sourceTree = "<group>"; };
@@ -150,6 +163,14 @@
 				66D1765A2A6F526200194690 /* LogListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		66D176712A6F651A00194690 /* AppIntents */ = {
+			isa = PBXGroup;
+			children = (
+				66D176722A6F658D00194690 /* OpenApp.swift */,
+			);
+			path = AppIntents;
 			sourceTree = "<group>";
 		};
 		66E066702A6E4D1100BE3751 /* Model */ = {
@@ -249,6 +270,7 @@
 				AFEFF5B52A67CFD4004AFD1A /* Assets.xcassets */,
 				AFEFF5B72A67CFD4004AFD1A /* DetectiveLog.entitlements */,
 				AFEFF5B02A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld */,
+				66D176712A6F651A00194690 /* AppIntents */,
 				AFEFF5B82A67CFD4004AFD1A /* Preview Content */,
 			);
 			path = DetectiveLog;
@@ -314,6 +336,7 @@
 				AFEFF5A62A67CFD3004AFD1A /* Frameworks */,
 				AFEFF5A72A67CFD3004AFD1A /* Resources */,
 				AFEFF5D52A67D002004AFD1A /* Embed Watch Content */,
+				66D1766F2A6F5FCA00194690 /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
@@ -412,6 +435,7 @@
 				AFE38EA02A683B0500B4FF9E /* LogCell.swift in Sources */,
 				AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */,
 				AF773DFB2A69825E00EF9E1D /* CategoryView.swift in Sources */,
+				66D176732A6F658D00194690 /* OpenApp.swift in Sources */,
 				AF73FA2F2A6A705A00213DBE /* LogViewModel.swift in Sources */,
 				AFEFF5DC2A67D765004AFD1A /* CloudKitManager.swift in Sources */,
 			);
@@ -434,6 +458,7 @@
 				66E0667F2A6E5CCE00BE3751 /* LogTitleSelectionView.swift in Sources */,
 				66E0667D2A6E5CA400BE3751 /* MainTabView.swift in Sources */,
 				66D1765D2A6F557800194690 /* LogDetailView.swift in Sources */,
+				66D176742A6F658D00194690 /* OpenApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
