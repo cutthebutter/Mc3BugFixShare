@@ -22,7 +22,6 @@ final class LogViewModel: ObservableObject {
         cloudKitManager.fetchLogRecord { log in
             DispatchQueue.main.async {
                 self.log = log.sorted(by: { $0.isPinned > $1.isPinned })
-                print("@Log init - \(self.log)")
             }
         }
     }
@@ -33,13 +32,13 @@ final class LogViewModel: ObservableObject {
                 return
             }
             log[changeIndex].category = category
-            cloudKitManager.changeLogRecordCategory(log: log[changeIndex], category: category)
+            cloudKitManager.updateLogRecordCategory(log: log[changeIndex], category: category)
         }
     }
     
     func setPinned(selectedLog: Log, isPinned: Int) {
         guard let changeIndex = log.firstIndex(where: { $0.id == selectedLog.id }) else { return }
-        cloudKitManager.changeLogRecordIsPinned(log: selectedLog,
+        cloudKitManager.updateLogRecordIsPinned(log: selectedLog,
                                                 isPinned: isPinned == 0 ? 1 : 0)
         log[changeIndex].isPinned = isPinned == 0 ? 1 : 0
         
