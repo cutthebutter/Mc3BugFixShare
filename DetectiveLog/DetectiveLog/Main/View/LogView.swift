@@ -8,6 +8,7 @@
 import SwiftUI
 import CloudKit
 
+@available(iOS 16.0, *)
 struct LogView: View {
     
     @Environment(\.editMode) var editMode
@@ -121,7 +122,8 @@ struct LogView: View {
                 print("IIII")
             }
             NavigationLink {
-                TempView(logCount: viewModel.log.count)
+                TempDetailView(viewModel: DetailViewModel(log: nil,
+                                                          logCount: viewModel.log.count + 1))
             } label: {
                 Image("write")
                     .foregroundColor(.black)
@@ -157,18 +159,28 @@ struct LogView: View {
     }
     
     //MARK: Log List - 카테고리 별 리스트
+    /// List EditMode는 ID가 옵셔널일 경우 작동하지 않음. id는 무조건 있어야 함.!
 
     func logList(category: LogCategory) -> some View {
         return List(selection: $multiSelection) {
             ForEach(viewModel.log) { log in
                 if log.category == category {
-                    LogCell(log: log)
-                        .listRowInsets(EdgeInsets())
-                        .contextMenu {
-                            setPinnedButton(log: log)
-                            categoryChangeButton(log: log)
-                            contextMenuItems
+                    ZStack {
+                        NavigationLink {
+                            TempDetailView(viewModel: DetailViewModel(log: log,
+                                                                      logCount: viewModel.log.count))
+                        } label: {
+                            EmptyView()
                         }
+                        .opacity(0)
+                        LogCell(log: log)
+                            .contextMenu {
+                                setPinnedButton(log: log)
+                                categoryChangeButton(log: log)
+                                contextMenuItems
+                            }
+                    }
+                    .listRowInsets(EdgeInsets())
                 }
             }
         }
@@ -208,8 +220,8 @@ struct LogView: View {
     
 }
 
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        LogView()
-    }
-}
+//struct MainView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LogView()
+//    }
+//}
