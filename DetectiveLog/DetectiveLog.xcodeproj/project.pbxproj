@@ -30,6 +30,16 @@
 		66E066862A6E632D00BE3751 /* LogTitleSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E066852A6E632D00BE3751 /* LogTitleSelectionViewModel.swift */; };
 		A950B18A2A6FC23400FB9080 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A950B1892A6FC23400FB9080 /* DetailView.swift */; };
 		AF73FA2F2A6A705A00213DBE /* LogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA2E2A6A705A00213DBE /* LogViewModel.swift */; };
+		AF73FA332A6E5E5E00213DBE /* LogMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA322A6E5E5E00213DBE /* LogMemo.swift */; };
+		AF73FA352A6E6B7E00213DBE /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA342A6E6B7E00213DBE /* TempView.swift */; };
+		AF73FA372A6E6B8800213DBE /* TempViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA362A6E6B8800213DBE /* TempViewModel.swift */; };
+		AF73FA392A6EC3F300213DBE /* TempWriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA382A6EC3F300213DBE /* TempWriteView.swift */; };
+		AF73FA3B2A6EEF4900213DBE /* LogOpinion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA3A2A6EEF4900213DBE /* LogOpinion.swift */; };
+		AF73FA3D2A6EF4BE00213DBE /* CloudKitManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA3C2A6EF4BE00213DBE /* CloudKitManagerInterface.swift */; };
+		AF73FA412A6EFB7000213DBE /* CloudKitManager+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA402A6EFB7000213DBE /* CloudKitManager+Create.swift */; };
+		AF73FA432A6EFBB300213DBE /* CloudKitManager+Read.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA422A6EFBB300213DBE /* CloudKitManager+Read.swift */; };
+		AF73FA452A6EFBF300213DBE /* CloudKitManager+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA442A6EFBF300213DBE /* CloudKitManager+Update.swift */; };
+		AF73FA472A6EFC2800213DBE /* CloudKitManager+Delete.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA462A6EFC2800213DBE /* CloudKitManager+Delete.swift */; };
 		AF773DFB2A69825E00EF9E1D /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF773DFA2A69825E00EF9E1D /* CategoryView.swift */; };
 		AFE38EA02A683B0500B4FF9E /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE38E9F2A683B0500B4FF9E /* LogCell.swift */; };
 		AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */; };
@@ -121,6 +131,16 @@
 		66E066872A6E6F0D00BE3751 /* DetectiveLogWatch Watch AppRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DetectiveLogWatch Watch AppRelease.entitlements"; sourceTree = "<group>"; };
 		A950B1892A6FC23400FB9080 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		AF73FA2E2A6A705A00213DBE /* LogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModel.swift; sourceTree = "<group>"; };
+		AF73FA322A6E5E5E00213DBE /* LogMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMemo.swift; sourceTree = "<group>"; };
+		AF73FA342A6E6B7E00213DBE /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
+		AF73FA362A6E6B8800213DBE /* TempViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewModel.swift; sourceTree = "<group>"; };
+		AF73FA382A6EC3F300213DBE /* TempWriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempWriteView.swift; sourceTree = "<group>"; };
+		AF73FA3A2A6EEF4900213DBE /* LogOpinion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOpinion.swift; sourceTree = "<group>"; };
+		AF73FA3C2A6EF4BE00213DBE /* CloudKitManagerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManagerInterface.swift; sourceTree = "<group>"; };
+		AF73FA402A6EFB7000213DBE /* CloudKitManager+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKitManager+Create.swift"; sourceTree = "<group>"; };
+		AF73FA422A6EFBB300213DBE /* CloudKitManager+Read.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKitManager+Read.swift"; sourceTree = "<group>"; };
+		AF73FA442A6EFBF300213DBE /* CloudKitManager+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKitManager+Update.swift"; sourceTree = "<group>"; };
+		AF73FA462A6EFC2800213DBE /* CloudKitManager+Delete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKitManager+Delete.swift"; sourceTree = "<group>"; };
 		AF773DFA2A69825E00EF9E1D /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		AFE38E9F2A683B0500B4FF9E /* LogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
 		AFEFF5A92A67CFD3004AFD1A /* DetectiveLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DetectiveLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -287,6 +307,9 @@
 			children = (
 				AFEFF5D82A67D112004AFD1A /* LogView.swift */,
 				AFE38E9F2A683B0500B4FF9E /* LogCell.swift */,
+				AF73FA342A6E6B7E00213DBE /* TempView.swift */,
+				AF73FA362A6E6B8800213DBE /* TempViewModel.swift */,
+				AF73FA382A6EC3F300213DBE /* TempWriteView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -303,6 +326,8 @@
 			isa = PBXGroup;
 			children = (
 				AFEFF5DD2A67F436004AFD1A /* Log.swift */,
+				AF73FA322A6E5E5E00213DBE /* LogMemo.swift */,
+				AF73FA3A2A6EEF4900213DBE /* LogOpinion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -313,6 +338,26 @@
 				AF773DFA2A69825E00EF9E1D /* CategoryView.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		AF73FA3E2A6EF7E800213DBE /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				AF73FA3C2A6EF4BE00213DBE /* CloudKitManagerInterface.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		AF73FA3F2A6EF80000213DBE /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				AFEFF5DB2A67D765004AFD1A /* CloudKitManager.swift */,
+				AF73FA402A6EFB7000213DBE /* CloudKitManager+Create.swift */,
+				AF73FA422A6EFBB300213DBE /* CloudKitManager+Read.swift */,
+				AF73FA442A6EFBF300213DBE /* CloudKitManager+Update.swift */,
+				AF73FA462A6EFC2800213DBE /* CloudKitManager+Delete.swift */,
+			);
+			path = Implementation;
 			sourceTree = "<group>";
 		};
 		AFEFF5A02A67CFD3004AFD1A = {
@@ -398,7 +443,8 @@
 		AFEFF5DA2A67D757004AFD1A /* CloudKit */ = {
 			isa = PBXGroup;
 			children = (
-				AFEFF5DB2A67D765004AFD1A /* CloudKitManager.swift */,
+				AF73FA3F2A6EF80000213DBE /* Implementation */,
+				AF73FA3E2A6EF7E800213DBE /* Interface */,
 			);
 			path = CloudKit;
 			sourceTree = "<group>";
@@ -547,18 +593,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF73FA412A6EFB7000213DBE /* CloudKitManager+Create.swift in Sources */,
+				AF73FA452A6EFBF300213DBE /* CloudKitManager+Update.swift in Sources */,
 				AFEFF5B22A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld in Sources */,
-				A950B18A2A6FC23400FB9080 /* DetailView.swift in Sources */,
+				AF73FA432A6EFBB300213DBE /* CloudKitManager+Read.swift in Sources */,
 				AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */,
+				AF73FA332A6E5E5E00213DBE /* LogMemo.swift in Sources */,
 				AFEFF5DE2A67F436004AFD1A /* Log.swift in Sources */,
+				AF73FA372A6E6B8800213DBE /* TempViewModel.swift in Sources */,
 				AFEFF5D92A67D112004AFD1A /* LogView.swift in Sources */,
 				AFE38EA02A683B0500B4FF9E /* LogCell.swift in Sources */,
+				AF73FA3B2A6EEF4900213DBE /* LogOpinion.swift in Sources */,
 				AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */,
 				66D176A92A6F773400194690 /* iOSWidget.intentdefinition in Sources */,
 				AF773DFB2A69825E00EF9E1D /* CategoryView.swift in Sources */,
 				66D176732A6F658D00194690 /* OpenApp.swift in Sources */,
 				AF73FA2F2A6A705A00213DBE /* LogViewModel.swift in Sources */,
+				AF73FA3D2A6EF4BE00213DBE /* CloudKitManagerInterface.swift in Sources */,
+				AF73FA352A6E6B7E00213DBE /* TempView.swift in Sources */,
+				AF73FA392A6EC3F300213DBE /* TempWriteView.swift in Sources */,
 				AFEFF5DC2A67D765004AFD1A /* CloudKitManager.swift in Sources */,
+				AF73FA472A6EFC2800213DBE /* CloudKitManager+Delete.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
