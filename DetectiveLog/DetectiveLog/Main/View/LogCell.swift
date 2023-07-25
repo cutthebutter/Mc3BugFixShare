@@ -28,8 +28,8 @@ struct LogCell: View {
             }
             .padding(.bottom, 2)
             VStack(alignment: .leading, spacing: 3) {
-                ForEach(log.latestMemo.indices, id: \.self) { index in
-                    Text("•  \(log.latestMemo[index])")
+                ForEach(log.latestMemo!.indices, id: \.self) { index in
+                    Text("•  \(log.latestMemo![index])")
                         .font(Font.system(size: 13))
                         .padding(.leading, 45)
                 }

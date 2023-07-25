@@ -24,18 +24,13 @@
 		66D176C92A6FE82300194690 /* SearchTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176C82A6FE82300194690 /* SearchTestView.swift */; };
 		66D176CB2A6FE95E00194690 /* SearchTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176CA2A6FE95E00194690 /* SearchTestViewModel.swift */; };
 		66D176EF2A70036800194690 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176EE2A70036800194690 /* SearchBarView.swift */; };
-		66E066772A6E4F8E00BE3751 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5DB2A67D765004AFD1A /* CloudKitManager.swift */; };
 		66E0667B2A6E5C9700BE3751 /* LogRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E0667A2A6E5C9700BE3751 /* LogRecordView.swift */; };
 		66E0667D2A6E5CA400BE3751 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E0667C2A6E5CA400BE3751 /* MainTabView.swift */; };
 		66E0667F2A6E5CCE00BE3751 /* LogTitleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E0667E2A6E5CCE00BE3751 /* LogTitleSelectionView.swift */; };
 		66E066812A6E5CDF00BE3751 /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E066802A6E5CDF00BE3751 /* LogListView.swift */; };
 		66E066862A6E632D00BE3751 /* LogTitleSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E066852A6E632D00BE3751 /* LogTitleSelectionViewModel.swift */; };
-		A950B18A2A6FC23400FB9080 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A950B1892A6FC23400FB9080 /* DetailView.swift */; };
 		AF73FA2F2A6A705A00213DBE /* LogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA2E2A6A705A00213DBE /* LogViewModel.swift */; };
 		AF73FA332A6E5E5E00213DBE /* LogMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA322A6E5E5E00213DBE /* LogMemo.swift */; };
-		AF73FA352A6E6B7E00213DBE /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA342A6E6B7E00213DBE /* TempView.swift */; };
-		AF73FA372A6E6B8800213DBE /* TempViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA362A6E6B8800213DBE /* TempViewModel.swift */; };
-		AF73FA392A6EC3F300213DBE /* TempWriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA382A6EC3F300213DBE /* TempWriteView.swift */; };
 		AF73FA3B2A6EEF4900213DBE /* LogOpinion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA3A2A6EEF4900213DBE /* LogOpinion.swift */; };
 		AF73FA3D2A6EF4BE00213DBE /* CloudKitManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA3C2A6EF4BE00213DBE /* CloudKitManagerInterface.swift */; };
 		AF73FA412A6EFB7000213DBE /* CloudKitManager+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA402A6EFB7000213DBE /* CloudKitManager+Create.swift */; };
@@ -147,9 +142,6 @@
 		A950B1892A6FC23400FB9080 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		AF73FA2E2A6A705A00213DBE /* LogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModel.swift; sourceTree = "<group>"; };
 		AF73FA322A6E5E5E00213DBE /* LogMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMemo.swift; sourceTree = "<group>"; };
-		AF73FA342A6E6B7E00213DBE /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
-		AF73FA362A6E6B8800213DBE /* TempViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewModel.swift; sourceTree = "<group>"; };
-		AF73FA382A6EC3F300213DBE /* TempWriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempWriteView.swift; sourceTree = "<group>"; };
 		AF73FA3A2A6EEF4900213DBE /* LogOpinion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOpinion.swift; sourceTree = "<group>"; };
 		AF73FA3C2A6EF4BE00213DBE /* CloudKitManagerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManagerInterface.swift; sourceTree = "<group>"; };
 		AF73FA402A6EFB7000213DBE /* CloudKitManager+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKitManager+Create.swift"; sourceTree = "<group>"; };
@@ -325,9 +317,6 @@
 			children = (
 				AFEFF5D82A67D112004AFD1A /* LogView.swift */,
 				AFE38E9F2A683B0500B4FF9E /* LogCell.swift */,
-				AF73FA342A6E6B7E00213DBE /* TempView.swift */,
-				AF73FA362A6E6B8800213DBE /* TempViewModel.swift */,
-				AF73FA382A6EC3F300213DBE /* TempWriteView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -621,7 +610,6 @@
 				66D176CB2A6FE95E00194690 /* SearchTestViewModel.swift in Sources */,
 				AF73FA332A6E5E5E00213DBE /* LogMemo.swift in Sources */,
 				AFEFF5DE2A67F436004AFD1A /* Log.swift in Sources */,
-				AF73FA372A6E6B8800213DBE /* TempViewModel.swift in Sources */,
 				AFEFF5D92A67D112004AFD1A /* LogView.swift in Sources */,
 				AFE38EA02A683B0500B4FF9E /* LogCell.swift in Sources */,
 				AF73FA3B2A6EEF4900213DBE /* LogOpinion.swift in Sources */,
@@ -632,8 +620,6 @@
 				AF773DFB2A69825E00EF9E1D /* CategoryView.swift in Sources */,
 				AF73FA2F2A6A705A00213DBE /* LogViewModel.swift in Sources */,
 				AF73FA3D2A6EF4BE00213DBE /* CloudKitManagerInterface.swift in Sources */,
-				AF73FA352A6E6B7E00213DBE /* TempView.swift in Sources */,
-				AF73FA392A6EC3F300213DBE /* TempWriteView.swift in Sources */,
 				AFEFF5DC2A67D765004AFD1A /* CloudKitManager.swift in Sources */,
 				AF73FA472A6EFC2800213DBE /* CloudKitManager+Delete.swift in Sources */,
 			);
@@ -649,7 +635,6 @@
 				66D1765B2A6F526200194690 /* LogListViewModel.swift in Sources */,
 				66D1764E2A6E964200194690 /* Log.swift in Sources */,
 				66D176502A6E97DE00194690 /* FakeLog.swift in Sources */,
-				66E066772A6E4F8E00BE3751 /* CloudKitManager.swift in Sources */,
 				66E0667B2A6E5C9700BE3751 /* LogRecordView.swift in Sources */,
 				66E066862A6E632D00BE3751 /* LogTitleSelectionViewModel.swift in Sources */,
 				66E066812A6E5CDF00BE3751 /* LogListView.swift in Sources */,

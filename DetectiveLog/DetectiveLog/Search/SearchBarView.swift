@@ -54,14 +54,19 @@ struct SearchBarView: View {
         }
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
+                Button {
+                    
+                } label: {
+                    Text("")
+                }
                 HStack{
                     Button {
-                        print("Clicked")
+                        print("UP")
                     } label: {
                         Image(systemName: "chevron.up")
                     }
                     Button {
-                        print("Clicked")
+                        print("DOWN")
                     } label: {
                         Image(systemName: "chevron.down")
                     }
