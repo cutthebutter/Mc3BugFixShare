@@ -12,7 +12,7 @@ extension CloudKitManager {
     /// func updateLogRecord: LogMemo를 작성할 경우 Log에 일부 업데이트를 해주는 메소드입니다.
     /// - Parameter: log: Log, latestMemo: [string], updatedAt: Date
     func updateLogRecord(log: Log, latestMemo: [String], updatedAt: Date) {
-        guard let recordId = log.id else { return }
+        guard let recordId = log.recordId else { return }
         container.fetch(withRecordID: recordId) { record, error in
             guard let record = record else {
                 if let error = error {
@@ -34,7 +34,7 @@ extension CloudKitManager {
     /// func updateLogRecordCategory: 메인 뷰에서 Log의 카테고리를 이동할 때 사용합니다.
     /// - Parameter: [Log], LogCategory
     func updateLogRecordCategory(log: Log, category: LogCategory) {
-        guard let recordId = log.id else { return }
+        guard let recordId = log.recordId else { return }
         container.fetch(withRecordID: recordId) { record, error in
             guard let record = record else {
                 if let error = error {
@@ -54,7 +54,7 @@ extension CloudKitManager {
     }
     
     func updateLogRecordIsPinned(log: Log, isPinned: Int) {
-        guard let recordId = log.id else { return }
+        guard let recordId = log.recordId else { return }
         container.fetch(withRecordID: recordId) { record, error in
             guard let record = record else {
                 if let error = error {
