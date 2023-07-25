@@ -17,7 +17,6 @@ struct LogView: View {
     @State var multiSelection = Set<CKRecord.ID>()
     var category = ["진행 중", "완결", "미완결"]
     
-    
     @ObservedObject var viewModel = LogViewModel()
     
     var body: some View {
@@ -25,21 +24,21 @@ struct LogView: View {
             VStack {
                 categoryPickerView
                     .onChange(of: selection) { _ in
+                        viewModel.logForCategoryChange = []
                         multiSelection = []
                     }
                 switch selection {
                 case 0:
-                    inProgressLogList
+                    logList(category: .inProgress)
                 case 1:
-                    completeLogList
+                    logList(category: .complete)
                 case 2:
-                    incompleteLogList
+                    logList(category: .incomplete)
                 default:
                     Text("Error Occured")
                 }
                 Spacer()
             }
-
             .navigationTitle("사건 일지")
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
@@ -76,7 +75,6 @@ struct LogView: View {
                 }
             }
             .sheet(isPresented: $isPresented) {
-//                CategoryView(tempLog: $tempLog, temp: $temp, isPresented: $isPresented)
                 CategoryView(viewModel: viewModel, isPresented: $isPresented)
             }
         }
@@ -92,63 +90,8 @@ struct LogView: View {
         .padding()
     }
     
-    var inProgressLogList: some View{
-        
-        List(selection: $multiSelection) {
-            ForEach(viewModel.log) { log in
-                if log.category == .inProgress {
-                    LogCell(log: log)
-                        .listRowInsets(EdgeInsets())
-                        .contextMenu {
-                            Button {
-                                viewModel.setPinned(selectedLog: log, isPinned: log.isPinned)
-                            } label: {
-                                Text(log.isPinned == 0 ? "상단에 고정하기" : "상단 고정 해제")
-                            }
-                            contextMenuItems
-                        }
-                }
-            }
-        }
-        .listStyle(.inset)
-
-    }
+    //MARK: Bottom Toolbar - 바텀 툴바. 디폴트 & Editing시 Bottom Toolbar
     
-    var completeLogList: some View {
-        List(selection: $multiSelection) {
-            ForEach(viewModel.log) { log in
-                if log.category == .complete {
-                    LogCell(log: log)
-                        .listRowInsets(EdgeInsets())
-                        .contextMenu {
-                            contextMenuItems
-                        }
-                }
-            }
-        }
-        .listStyle(.inset)
-    }
-    
-    var incompleteLogList: some View {
-        List(selection: $multiSelection) {
-            ForEach(viewModel.log) { log in
-                if log.category == .incomplete {
-                    LogCell(log: log)
-                        .listRowInsets(EdgeInsets())
-                        .contextMenu {
-                            Button {
-                                viewModel.setPinned(selectedLog: log, isPinned: log.isPinned)
-                            } label: {
-                                Text("상단에 고정하기")
-                            }
-                            contextMenuItems
-                        }
-                }
-            }
-        }
-        .listStyle(.inset)
-    }
-//
     var bottomToolbarItem: some View {
         Group {
             Button("") {
@@ -184,18 +127,52 @@ struct LogView: View {
         }
     }
     
+    
+    
+    //MARK: Log List - 카테고리 별 리스트
+    
+    func logList(category: LogCategory) -> some View {
+        return List(selection: $multiSelection) {
+            ForEach(viewModel.log) { log in
+                if log.category == category {
+                    LogCell(log: log)
+                        .listRowInsets(EdgeInsets())
+                        .contextMenu {
+                            setPinnedButton(log: log)
+                            categoryChangeButton(log: log)
+                            contextMenuItems
+                        }
+                }
+            }
+        }
+        .listStyle(.inset)
+    }
+    
+    //MARK: Context Menu - 꾹 눌렀을 때 나오는 메뉴
+    
+    func setPinnedButton(log: Log) -> some View {
+        return Button {
+            viewModel.setPinned(selectedLog: log, isPinned: log.isPinned)
+        } label: {
+            Text(log.isPinned == 0 ? "상단에 고정하기" : "상단 고정 해제")
+        }
+    }
+    
+    func categoryChangeButton(log: Log) -> some View {
+        return Button {
+            viewModel.logForCategoryChange.append(log)
+            isPresented.toggle()
+        } label: {
+            Text("이동하기")
+        }
+    }
+    
     var contextMenuItems: some View {
         Group {
-            
             Button {
                 print("메모 잠그기")
             } label: {
                 Text("메모 잠그기")
-            }
-            Button {
-                print("이동하기")
-            } label: {
-                Text("이동하기")
             }
         }
     }
