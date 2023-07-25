@@ -10,11 +10,11 @@ import CloudKit
 
 struct LogView: View {
     
-    @Environment(\.editMode) private var editMode
+    @Environment(\.editMode) var editMode
     @State var isPresented = false
     @State var isEditing = false
     @State var selection = 0
-    @State var multiSelection = Set<CKRecord.ID>()
+    @State var multiSelection = Set<UUID>()
     var category = ["진행 중", "완결", "미완결"]
     
     @ObservedObject var viewModel = LogViewModel()
@@ -38,19 +38,15 @@ struct LogView: View {
                 default:
                     Text("Error Occured")
                 }
+
                 Spacer()
+
             }
-            .toolbar {
-                ToolbarItemGroup(placement: .bottomBar) {
-                    if !isEditing {
-                        bottomToolbarItem
-                    } else {
-                        bottomToolbarItemIsEditing
-                    }
-                    
-                }
+            .sheet(isPresented: $isPresented) {
+                CategoryView(viewModel: viewModel, isPresented: $isPresented)
             }
-            .environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive)).animation(Animation.linear(duration: 0.2), value: isEditing)
+            .environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive))
+            .animation(Animation.linear(duration: 0.2), value: isEditing)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button {
@@ -64,17 +60,23 @@ struct LogView: View {
                         Button {
                             self.isEditing.toggle()
                         } label: {
-                            Text(isEditing ? "선택하기" : "Edit")
+                            Text(isEditing ? "Done" : "선택하기")
                         }
-
                     } label: {
                         Image(systemName: "ellipsis")
                             .foregroundColor(.black)
                     }
                 }
             }
-            .sheet(isPresented: $isPresented) {
-                CategoryView(viewModel: viewModel, isPresented: $isPresented)
+            .toolbar {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    if !isEditing {
+                        bottomToolbarItem
+                    } else {
+                        bottomToolbarItemIsEditing
+                    }
+
+                }
             }
             .onAppear {
                 print("@main On Appear")
@@ -84,6 +86,7 @@ struct LogView: View {
     }
     
     //MARK: Title
+    
     var title: some View {
         Rectangle()
             .fill(.clear)
@@ -98,6 +101,7 @@ struct LogView: View {
     }
     
     //MARK: PickerView
+    
     var categoryPickerView: some View {
         Picker("Picker", selection: $selection) {
             ForEach(category.indices, id: \.self) { index in
@@ -127,7 +131,7 @@ struct LogView: View {
     
     var bottomToolbarItemIsEditing: some View {
         Group {
-            Button("이동") {
+            Button {
                 viewModel.logForCategoryChange = []
                 for selection in multiSelection {
                     print("@Log - \(selection)")
@@ -136,18 +140,24 @@ struct LogView: View {
                     )
                 }
                 self.isPresented.toggle()
+            } label: {
+                Text("재분류하기")
+                    .font(.custom("AppleSDGothicNeo-Regular", size: 16))
+                    .foregroundColor(.black)
             }
             Button {
                 print("글쓰기")
                 // 데이터베이스
             } label: {
-                Text("삭제")
+                Text("삭제하기")
+                    .font(.custom("AppleSDGothicNeo-Regular", size: 16))
+                    .foregroundColor(.red)
             }
         }
     }
     
     //MARK: Log List - 카테고리 별 리스트
-    
+
     func logList(category: LogCategory) -> some View {
         return List(selection: $multiSelection) {
             ForEach(viewModel.log) { log in
@@ -164,6 +174,7 @@ struct LogView: View {
         }
         .padding(.top, 12)
         .listStyle(.inset)
+
     }
     
     //MARK: Context Menu - 꾹 눌렀을 때 나오는 메뉴
