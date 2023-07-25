@@ -12,8 +12,6 @@
 		66D176592A6F507D00194690 /* FakeEachLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176582A6F507D00194690 /* FakeEachLog.swift */; };
 		66D1765B2A6F526200194690 /* LogListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1765A2A6F526200194690 /* LogListViewModel.swift */; };
 		66D1765D2A6F557800194690 /* LogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1765C2A6F557800194690 /* LogDetailView.swift */; };
-		66D176732A6F658D00194690 /* OpenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176722A6F658D00194690 /* OpenApp.swift */; };
-		66D176742A6F658D00194690 /* OpenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176722A6F658D00194690 /* OpenApp.swift */; };
 		66D1769A2A6F773300194690 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D176992A6F773300194690 /* WidgetKit.framework */; };
 		66D1769C2A6F773300194690 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D1769B2A6F773300194690 /* SwiftUI.framework */; };
 		66D1769F2A6F773300194690 /* iOSWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1769E2A6F773300194690 /* iOSWidgetBundle.swift */; };
@@ -22,7 +20,10 @@
 		66D176A82A6F773400194690 /* iOSWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 66D176A42A6F773300194690 /* iOSWidget.intentdefinition */; };
 		66D176A92A6F773400194690 /* iOSWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 66D176A42A6F773300194690 /* iOSWidget.intentdefinition */; };
 		66D176AC2A6F773400194690 /* iOSWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 66D176972A6F773300194690 /* iOSWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		66D176BD2A6FA42F00194690 /* OpenAppIntent.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 66D176B42A6FA42F00194690 /* OpenAppIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		66D176C72A6FE69500194690 /* FakeLogMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176C62A6FE69500194690 /* FakeLogMemo.swift */; };
+		66D176C92A6FE82300194690 /* SearchTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176C82A6FE82300194690 /* SearchTestView.swift */; };
+		66D176CB2A6FE95E00194690 /* SearchTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176CA2A6FE95E00194690 /* SearchTestViewModel.swift */; };
+		66D176EF2A70036800194690 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176EE2A70036800194690 /* SearchBarView.swift */; };
 		66E066772A6E4F8E00BE3751 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5DB2A67D765004AFD1A /* CloudKitManager.swift */; };
 		66E0667B2A6E5C9700BE3751 /* LogRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E0667A2A6E5C9700BE3751 /* LogRecordView.swift */; };
 		66E0667D2A6E5CA400BE3751 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E0667C2A6E5CA400BE3751 /* MainTabView.swift */; };
@@ -55,13 +56,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 66D176962A6F773300194690;
 			remoteInfo = iOSWidgetExtension;
-		};
-		66D176BB2A6FA42F00194690 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AFEFF5A12A67CFD3004AFD1A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 66D176B32A6FA42F00194690;
-			remoteInfo = OpenAppIntent;
 		};
 		AFEFF5CF2A67D002004AFD1A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -100,7 +94,6 @@
 			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
-				66D176BD2A6FA42F00194690 /* OpenAppIntent.appex in Embed ExtensionKit Extensions */,
 			);
 			name = "Embed ExtensionKit Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,7 +116,6 @@
 		66D176582A6F507D00194690 /* FakeEachLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEachLog.swift; sourceTree = "<group>"; };
 		66D1765A2A6F526200194690 /* LogListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListViewModel.swift; sourceTree = "<group>"; };
 		66D1765C2A6F557800194690 /* LogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetailView.swift; sourceTree = "<group>"; };
-		66D176722A6F658D00194690 /* OpenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenApp.swift; sourceTree = "<group>"; };
 		66D176972A6F773300194690 /* iOSWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iOSWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D176992A6F773300194690 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		66D1769B2A6F773300194690 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -132,7 +124,10 @@
 		66D176A42A6F773300194690 /* iOSWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = iOSWidget.intentdefinition; sourceTree = "<group>"; };
 		66D176A52A6F773400194690 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66D176A72A6F773400194690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		66D176B42A6FA42F00194690 /* OpenAppIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = OpenAppIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		66D176C62A6FE69500194690 /* FakeLogMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLogMemo.swift; sourceTree = "<group>"; };
+		66D176C82A6FE82300194690 /* SearchTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTestView.swift; sourceTree = "<group>"; };
+		66D176CA2A6FE95E00194690 /* SearchTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTestViewModel.swift; sourceTree = "<group>"; };
+		66D176EE2A70036800194690 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		66E0667A2A6E5C9700BE3751 /* LogRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRecordView.swift; sourceTree = "<group>"; };
 		66E0667C2A6E5CA400BE3751 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		66E0667E2A6E5CCE00BE3751 /* LogTitleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTitleSelectionView.swift; sourceTree = "<group>"; };
@@ -167,13 +162,6 @@
 			files = (
 				66D1769C2A6F773300194690 /* SwiftUI.framework in Frameworks */,
 				66D1769A2A6F773300194690 /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		66D176B12A6FA42F00194690 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,14 +225,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		66D176712A6F651A00194690 /* AppIntents */ = {
-			isa = PBXGroup;
-			children = (
-				66D176722A6F658D00194690 /* OpenApp.swift */,
-			);
-			path = AppIntents;
-			sourceTree = "<group>";
-		};
 		66D176982A6F773300194690 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +244,17 @@
 				66D176A72A6F773400194690 /* Info.plist */,
 			);
 			path = iOSWidget;
+			sourceTree = "<group>";
+		};
+		66D176C52A6FE65900194690 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				66D176C62A6FE69500194690 /* FakeLogMemo.swift */,
+				66D176CA2A6FE95E00194690 /* SearchTestViewModel.swift */,
+				66D176C82A6FE82300194690 /* SearchTestView.swift */,
+				66D176EE2A70036800194690 /* SearchBarView.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		66E066702A6E4D1100BE3751 /* Model */ = {
@@ -359,7 +350,6 @@
 				AFEFF5A92A67CFD3004AFD1A /* DetectiveLog.app */,
 				AFEFF5C42A67D001004AFD1A /* DetectiveLogWatch Watch App.app */,
 				66D176972A6F773300194690 /* iOSWidgetExtension.appex */,
-				66D176B42A6FA42F00194690 /* OpenAppIntent.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -367,6 +357,7 @@
 		AFEFF5AB2A67CFD3004AFD1A /* DetectiveLog */ = {
 			isa = PBXGroup;
 			children = (
+				66D176C52A6FE65900194690 /* Search */,
 				A950B1882A6FC15800FB9080 /* Detail */,
 				AF73FA302A6C25FE00213DBE /* Category */,
 				AFEFF5DA2A67D757004AFD1A /* CloudKit */,
@@ -376,7 +367,6 @@
 				AFEFF5B52A67CFD4004AFD1A /* Assets.xcassets */,
 				AFEFF5B72A67CFD4004AFD1A /* DetectiveLog.entitlements */,
 				AFEFF5B02A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld */,
-				66D176712A6F651A00194690 /* AppIntents */,
 				AFEFF5B82A67CFD4004AFD1A /* Preview Content */,
 			);
 			path = DetectiveLog;
@@ -451,23 +441,6 @@
 			productReference = 66D176972A6F773300194690 /* iOSWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		66D176B32A6FA42F00194690 /* OpenAppIntent */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 66D176BE2A6FA42F00194690 /* Build configuration list for PBXNativeTarget "OpenAppIntent" */;
-			buildPhases = (
-				66D176B02A6FA42F00194690 /* Sources */,
-				66D176B12A6FA42F00194690 /* Frameworks */,
-				66D176B22A6FA42F00194690 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = OpenAppIntent;
-			productName = OpenAppIntent;
-			productReference = 66D176B42A6FA42F00194690 /* OpenAppIntent.appex */;
-			productType = "com.apple.product-type.extensionkit-extension";
-		};
 		AFEFF5A82A67CFD3004AFD1A /* DetectiveLog */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFEFF5BD2A67CFD4004AFD1A /* Build configuration list for PBXNativeTarget "DetectiveLog" */;
@@ -502,7 +475,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				66D176BC2A6FA42F00194690 /* PBXTargetDependency */,
 			);
 			name = "DetectiveLogWatch Watch App";
 			productName = "DetectiveLogWatch Watch App";
@@ -520,9 +492,6 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					66D176962A6F773300194690 = {
-						CreatedOnToolsVersion = 14.3.1;
-					};
-					66D176B32A6FA42F00194690 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 					AFEFF5A82A67CFD3004AFD1A = {
@@ -549,7 +518,6 @@
 				AFEFF5A82A67CFD3004AFD1A /* DetectiveLog */,
 				AFEFF5C32A67D001004AFD1A /* DetectiveLogWatch Watch App */,
 				66D176962A6F773300194690 /* iOSWidgetExtension */,
-				66D176B32A6FA42F00194690 /* OpenAppIntent */,
 			);
 		};
 /* End PBXProject section */
@@ -560,13 +528,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				66D176A62A6F773400194690 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		66D176B22A6FA42F00194690 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,13 +562,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		66D176B02A6FA42F00194690 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AFEFF5A52A67CFD3004AFD1A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -615,13 +569,16 @@
 				AFEFF5B22A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld in Sources */,
 				A950B18A2A6FC23400FB9080 /* DetailView.swift in Sources */,
 				AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */,
+				66D176C92A6FE82300194690 /* SearchTestView.swift in Sources */,
+				66D176CB2A6FE95E00194690 /* SearchTestViewModel.swift in Sources */,
 				AFEFF5DE2A67F436004AFD1A /* Log.swift in Sources */,
 				AFEFF5D92A67D112004AFD1A /* LogView.swift in Sources */,
 				AFE38EA02A683B0500B4FF9E /* LogCell.swift in Sources */,
 				AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */,
+				66D176C72A6FE69500194690 /* FakeLogMemo.swift in Sources */,
+				66D176EF2A70036800194690 /* SearchBarView.swift in Sources */,
 				66D176A92A6F773400194690 /* iOSWidget.intentdefinition in Sources */,
 				AF773DFB2A69825E00EF9E1D /* CategoryView.swift in Sources */,
-				66D176732A6F658D00194690 /* OpenApp.swift in Sources */,
 				AF73FA2F2A6A705A00213DBE /* LogViewModel.swift in Sources */,
 				AFEFF5DC2A67D765004AFD1A /* CloudKitManager.swift in Sources */,
 			);
@@ -644,7 +601,6 @@
 				66E0667F2A6E5CCE00BE3751 /* LogTitleSelectionView.swift in Sources */,
 				66E0667D2A6E5CA400BE3751 /* MainTabView.swift in Sources */,
 				66D1765D2A6F557800194690 /* LogDetailView.swift in Sources */,
-				66D176742A6F658D00194690 /* OpenApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,11 +611,6 @@
 			isa = PBXTargetDependency;
 			target = 66D176962A6F773300194690 /* iOSWidgetExtension */;
 			targetProxy = 66D176AA2A6F773400194690 /* PBXContainerItemProxy */;
-		};
-		66D176BC2A6FA42F00194690 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 66D176B32A6FA42F00194690 /* OpenAppIntent */;
-			targetProxy = 66D176BB2A6FA42F00194690 /* PBXContainerItemProxy */;
 		};
 		AFEFF5D02A67D002004AFD1A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -725,63 +676,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		66D176BF2A6FA42F00194690 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8R3N359429;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = OpenAppIntent/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = OpenAppIntent;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kozi.DetectiveLog.watchkitapp.OpenAppIntent;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.4;
-			};
-			name = Debug;
-		};
-		66D176C02A6FA42F00194690 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8R3N359429;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = OpenAppIntent/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = OpenAppIntent;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kozi.DetectiveLog.watchkitapp.OpenAppIntent;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 9.4;
 			};
 			name = Release;
 		};
@@ -1046,15 +940,6 @@
 			buildConfigurations = (
 				66D176AE2A6F773400194690 /* Debug */,
 				66D176AF2A6F773400194690 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		66D176BE2A6FA42F00194690 /* Build configuration list for PBXNativeTarget "OpenAppIntent" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				66D176BF2A6FA42F00194690 /* Debug */,
-				66D176C02A6FA42F00194690 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
