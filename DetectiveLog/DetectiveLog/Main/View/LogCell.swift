@@ -73,7 +73,8 @@ struct LogCell: View {
 
 struct LogCell_Previews: PreviewProvider {
     static var previews: some View {
-        LogCell(log: Log(id: nil,
+        LogCell(log: Log(id: UUID(),
+                         recordId: nil,
                          category: .inProgress,
                          title: "슈프림 양념치킨",
                          latestMemo: ["한지석", "코지"], isBookmarked: 0, isLocked: 0, isPinned: 1, createdAt: Date(), updatedAt: Date(), logMemoDates: nil, logMemoId: nil))
