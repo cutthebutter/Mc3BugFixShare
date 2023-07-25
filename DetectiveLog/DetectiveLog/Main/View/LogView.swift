@@ -21,7 +21,8 @@ struct LogView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 0) {
+                title
                 categoryPickerView
                     .onChange(of: selection) { _ in
                         viewModel.logForCategoryChange = []
@@ -39,7 +40,6 @@ struct LogView: View {
                 }
                 Spacer()
             }
-            .navigationTitle("사건 일지")
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
                     if !isEditing {
@@ -57,29 +57,47 @@ struct LogView: View {
                         print("Text")
                     } label: {
                         Image(systemName: "magnifyingglass")
+                            .foregroundColor(.black)
                     }
                     // EditButton을 활용하여 특정 값의 변화를 체크해서 이동하는 로직을 만들어야 할듯!
                     Menu {
                         Button {
                             self.isEditing.toggle()
-                            if isEditing {
-                                    
-                            }
                         } label: {
-                            Text(isEditing ? "Done" : "Edit")
+                            Text(isEditing ? "선택하기" : "Edit")
                         }
 
                     } label: {
                         Image(systemName: "ellipsis")
+                            .foregroundColor(.black)
                     }
                 }
             }
             .sheet(isPresented: $isPresented) {
                 CategoryView(viewModel: viewModel, isPresented: $isPresented)
             }
+            .onAppear {
+                print("@main On Appear")
+                viewModel.fetchLog()
+            }
         }
     }
     
+    //MARK: Title
+    var title: some View {
+        Rectangle()
+            .fill(.clear)
+            .frame(height: 66)
+            .frame(maxWidth: .infinity)
+            .overlay(alignment: .topLeading) {
+                Text("사건 일지")
+                    .font(.custom("AppleSDGothicNeo-Bold", size: 22))
+                    .padding(.top, 16)
+                    .padding(.leading, 20)
+            }
+    }
+    
+    //MARK: PickerView
     var categoryPickerView: some View {
         Picker("Picker", selection: $selection) {
             ForEach(category.indices, id: \.self) { index in
@@ -87,7 +105,8 @@ struct LogView: View {
             }
         }
         .pickerStyle(.segmented)
-        .padding()
+        .padding(.horizontal, 20)
+//        .padding()
     }
     
     //MARK: Bottom Toolbar - 바텀 툴바. 디폴트 & Editing시 Bottom Toolbar
@@ -97,10 +116,10 @@ struct LogView: View {
             Button("") {
                 print("IIII")
             }
-            Button {
-                print("글쓰기")
+            NavigationLink {
+                TempView(logCount: viewModel.log.count)
             } label: {
-                Image(systemName: "square.and.pencil")
+                Image("write")
                     .foregroundColor(.black)
             }
         }
@@ -127,8 +146,6 @@ struct LogView: View {
         }
     }
     
-    
-    
     //MARK: Log List - 카테고리 별 리스트
     
     func logList(category: LogCategory) -> some View {
@@ -145,6 +162,7 @@ struct LogView: View {
                 }
             }
         }
+        .padding(.top, 12)
         .listStyle(.inset)
     }
     
