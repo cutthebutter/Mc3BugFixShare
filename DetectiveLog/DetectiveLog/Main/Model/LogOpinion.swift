@@ -9,8 +9,17 @@ import Foundation
 import CloudKit
 
 struct LogOpinion: Identifiable {
+    
     let id: CKRecord.ID
     let referenceId: CKRecord.Reference
     let opinion: String
     let createdAt: Date
+    
+    static func fetchLogOpinion(log: Log, _ completion: @escaping (([LogOpinion]) -> ())) {
+        let cloudKitManager = CloudKitManager.shared
+        cloudKitManager.fetchLogOpinionRecord(log: log) { logOpinion in
+            completion(logOpinion)
+        }
+    }
+    
 }
