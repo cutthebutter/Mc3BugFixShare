@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A950B1872A6E51C100FB9080 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A950B1862A6E51C100FB9080 /* DetailView.swift */; };
 		66D1764E2A6E964200194690 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5DD2A67F436004AFD1A /* Log.swift */; };
 		66D176502A6E97DE00194690 /* FakeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1764F2A6E97DE00194690 /* FakeLog.swift */; };
 		66D176592A6F507D00194690 /* FakeEachLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176582A6F507D00194690 /* FakeEachLog.swift */; };
@@ -99,6 +100,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+
+		A950B1862A6E51C100FB9080 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		66D1764F2A6E97DE00194690 /* FakeLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLog.swift; sourceTree = "<group>"; };
 		66D176582A6F507D00194690 /* FakeEachLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEachLog.swift; sourceTree = "<group>"; };
 		66D1765A2A6F526200194690 /* LogListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListViewModel.swift; sourceTree = "<group>"; };
@@ -118,6 +121,7 @@
 		66E066802A6E5CDF00BE3751 /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
 		66E066852A6E632D00BE3751 /* LogTitleSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTitleSelectionViewModel.swift; sourceTree = "<group>"; };
 		66E066872A6E6F0D00BE3751 /* DetectiveLogWatch Watch AppRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DetectiveLogWatch Watch AppRelease.entitlements"; sourceTree = "<group>"; };
+
 		AF73FA2E2A6A705A00213DBE /* LogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModel.swift; sourceTree = "<group>"; };
 		AF773DFA2A69825E00EF9E1D /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		AFE38E9F2A683B0500B4FF9E /* LogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
@@ -165,6 +169,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+
+		A950B1852A6E4EE500FB9080 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A950B1862A6E51C100FB9080 /* DetailView.swift */,
+			);
+			path = Detail;
+
 		66D176512A6E984B00194690 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +282,7 @@
 				66E066852A6E632D00BE3751 /* LogTitleSelectionViewModel.swift */,
 			);
 			path = ViewModel;
+
 			sourceTree = "<group>";
 		};
 		AF73FA2B2A6A703B00213DBE /* View */ = {
@@ -329,6 +342,7 @@
 		AFEFF5AB2A67CFD3004AFD1A /* DetectiveLog */ = {
 			isa = PBXGroup;
 			children = (
+				A950B1852A6E4EE500FB9080 /* Detail */,
 				AF73FA302A6C25FE00213DBE /* Category */,
 				AFEFF5DA2A67D757004AFD1A /* CloudKit */,
 				AFEFF5D62A67D0B9004AFD1A /* Main */,
@@ -539,6 +553,7 @@
 				AFEFF5B22A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld in Sources */,
 				AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */,
 				AFEFF5DE2A67F436004AFD1A /* Log.swift in Sources */,
+				A950B1872A6E51C100FB9080 /* DetailView.swift in Sources */,
 				AFEFF5D92A67D112004AFD1A /* LogView.swift in Sources */,
 				AFE38EA02A683B0500B4FF9E /* LogCell.swift in Sources */,
 				AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */,
@@ -765,7 +780,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DetectiveLog/Preview Content\"";
-				DEVELOPMENT_TEAM = 8R3N359429;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -806,7 +821,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DetectiveLog/Preview Content\"";
-				DEVELOPMENT_TEAM = 8R3N359429;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -845,7 +860,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DetectiveLogWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 8R3N359429;
+				DEVELOPMENT_TEAM = ULM4SQD73B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = DetectiveLogWatch;
@@ -876,7 +891,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DetectiveLogWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 8R3N359429;
+				DEVELOPMENT_TEAM = ULM4SQD73B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = DetectiveLogWatch;
