@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import CloudKit
 
 protocol CloudKitManagerInterface {
     
     //MARK: Create
-    func createLogRecord(log: Log)
+    func createLogRecord(log: Log, _ completion: @escaping ((CKRecord.ID) -> ()))
     func createLogMemoRecord(log: Log, logMemo: LogMemo)
     func createdLogOpinionRecord(log: Log, logOpinion: LogOpinion)
 
