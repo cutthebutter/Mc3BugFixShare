@@ -38,10 +38,10 @@ struct LogCell: View {
             //MARK: 최근 메모
             VStack(alignment: .leading, spacing: 3) {
                 if let latestMemo = log.latestMemo {
-                    ForEach(latestMemo.indices, id: \.self) { index in
+                    let range = 0..<min(latestMemo.count, 2)
+                    ForEach(range, id: \.self) { index in
                         Text("•  \(latestMemo[index])")
                             .font(.custom("AppleSDGothicNeo-Regular", size: 13))
-                            
                     }
                 }
             }
@@ -77,6 +77,6 @@ struct LogCell_Previews: PreviewProvider {
                          recordId: nil,
                          category: .inProgress,
                          title: "슈프림 양념치킨",
-                         latestMemo: ["한지석", "코지"], isBookmarked: 0, isLocked: 0, isPinned: 1, createdAt: Date(), updatedAt: Date(), logMemoDates: nil, logMemoId: nil))
+                         latestMemo: ["한지석", "코지"], isBookmarked: 0, isLocked: 0, isPinned: 1, createdAt: Date(), updatedAt: Date()))
     }
 }
