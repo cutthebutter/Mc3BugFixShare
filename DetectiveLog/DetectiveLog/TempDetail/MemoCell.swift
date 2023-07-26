@@ -6,30 +6,38 @@
 //
 
 import SwiftUI
+import Combine
 
-struct MemoCell: View {
+@available(iOS 16.0, *)
+extension DetailLogView {
     
-    var logMemo: LogMemo
-
-    var body: some View {
+    func memoCell(logMemo: Binding<LogMemo>) -> some View {
         HStack(alignment: .top, spacing: 0) {
-            Text(formatDateToString(date: logMemo.createdAt))
+            Text(dateToTime(date: logMemo.createdAt.wrappedValue))
                 .font(.custom("AppleSDGothicNeo-Regular", size: 16))
                 .opacity(0.3)
+                .padding(.bottom, 22)
                 .padding(.leading, 28)
             
-            Text(logMemo.memo)
+            // 키보드 반응형 깔끔하게 하는 방법
+            // 키보드 올라갈때 스크롤의 최 하단에 위치하게 하는 방법
+            // 키보드 내려갈 때
+            Text(logMemo.memo.wrappedValue)
                 .font(.custom("AppleSDGothicNeo-Regular", size: 14))
-                .frame(alignment: .topLeading)
                 .padding(.leading, 20)
                 .padding(.trailing, 50)
+                .padding(.bottom, 22)
             
+//            TextEditor(text: logMemo.memo)
+//                .padding(.top, 0)
+                
+        
             Spacer()
         }
-        .background(.orange)
+
     }
     
-    func formatDateToString(date: Date) -> String {
+    func dateToTime(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:MM"
         return dateFormatter.string(from: date)
@@ -37,8 +45,10 @@ struct MemoCell: View {
     
 }
 
+//
+//@available(iOS 16.0, *)
 //struct MemoCell_Previews: PreviewProvider {
 //    static var previews: some View {
-//        MemoCell(logMemo: LogMemo(id: nil, referenceId: nil, memo: "눈꽃을 나누다 삼겹살집에 가면, 항상 소주 한병 이상을 먹게 되더라구요.", logMemoDate: Date(), createdAt: Date()))
+//        MemoCell(logMemo: LogMemo(id: UUID(), recordId: nil, referenceId: nil, memo: "질곡동 사건", logMemoDate: Date(), createdAt: Date()))
 //    }
 //}
