@@ -24,6 +24,8 @@
 		66D176C92A6FE82300194690 /* SearchTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176C82A6FE82300194690 /* SearchTestView.swift */; };
 		66D176CB2A6FE95E00194690 /* SearchTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176CA2A6FE95E00194690 /* SearchTestViewModel.swift */; };
 		66D176EF2A70036800194690 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176EE2A70036800194690 /* SearchBarView.swift */; };
+		66D176F72A70F4DC00194690 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176F62A70F4DC00194690 /* CalendarView.swift */; };
+		66D176FB2A71452500194690 /* MoveYearMonthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176FA2A71452500194690 /* MoveYearMonthPicker.swift */; };
 		66E0667B2A6E5C9700BE3751 /* LogRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E0667A2A6E5C9700BE3751 /* LogRecordView.swift */; };
 		66E0667D2A6E5CA400BE3751 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E0667C2A6E5CA400BE3751 /* MainTabView.swift */; };
 		66E0667F2A6E5CCE00BE3751 /* LogTitleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E0667E2A6E5CCE00BE3751 /* LogTitleSelectionView.swift */; };
@@ -133,6 +135,8 @@
 		66D176C82A6FE82300194690 /* SearchTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTestView.swift; sourceTree = "<group>"; };
 		66D176CA2A6FE95E00194690 /* SearchTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTestViewModel.swift; sourceTree = "<group>"; };
 		66D176EE2A70036800194690 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		66D176F62A70F4DC00194690 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		66D176FA2A71452500194690 /* MoveYearMonthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveYearMonthPicker.swift; sourceTree = "<group>"; };
 		66E0667A2A6E5C9700BE3751 /* LogRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRecordView.swift; sourceTree = "<group>"; };
 		66E0667C2A6E5CA400BE3751 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		66E0667E2A6E5CCE00BE3751 /* LogTitleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTitleSelectionView.swift; sourceTree = "<group>"; };
@@ -265,6 +269,8 @@
 				66D176CA2A6FE95E00194690 /* SearchTestViewModel.swift */,
 				66D176C82A6FE82300194690 /* SearchTestView.swift */,
 				66D176EE2A70036800194690 /* SearchBarView.swift */,
+				66D176F62A70F4DC00194690 /* CalendarView.swift */,
+				66D176FA2A71452500194690 /* MoveYearMonthPicker.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -601,12 +607,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66D176FB2A71452500194690 /* MoveYearMonthPicker.swift in Sources */,
 				AF73FA412A6EFB7000213DBE /* CloudKitManager+Create.swift in Sources */,
 				AF73FA452A6EFBF300213DBE /* CloudKitManager+Update.swift in Sources */,
 				AFEFF5B22A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld in Sources */,
 				AF73FA432A6EFBB300213DBE /* CloudKitManager+Read.swift in Sources */,
 				AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */,
 				66D176C92A6FE82300194690 /* SearchTestView.swift in Sources */,
+				66D176F72A70F4DC00194690 /* CalendarView.swift in Sources */,
 				66D176CB2A6FE95E00194690 /* SearchTestViewModel.swift in Sources */,
 				AF73FA332A6E5E5E00213DBE /* LogMemo.swift in Sources */,
 				AFEFF5DE2A67F436004AFD1A /* Log.swift in Sources */,

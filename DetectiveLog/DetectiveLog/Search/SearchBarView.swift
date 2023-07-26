@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+@available(iOS 16.0, *)
+
 struct SearchBarView: View {
     @State var searchText = ""
     @Binding var isSearch : Bool
+    @State var showCalendar = false
+    
     var body: some View {
         VStack{
             HStack{
@@ -18,7 +22,7 @@ struct SearchBarView: View {
                     TextField("사건 실마리 찾아보기", text: $searchText)
                     if searchText.count == 0 {
                         Button{
-                            
+                            showCalendar = true
                         } label : {
                             Image(systemName: "calendar")
                         }
@@ -73,7 +77,14 @@ struct SearchBarView: View {
                 }
                 
             }
+            
         }
+        .sheet(isPresented: $showCalendar) {
+            CalendarView()
+                .padding()
+                .presentationDetents([.fraction(0.45)])
+        }
+        
     }
 }
 
