@@ -92,52 +92,9 @@ extension CloudKitManager {
         }
     }
     
-    /// func fetchLogMemoRecord: CloudKit에 저장된 LogMemo(Detail) 데이터를 불러옵니다.
+    /// func fetchLogMemoRecord : CloudKit에 저장된 LogMemo(Detail) 데이터를 불러옵니다.
     /// - Parameter : log: Log
-    /// , _ completion: @escaping (([LogMemo]) -> ())
-//    func fetchLogMemoRecord(log: Log, _ completion: @escaping (([LogMemo]) -> ())) {
-//        var logMemoList: [LogMemo] = []
-//        guard let logRecordId = log.recordId else { return }
-//    
-//        let predicate = NSPredicate(format: "id == %@", logRecordId)
-//        let query = CKQuery(recordType: "LogMemo", predicate: predicate)
-//        let operation = CKQueryOperation(query: query)
-//        operation.database = container
-//        
-//        operation.recordMatchedBlock = { recordId, result in
-//            switch result {
-//            case .success(let record):
-//                guard let referenceId = record["id"] as? CKRecord.Reference,
-//                      let memo = record["memo"] as? String,
-//                      let logMemoDate = record["logMemoDate"] as? Date,
-//                      let createdAt = record["createdAt"] as? Date
-//                else {
-//                    return
-//                }
-//                logMemoList.append(LogMemo(id: UUID(),
-//                                           recordId: logRecordId,
-//                                           referenceId: referenceId,
-//                                           memo: memo,
-//                                           logMemoDate: logMemoDate,
-//                                           createdAt: createdAt))
-//            case .failure(let error):
-//                print("@Log fetchLogMemoRecord - \(error.localizedDescription)")
-//            }
-//        }
-//        
-//        operation.queryResultBlock = { result in
-//            switch result {
-//            case .success(_):
-//                print("Hi")
-//                completion(logMemoList)
-//            case .failure(let error):
-//                print("@Log queryResultBlokc error - \(error.localizedDescription)")
-//            }
-//        }
-//
-//        operation.start()
-//    }
-    
+    /// - return : LogMemo
     func fetchLogMemoRecord(log: Log) async -> [LogMemo] {
         var logMemoList: [LogMemo] = []
         guard let logRecordId = log.recordId else { return [] }
@@ -174,41 +131,121 @@ extension CloudKitManager {
         return logMemoList
     }
     
+    /// func fetchLogMemoRecord: CloudKit에 저장된 LogMemo(Detail) 데이터를 불러옵니다.
+    /// - Parameter : log: Log
+    /// , _ completion: @escaping (([LogMemo]) -> ())
+//    func fetchLogMemoRecord(log: Log, _ completion: @escaping (([LogMemo]) -> ())) {
+//        var logMemoList: [LogMemo] = []
+//        guard let logRecordId = log.recordId else { return }
+//
+//        let predicate = NSPredicate(format: "id == %@", logRecordId)
+//        let query = CKQuery(recordType: "LogMemo", predicate: predicate)
+//        let operation = CKQueryOperation(query: query)
+//        operation.database = container
+//
+//        operation.recordMatchedBlock = { recordId, result in
+//            switch result {
+//            case .success(let record):
+//                guard let referenceId = record["id"] as? CKRecord.Reference,
+//                      let memo = record["memo"] as? String,
+//                      let logMemoDate = record["logMemoDate"] as? Date,
+//                      let createdAt = record["createdAt"] as? Date
+//                else {
+//                    return
+//                }
+//                logMemoList.append(LogMemo(id: UUID(),
+//                                           recordId: logRecordId,
+//                                           referenceId: referenceId,
+//                                           memo: memo,
+//                                           logMemoDate: logMemoDate,
+//                                           createdAt: createdAt))
+//            case .failure(let error):
+//                print("@Log fetchLogMemoRecord - \(error.localizedDescription)")
+//            }
+//        }
+//
+//        operation.queryResultBlock = { result in
+//            switch result {
+//            case .success(_):
+//                print("Hi")
+//                completion(logMemoList)
+//            case .failure(let error):
+//                print("@Log queryResultBlokc error - \(error.localizedDescription)")
+//            }
+//        }
+//
+//        operation.start()
+//    }
+    
     /// func fetchLogOpinionRecord: CloudKit Datebase에서 사견을 불러옵니다.
     /// - Parameter : log: Log
-    func fetchLogOpinionRecord(log: Log, _ completion: @escaping (([LogOpinion]) -> ())) {
-        var logOpinion: [LogOpinion] = []
-        guard let logRecordId = log.recordId else { return }
+    func fetchLogOpinionRecord(log: Log) async -> [LogOpinion] {
+        var logOpinionList: [LogOpinion] = []
+        guard let logRecordId = log.recordId else { return [] }
         let predicate = NSPredicate(format: "id == %@", logRecordId)
-        let query = CKQuery(recordType: "LogMemo", predicate: predicate)
-        let operation = CKQueryOperation(query: query)
-        operation.database = container
-        
-        operation.recordMatchedBlock = { recordId, result in
-            switch result {
-            case .success(let record):
-                guard let referenceId = record["id"] as? CKRecord.Reference,
-                      let opinion = record["opinion"] as? String,
-                      let createdAt = record["createdAt"] as? Date
-                else { return }
-                logOpinion.append(LogOpinion(id: record.recordID,
-                                             referenceId: referenceId,
-                                             opinion: opinion,
-                                             createdAt: createdAt))
-            case .failure(let error):
-                print("@Log fetchLogOpinionRecord error - \(error.localizedDescription)")
+        let query = CKQuery(recordType: "LogOpinion", predicate: predicate)
+        do {
+            let result = try await container.records(matching: query)
+            for (_, result) in result.matchResults {
+                switch result {
+                case .success(let record):
+                    guard let referenceId = record["id"] as? CKRecord.Reference,
+                          let opinion = record["opinion"] as? String,
+                          let createdAt = record["createdAt"] as? Date
+                    else {
+                        return []
+                    }
+                    logOpinionList.append(LogOpinion(id: UUID(),
+                                                     recordId: record.recordID,
+                                                     referenceId: referenceId,
+                                                     opinion: opinion,
+                                                     createdAt: createdAt))
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
             }
+        } catch {
+            print(error.localizedDescription)
         }
-        
-        operation.queryResultBlock = { result in
-            switch result {
-            case .success(_):
-                completion(logOpinion)
-            case .failure(let error):
-                print("@Log fetchLogOpinionRecord error - \(error.localizedDescription)")
-            }
-        }
-        operation.start()
+        logOpinionList.sort(by: { $0.createdAt < $1.createdAt })
+        return logOpinionList
     }
+    
+    /// func fetchLogOpinionRecord: CloudKit Datebase에서 사견을 불러옵니다.
+    /// - Parameter : log: Log
+//    func fetchLogOpinionRecord(log: Log, _ completion: @escaping (([LogOpinion]) -> ())) {
+//        var logOpinion: [LogOpinion] = []
+//        guard let logRecordId = log.recordId else { return }
+//        let predicate = NSPredicate(format: "id == %@", logRecordId)
+//        let query = CKQuery(recordType: "LogMemo", predicate: predicate)
+//        let operation = CKQueryOperation(query: query)
+//        operation.database = container
+//
+//        operation.recordMatchedBlock = { recordId, result in
+//            switch result {
+//            case .success(let record):
+//                guard let referenceId = record["id"] as? CKRecord.Reference,
+//                      let opinion = record["opinion"] as? String,
+//                      let createdAt = record["createdAt"] as? Date
+//                else { return }
+//                logOpinion.append(LogOpinion(id: record.recordID,
+//                                             referenceId: referenceId,
+//                                             opinion: opinion,
+//                                             createdAt: createdAt))
+//            case .failure(let error):
+//                print("@Log fetchLogOpinionRecord error - \(error.localizedDescription)")
+//            }
+//        }
+//
+//        operation.queryResultBlock = { result in
+//            switch result {
+//            case .success(_):
+//                completion(logOpinion)
+//            case .failure(let error):
+//                print("@Log fetchLogOpinionRecord error - \(error.localizedDescription)")
+//            }
+//        }
+//        operation.start()
+//    }
     
 }
