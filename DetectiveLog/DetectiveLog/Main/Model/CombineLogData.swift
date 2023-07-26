@@ -7,9 +7,15 @@
 
 import Foundation
 
-struct CombineLogData: Identifiable {
+struct CombineLogData: Identifiable, Equatable {
+    
+    static func == (lhs: CombineLogData, rhs: CombineLogData) -> Bool {
+        return true
+    }
+    
+    
     let id: UUID
     let date: Date
     var logMemo: [LogMemo] = []
-    let logOpinion: [LogOpinion]?
+    let logOpinion: LogOpinion?
 }
