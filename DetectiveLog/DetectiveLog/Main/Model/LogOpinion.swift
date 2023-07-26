@@ -10,16 +10,15 @@ import CloudKit
 
 struct LogOpinion: Identifiable {
     
-    let id: CKRecord.ID
+    let id: UUID
+    let recordId: CKRecord.ID
     let referenceId: CKRecord.Reference
     let opinion: String
     let createdAt: Date
     
-    static func fetchLogOpinion(log: Log, _ completion: @escaping (([LogOpinion]) -> ())) {
+    static func fetchLogOpinion(log: Log) async -> [LogOpinion]  {
         let cloudKitManager = CloudKitManager.shared
-        cloudKitManager.fetchLogOpinionRecord(log: log) { logOpinion in
-            completion(logOpinion)
-        }
+        return await cloudKitManager.fetchLogOpinionRecord(log: log)
     }
     
 }
