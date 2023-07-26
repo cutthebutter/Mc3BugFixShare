@@ -17,7 +17,7 @@ protocol CloudKitManagerInterface {
 
     //MARK: Read
     func fetchLogRecord(_ completion: @escaping (([Log]) -> ()))
-    func fetchLogMemoRecord(log: Log, _ completion: @escaping (([LogMemo]) -> ()))
+    func fetchLogMemoRecord(log: Log) async -> [LogMemo]
     func fetchLogOpinionRecord(log: Log, _ completion: @escaping (([LogOpinion]) -> ()))
 
     //MARK: Update
