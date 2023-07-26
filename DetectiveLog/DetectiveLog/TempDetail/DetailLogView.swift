@@ -7,60 +7,105 @@
 
 import SwiftUI
 
+@available(iOS 16.0, *)
 struct DetailLogView: View {
     
     @ObservedObject var viewModel: DetailViewModel
     
     var body: some View {
-        VStack(spacing: 0) {
+        NavigationView {
+            VStack(spacing: 0) {
+                title
+                if viewModel.combineLogData == [] {
+                    VStack(alignment: .center) {
+                        ProgressView()
+                    }
+                }
+                combineLogCell
+            }
+
+            .toolbar {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button("testBtn") {
+                        // 테스트용 입니다.
+                    }
+                    Button {
+                        if let log = viewModel.log {
+                            viewModel.createLogMemo(log: log, memo: "키오")
+                        }
+                    } label: {
+                        Text("단서추가")
+                            .font(.custom("AppleSDGothicNeo-SemiBold", size: 20))
+                            .foregroundColor(.black)
+                            
+                    }
+
+                }
+            }
+            .onTapGesture {
+                hideKeyboard()
+            }
+            .onAppear {
+                if let log = viewModel.log {
+                    Task {
+                        await viewModel.fetchLogData(log: log)
+                    }
+                } else {
+                    viewModel.createLog()
+                }
+            }
+        }
+    }
+    
+    var title: some View {
+        ZStack(alignment: .topLeading) {
+            Rectangle()
+                .fill(.white)
+                .frame(height: 66)
+                .frame(maxWidth: .infinity)
+            
             if let log = viewModel.log {
                 Text(log.title)
-                combineLogCell
-                    .listRowInsets(EdgeInsets())
+                    .font(.custom("AppleSDGothicNeo-Bold", size: 22))
+                    .padding(.top, 16)
+                    .padding(.leading, 20)
             }
         }
-        .onAppear {
-            if let log = viewModel.log {
-                viewModel.fetchLogMemo(log: log)
-            } else {
-                viewModel.createLog()
-            }
-        }
+        
     }
     
     var combineLogCell: some View {
-        List {
-            ForEach(viewModel.combineLogData) { logData in
-                DateCell(combineLogData: logData)
-//                let range = 0..<logData.logMemo.count
-                ForEach(logData.logMemo, id: \.self) { logMemo in
-                    MemoCell(logMemo: logMemo)
+        ScrollViewReader { list in
+            List {
+                ForEach(viewModel.combineLogData.indices, id: \.self) { dataIndex in
+                    DateCell(combineLogData: viewModel.combineLogData[dataIndex])
+                        .listRowInsets(EdgeInsets())
+                        .listRowSeparatorTint(.white)
+                    ForEach(viewModel.combineLogData[dataIndex].logMemo.indices, id: \.self) { memoIndex in
+                        memoCell(logMemo: $viewModel.combineLogData[dataIndex].logMemo[memoIndex])
+                            .id(viewModel.combineLogData[dataIndex].logMemo[memoIndex].id)
+                            .onTapGesture {
+                                viewModel.updateTextField = viewModel.combineLogData[dataIndex].logMemo[memoIndex].id
+                            }
+                    }
+                    .listRowInsets(EdgeInsets())
+                    .listRowSeparatorTint(.white)
                 }
-//                ForEach(range, content: <#T##(Int) -> TableRowContent#>)
-//                ForEach(range) { Int in
-//                    <#code#>
-//                }
             }
+            
+            .listStyle(.plain)
+            .onChange(of: viewModel.lastIndex) { _ in
+                withAnimation {
+                    list.scrollTo(viewModel.lastIndex)
+                }
+            }
+//            .onChange(of: viewModel.updateTextField) { _ in
+//                print("@Log UpdateTextField")
+//                list.scrollTo(viewModel.updateTextField)
+//            }
         }
     }
-    
-//    func memoCell(logMemo: LogMemo) -> some View {
-//        return         HStack(alignment: .top, spacing: 0) {
-//            Text(formatDateToString(date: logMemo.createdAt))
-//                .font(.custom("AppleSDGothicNeo-Regular", size: 16))
-//                .opacity(0.3)
-//                .padding(.leading, 28)
-//
-//            Text(logMemo.memo)
-//                .font(.custom("AppleSDGothicNeo-Regular", size: 14))
-//                .frame(alignment: .topLeading)
-//                .padding(.leading, 20)
-//                .padding(.trailing, 50)
-//
-//            Spacer()
-//        }
-//    }
-    
+
     func formatDateToString(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:MM"
@@ -68,6 +113,53 @@ struct DetailLogView: View {
     }
     
 }
+
+//struct HideRowSeparatorModifier: ViewModifier {
+//
+//    static let defaultListRowHeight: CGFloat = 44
+//
+//    var insets: EdgeInsets
+//    var background: Color
+//
+//    init(insets: EdgeInsets, background: Color) {
+//        self.insets = insets
+//
+//        var alpha: CGFloat = 0
+//        UIColor(background).getWhite(nil, alpha: &alpha)
+//        assert(alpha == 1, "Setting background to a non-opaque color will result in separators remaining visible.")
+//        self.background = background
+//    }
+//
+//    func body(content: Content) -> some View {
+//        content
+//            .padding(insets)
+//            .frame(
+//            minWidth: 0, maxWidth: .infinity,
+//            minHeight: Self.defaultListRowHeight,
+//            alignment: .leading
+//        )
+//            .listRowInsets(EdgeInsets())
+//            .background(background)
+//    }
+//}
+//
+//extension EdgeInsets {
+//
+//    static let defaultListRowInsets = Self(top: 0, leading: 16, bottom: 0, trailing: 16)
+//}
+//
+//extension View {
+//
+//    func hideRowSeparator(
+//        insets: EdgeInsets = .defaultListRowInsets,
+//        background: Color = .white
+//    ) -> some View {
+//        modifier(HideRowSeparatorModifier(
+//            insets: insets,
+//            background: background
+//            ))
+//    }
+//}
 
 //struct DetailLogView_Previews: PreviewProvider {
 //    static var previews: some View {
