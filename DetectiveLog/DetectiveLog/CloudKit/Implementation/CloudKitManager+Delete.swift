@@ -12,7 +12,7 @@ extension CloudKitManager {
     /// func deleteLogRecord: CloudKit Database에서 Log Record를 삭제합니다.
     /// - Parameter: Log
     func deleteLogRecord(log: Log) {
-        guard let recordId = log.id else { return }
+        guard let recordId = log.recordId else { return }
         container.delete(withRecordID: recordId) { recordId, error in
             if let error = error {
                 print("@Log deleteLogRecord Error - \(error.localizedDescription)")

@@ -8,8 +8,9 @@
 import Foundation
 import CloudKit
 
-struct Log: Identifiable, Equatable {
-    let id: CKRecord.ID?
+struct Log: Identifiable, Equatable{
+    let id: UUID
+    let recordId: CKRecord.ID?
     var category: LogCategory
     let title: String
     let latestMemo: [String]?

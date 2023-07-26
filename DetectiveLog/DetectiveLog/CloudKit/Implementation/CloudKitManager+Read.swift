@@ -33,7 +33,8 @@ extension CloudKitManager {
                 else {
                     print("@fetchLogRecord return")
                     return }
-                logList.append(Log(id: record.recordID,
+                logList.append(Log(id: UUID(),
+                                   recordId: record.recordID,
                                    category: logCategory,
                                    title: title,
                                    latestMemo: record["latestMemo"] as? [String] ?? [],
@@ -66,7 +67,7 @@ extension CloudKitManager {
     /// - Parameter : log: Log
     func fetchLogMemoRecord(log: Log, _ completion: @escaping (([LogMemo]) -> ())) {
         var logMemoList: [LogMemo] = []
-        guard let logRecordId = log.id else { return }
+        guard let logRecordId = log.recordId else { return }
         let predicate = NSPredicate(format: "id == %@", logRecordId)
         let query = CKQuery(recordType: "LogMemo", predicate: predicate)
         let operation = CKQueryOperation(query: query)
@@ -109,7 +110,7 @@ extension CloudKitManager {
     /// - Parameter : log: Log
     func fetchLogOpinionRecord(log: Log, _ completion: @escaping (([LogOpinion]) -> ())) {
         var logOpinion: [LogOpinion] = []
-        guard let logRecordId = log.id else { return }
+        guard let logRecordId = log.recordId else { return }
         let predicate = NSPredicate(format: "id == %@", logRecordId)
         let query = CKQuery(recordType: "LogMemo", predicate: predicate)
         let operation = CKQueryOperation(query: query)
