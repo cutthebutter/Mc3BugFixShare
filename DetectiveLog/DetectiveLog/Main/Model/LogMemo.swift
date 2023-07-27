@@ -23,3 +23,8 @@ struct LogMemo: Identifiable, Hashable {
     }
 
 }
+
+enum MemoStatus {
+    case new
+    case exist
+}
