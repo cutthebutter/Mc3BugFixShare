@@ -12,7 +12,7 @@ struct Log: Identifiable, Equatable{
     let id: UUID
     let recordId: CKRecord.ID?
     var category: LogCategory
-    let title: String
+    var title: String
     let latestMemo: [String]?
     let isBookmarked: Int // 0 == false <-> 1 == true
     let isLocked: Int
