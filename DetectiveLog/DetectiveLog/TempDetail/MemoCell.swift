@@ -15,7 +15,8 @@ struct MemoCell: View {
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
             Text(dateToTime(date: logMemo.createdAt))
-                .font(.custom("AppleSDGothicNeo-Regular", size: 16))
+                .font(.custom("AppleSDGothicNeo-Regular", size: 14))
+                .frame(width: 39)
                 .opacity(0.3)
                 .padding(.bottom, 22)
                 .padding(.leading, 28)
