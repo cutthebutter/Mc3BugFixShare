@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+//코어데이터가 들어오면 대체할 모델
 struct FakeLogMemo : Identifiable, Comparable {
     
     static func < (lhs: FakeLogMemo, rhs: FakeLogMemo) -> Bool {

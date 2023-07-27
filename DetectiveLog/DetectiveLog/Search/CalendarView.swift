@@ -20,6 +20,7 @@ struct CalendarView: View {
             yearMonthHeaderView
                 .padding(.vertical)
             Spacer()
+            ///isMonthChange될때마다 보여지는 뷰가 달라집니다.
             if isMonthChange {
                 MoveYearMonthPicker(month: $month, isMonthChange: $isMonthChange, viewModel: SearchTestViewModel())
             } else {
@@ -34,6 +35,8 @@ struct CalendarView: View {
     var yearMonthHeaderView: some View {
         HStack(alignment: .center, spacing: 20) {
             
+            ///버튼을 누를때마바 보여지는 뷰가 달라질 수 잇도록 isMonthChange를 토글합니다
+            ///빠르게 토글버튼을 클릭했을 때 arrayBuffer가 overFlow되는 문제가 있습니다. 시간을 들이면 해결할수 있기는 한데, 현재는 그냥 아예 버튼을 아예 활성화 하지 않을까 합니다.
             Button {
                 isMonthChange.toggle()
             } label: {
@@ -49,6 +52,7 @@ struct CalendarView: View {
             Spacer()
             
             if !isMonthChange {
+                // 전 월로 일동하는 버튼
                 Button{
                     changeMonth(by: -1)
                 } label: {
@@ -58,6 +62,7 @@ struct CalendarView: View {
                 }
                 .disabled(!canMoveToPreviousMonth())
                 
+                // 이후 월로 이동하는 버튼
                 Button{
                     changeMonth(by: 1)
                 } label: {
@@ -72,6 +77,7 @@ struct CalendarView: View {
         .padding(.horizontal)
     }
     
+    //MARK: - 캘린더 뷰
     var calendarView : some View {
         VStack{
             dayView
@@ -79,6 +85,7 @@ struct CalendarView: View {
         }
     }
     
+    //MARK: - 상단 요일 구성 뷰
     var dayView : some View {
         HStack {
             ForEach(Self.koreanWeekdaySymbols.indices, id: \.self) { symbol in
@@ -92,36 +99,34 @@ struct CalendarView: View {
     
     // MARK: - 날짜 그리드 뷰
     var calendarGridView: some View {
-//        @State var dateTakingMemoList = viewModel.logMemoDates()
         let daysInMonth: Int = numberOfDays(in: month)
         let firstWeekday: Int = firstWeekdayOfMonth(in: month) - 1
         let columns = Array(repeating: GridItem(), count: 7)
         let range = -firstWeekday ..< daysInMonth
         let indices = Array(range)
         
-        // 날짜 형식 지정자
+        ///날짜 형식 지정자
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd"
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         
+        ///월마다 lazy하게 달력을 그림
         return LazyVGrid(columns: columns) {
             ForEach(indices, id: \.self) { index in
                 Group {
+                    ///이번달 날짜를 그림
                     if index > -1 && index < daysInMonth {
                         let date : Date = getDate(for: index)
-                        let dateString : String = dateFormatter.string(from: date)  // 새 변수
                         let day : Int = Calendar.current.component(.day, from: date)
                         let clicked : Bool = clickedCurrentMonthDates == date
                         let isToday : Bool = date.formattedCalendarDayDate == today.formattedCalendarDayDate
-                        let isMemoInDate = viewModel.logMemoDates.contains(dateString) // 수정된 부분
-
-//                        CellView(day: day, clicked: clicked, isToday: isToday, isMemoinDate: isMemoInDate)
-//                            .disabled(!isMemoInDate)
+                        let dateString : String = dateFormatter.string(from: date)
+                        let isMemoInDate = viewModel.logMemoDates.contains(dateString)
                         
+                        // 날짜 버튼
                         Button(action: {
                             if isMemoInDate {
                                 clickedCurrentMonthDates = date
-                                print("@Log clickedCurrentMonthDates: \(clickedCurrentMonthDates)")
                                 showCalendar = false
                             }
                         }) {
@@ -129,7 +134,7 @@ struct CalendarView: View {
                         }
                         .buttonStyle(PlainButtonStyle())
                         
-                    } else if Calendar.current.date(
+                    } else if Calendar.current.date( ///이전달 중 이번달 달력안에 포함되는 일 수를 가져옴
                         byAdding: .day,
                         value: index,
                         to: previousMonth()
@@ -179,13 +184,11 @@ private struct CellView: View {
         clicked: Bool = false,
         isToday: Bool = false,
         isMemoinDate: Bool = true
-//        isCurrentMonthDay: Bool = true
     ) {
         self.day = day
         self.clicked = clicked
         self.isToday = isToday
         self.isMemoinDate = isMemoinDate
-//        self.isCurrentMonthDay = isCurrentMonthDay
     }
     
     ///기본적으로 캘린더가 동그라미로 구성

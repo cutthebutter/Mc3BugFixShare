@@ -6,87 +6,71 @@
 //
 
 import SwiftUI
+import Combine
 
 @available(iOS 16.0, *)
 
 struct SearchBarView: View {
-    @State var searchText = ""
+    @State var searchInput = ""
     @Binding var isSearch : Bool
     @State var showCalendar = false
     @Binding var clickedCurrentMonthDates: Date?
+    @Binding var searchText : String
+    @State private var keyboardHeight: CGFloat = 0
     
     var body: some View {
-        VStack{
-            HStack{
+        ZStack{
+            VStack{
                 HStack{
-                    Image(systemName: "magnifyingglass")
-                    TextField("사건 실마리 찾아보기", text: $searchText)
-                    if searchText.count == 0 {
-                        Button{
-                            showCalendar = true
-                        } label : {
-                            Image(systemName: "calendar")
+                    HStack{
+                        Image(systemName: "magnifyingglass")
+                        TextField("사건 실마리 찾아보기", text: $searchInput) {
+                            searchText = searchInput
                         }
-                    } else {
-                        Button{
-                            searchText = ""
-                            
-                        } label : {
-                            Image(systemName: "x.circle.fill")
+                        if searchInput.count == 0 {
+                            // 캘린더 버튼
+                            Button{
+                                showCalendar = true
+                            } label : {
+                                Image(systemName: "calendar")
+                            }
+                        } else {
+                            // 버튼(검색키워드를 삭제함)
+                            Button{
+                                searchInput = ""
+                                searchText = ""
+                                
+                            } label : {
+                                Image(systemName: "x.circle.fill")
+                            }
                         }
-                        
                     }
-                    
+                    .padding(.horizontal)
+                    .padding(.vertical, 10)
+                    .background(
+                        RoundedRectangle(cornerRadius: 50) // 둥근 사각형 생성
+                            .stroke(Color.black, lineWidth: 1)
+                    )
+                    // 취소버튼
+                    Button{
+                        isSearch = false
+                        searchText = ""
+                    } label :{
+                        Text("취소")
+                    }
                 }
-                .padding(.horizontal)
-                .padding(.vertical, 10)
-                .background(
-                    RoundedRectangle(cornerRadius: 50) // 둥근 사각형 생성
-                        .stroke(Color.black, lineWidth: 1)
-                )
-                
-                Button{
-                    isSearch = false
-                } label :{
-                    Text("취소")
-                    
-                }
+                .foregroundColor(Color.black)
+                .padding()
+                .background(Color.white)
+                Spacer()
             }
-            .foregroundColor(Color.black)
-            .padding()
-            .background(Color.white)
 
-            Spacer()
-        }
-        .toolbar {
-            ToolbarItemGroup(placement: .keyboard) {
-                Button {
-                    
-                } label: {
-                    Text("")
-                }
-                HStack{
-                    Button {
-                        print("UP")
-                    } label: {
-                        Image(systemName: "chevron.up")
-                    }
-                    Button {
-                        print("DOWN")
-                    } label: {
-                        Image(systemName: "chevron.down")
-                    }
-                }
-                
-            }
-            
         }
         .sheet(isPresented: $showCalendar) {
             CalendarView(clickedCurrentMonthDates: $clickedCurrentMonthDates, showCalendar : $showCalendar)
                 .padding()
                 .presentationDetents([.fraction(0.45)])
         }
-        
     }
 }
 

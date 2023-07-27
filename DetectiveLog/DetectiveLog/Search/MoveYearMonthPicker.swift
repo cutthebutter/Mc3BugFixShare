@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+//빠르게 토글버튼을 클릭했을 때 arrayBuffer가 overFlow되는 문제가 있습니다. 시간을 들이면 해결할수 있기는 한데, 현재는 그냥 아예 버튼을 아예 활성화 하지 않을까 합니다.
+
 struct MoveYearMonthPicker: View {
     @ObservedObject var viewModel = SearchTestViewModel()
     @Binding var month : Date
@@ -25,7 +27,7 @@ struct MoveYearMonthPicker: View {
             self._month = month
             self._isMonthChange = isMonthChange
             self.viewModel = viewModel
-
+            ///가장 과거 데이터의 년도와 월, 가장 최근 데이터의 년도와 월을 가져옵니다.
             if let firstDate = viewModel.logMemoList.first?.date,
                let lastDate = viewModel.logMemoList.last?.date {
                 startYear = Calendar.current.component(.year, from: firstDate)
@@ -41,7 +43,7 @@ struct MoveYearMonthPicker: View {
                 
             allYears = Array(startYear...endYear).map { String(format: "%d년", $0) }
         }
-    
+    /// 년도들에 따라 Month의 범위가 달라지게 해줍니다.
     var availableMonths: [String] {
         if endYear == startYear {
             return Array(allMonths[(startMonth-1)...(endMonth-1)])
@@ -84,10 +86,10 @@ struct MoveYearMonthPicker: View {
                     }
                 }
             }
-            HStack{     
+            HStack{
+                // 취소버튼
                 Button {
                     isMonthChange = false
-
                 } label: {
                     HStack{
                         Spacer()
@@ -101,8 +103,10 @@ struct MoveYearMonthPicker: View {
                             .foregroundColor(Color(red: 244/255, green: 244/255, blue: 245/255))
                     )
                 }
-                    
+                
+                // 확인 버튼
                 Button {
+                    ///완료버튼을 누르면 년,월을 date로 만들어서 selectDate를 리턴하며 Picker뷰를 닫음
                     if let (year, month) = parseSelectedYearAndMonth() {
                         var dateComponents = DateComponents()
                         dateComponents.year = year
@@ -126,22 +130,19 @@ struct MoveYearMonthPicker: View {
                             .foregroundColor(Color(red: 244/255, green: 244/255, blue: 245/255))
                     )
                 }
-                
             }
-
         }
         .padding()
     }
     
+    ///년, 월을 제거한 년, 월의 숫자만 리턴하는 함수
     func parseSelectedYearAndMonth() -> (Int, Int)? {
         guard let year = Int(selectedYear.dropLast(1)),
               let month = Int(selectedMonth.dropLast(1)) else {
             return nil
         }
-        
         return (year, month)
     }
-    
 }
 
 //struct MoveYearMonthPicker_Previews: PreviewProvider {
