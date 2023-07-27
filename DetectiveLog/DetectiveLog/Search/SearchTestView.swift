@@ -11,23 +11,33 @@ import SwiftUI
 struct SearchTestView: View {
     @ObservedObject var viewModel = SearchTestViewModel()
     @State var isSearch : Bool = false
+    @State var clickedCurrentMonthDates: Date?
     
     var body: some View {
         NavigationView{
             ZStack {
-                List{
-                    ForEach(groupData(viewModel.logMemoList), id: \.key) { key, values in
-                        Section(header: Text("\(key)")) {
-                            ForEach(values) { log in
-                                memoCell(fakeLogMemo: log)
+                ScrollViewReader { proxy in
+                    List{
+                        ForEach(groupData(viewModel.logMemoList), id: \.key) { key, values in
+                            Section(header: Text("\(key)")) {
+                                ForEach(values) { log in
+                                    memoCell(fakeLogMemo: log)
+                                }
                             }
+                            .id(key) // Add this line
+                        }
+                    }
+                    .padding(.top, isSearch ? 44 : 0)
+                    .onChange(of: clickedCurrentMonthDates) { newValue in
+                        let dateKey = getFormattedDateKey(newValue)
+                        withAnimation {
+                            proxy.scrollTo(dateKey, anchor: .top)
                         }
                     }
                 }
-                .padding(.top, isSearch ? 44 : 0)
                 
                 if isSearch {
-                    SearchBarView(isSearch: $isSearch)
+                    SearchBarView(isSearch: $isSearch, clickedCurrentMonthDates: $clickedCurrentMonthDates)
                 }
             }
             .toolbar {
@@ -39,7 +49,7 @@ struct SearchTestView: View {
                             Image(systemName: "magnifyingglass")
                         }
                     }
-
+                    
                 }
                 
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
@@ -54,17 +64,26 @@ struct SearchTestView: View {
                 
             }
         }
-  
+        
     }
     /// 섹션을 그룹화 함
     func groupData(_ data: [FakeLogMemo]) -> [(key: String, value: [FakeLogMemo])] {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         
         let grouped = Dictionary(grouping: data) { (element: FakeLogMemo) in
             dateFormatter.string(from: element.date)
         }
         return grouped.sorted { $0.key < $1.key }
+    }
+    
+    func getFormattedDateKey(_ date: Date?) -> String {
+        guard let date = date else { return "" }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        return dateFormatter.string(from: date)
     }
 }
 

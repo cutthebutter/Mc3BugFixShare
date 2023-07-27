@@ -36,5 +36,595 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "02B075BB-897F-4C22-B90B-BF415EAA7273"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/CalendarView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB1FEBF2-25E5-43FE-B8AC-646C68A4D078"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/CalendarView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CBE7F233-A87E-4792-AC0C-C7D6249385D6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/CalendarView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "CBE7F233-A87E-4792-AC0C-C7D6249385D6 - 3950e57948e8c798"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI._ConditionalContent&lt;DetectiveLog.MoveYearMonthPicker, &lt;&lt;opaque return type of DetectiveLog.CalendarView.calendarView : some&gt;&gt;.0&gt;, SwiftUI.Spacer)&gt; in DetectiveLog.CalendarView.body.getter : some"
+                  moduleName = "DetectiveLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLog/Search/CalendarView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "2100">
+               </Location>
+               <Location
+                  uuid = "CBE7F233-A87E-4792-AC0C-C7D6249385D6 - a8413f7f69e25745"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DetectiveLog.CalendarView.body.getter : some"
+                  moduleName = "DetectiveLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLog/Search/CalendarView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "184">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1320D2D4-CF59-4A47-8A48-3A986A828A1E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/CalendarView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "1320D2D4-CF59-4A47-8A48-3A986A828A1E - 3950e57948e8c7b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI._ConditionalContent&lt;DetectiveLog.MoveYearMonthPicker, &lt;&lt;opaque return type of DetectiveLog.CalendarView.calendarView : some&gt;&gt;.0&gt;, SwiftUI.Spacer)&gt; in DetectiveLog.CalendarView.body.getter : some"
+                  moduleName = "DetectiveLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLog/Search/CalendarView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "2124">
+               </Location>
+               <Location
+                  uuid = "1320D2D4-CF59-4A47-8A48-3A986A828A1E - a8413f7f69e25745"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DetectiveLog.CalendarView.body.getter : some"
+                  moduleName = "DetectiveLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLog/Search/CalendarView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "184">
+               </Location>
+               <Location
+                  uuid = "1320D2D4-CF59-4A47-8A48-3A986A828A1E - 3950e57948e8c71c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI._ConditionalContent&lt;DetectiveLog.MoveYearMonthPicker, &lt;&lt;opaque return type of DetectiveLog.CalendarView.calendarView : some&gt;&gt;.0&gt;, SwiftUI.Spacer)&gt; in DetectiveLog.CalendarView.body.getter : some"
+                  moduleName = "DetectiveLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLog/Search/CalendarView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "884">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "182066E0-C7CA-4C68-B5C7-F7EFE7E94595"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/CalendarView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "533EB62E-C36F-4D5B-BD9A-C4DF529CC1E6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/CalendarView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "903372AB-0AC9-47CD-AAEF-301A32B778BE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/CalendarView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "yearMonthHeaderView"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "903372AB-0AC9-47CD-AAEF-301A32B778BE - a6c93ece208d028b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.buttonStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PrimitiveButtonStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, Swift.Optional&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt; in DetectiveLog.CalendarView.yearMonthHeaderView.getter : some"
+                  moduleName = "DetectiveLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLog/Search/CalendarView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "903372AB-0AC9-47CD-AAEF-301A32B778BE - 9ba9f4bebe0e6a96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.buttonStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PrimitiveButtonStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, Swift.Optional&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt; in DetectiveLog.CalendarView.yearMonthHeaderView.getter : some"
+                  moduleName = "DetectiveLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLog/Search/CalendarView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "903372AB-0AC9-47CD-AAEF-301A32B778BE - 9e564f3f39262809"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.buttonStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PrimitiveButtonStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, Swift.Optional&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt; in DetectiveLog.CalendarView.yearMonthHeaderView.getter : some"
+                  moduleName = "DetectiveLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLog/Search/CalendarView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "1380">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5926C2EB-FC40-4C5A-B842-4AB3C3D3385E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/CalendarView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "yearMonthHeaderView"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "5926C2EB-FC40-4C5A-B842-4AB3C3D3385E - 9ba9f4bebe0e6a96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.buttonStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PrimitiveButtonStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, Swift.Optional&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt; in DetectiveLog.CalendarView.yearMonthHeaderView.getter : some"
+                  moduleName = "DetectiveLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLog/Search/CalendarView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "5926C2EB-FC40-4C5A-B842-4AB3C3D3385E - 9e564f3f3926284f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.buttonStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PrimitiveButtonStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, Swift.Optional&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt; in DetectiveLog.CalendarView.yearMonthHeaderView.getter : some"
+                  moduleName = "DetectiveLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLog/Search/CalendarView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1668">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7360637A-EB2E-4204-914B-C5E6B0E4AE4D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/MoveYearMonthPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "init(month:isMonthChange:viewModel:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7360637A-EB2E-4204-914B-C5E6B0E4AE4D - d99590bc00b336ba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DetectiveLog.MoveYearMonthPicker.init(month: SwiftUI.Binding&lt;Foundation.Date&gt;, isMonthChange: SwiftUI.Binding&lt;Swift.Bool&gt;, viewModel: DetectiveLog.SearchTestViewModel) -&gt; DetectiveLog.MoveYearMonthPicker"
+                  moduleName = "DetectiveLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLog/Search/MoveYearMonthPicker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "4604">
+               </Location>
+               <Location
+                  uuid = "7360637A-EB2E-4204-914B-C5E6B0E4AE4D - ba0ee924d40fb7a3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; Swift.String in DetectiveLog.MoveYearMonthPicker.init(month: SwiftUI.Binding&lt;Foundation.Date&gt;, isMonthChange: SwiftUI.Binding&lt;Swift.Bool&gt;, viewModel: DetectiveLog.SearchTestViewModel) -&gt; DetectiveLog.MoveYearMonthPicker"
+                  moduleName = "DetectiveLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLog/Search/MoveYearMonthPicker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A9DB388-1644-46E8-8164-17D54E06671E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/MoveYearMonthPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "init(month:isMonthChange:viewModel:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9A9DB388-1644-46E8-8164-17D54E06671E - d99590bc00b336ba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DetectiveLog.MoveYearMonthPicker.init(month: SwiftUI.Binding&lt;Foundation.Date&gt;, isMonthChange: SwiftUI.Binding&lt;Swift.Bool&gt;, viewModel: DetectiveLog.SearchTestViewModel) -&gt; DetectiveLog.MoveYearMonthPicker"
+                  moduleName = "DetectiveLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLog/Search/MoveYearMonthPicker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "4604">
+               </Location>
+               <Location
+                  uuid = "9A9DB388-1644-46E8-8164-17D54E06671E - ba0ee924d40fb7a3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; Swift.String in DetectiveLog.MoveYearMonthPicker.init(month: SwiftUI.Binding&lt;Foundation.Date&gt;, isMonthChange: SwiftUI.Binding&lt;Swift.Bool&gt;, viewModel: DetectiveLog.SearchTestViewModel) -&gt; DetectiveLog.MoveYearMonthPicker"
+                  moduleName = "DetectiveLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLog/Search/MoveYearMonthPicker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8F00BB4-72BC-46C3-83A4-FD2837A6FCD8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/MoveYearMonthPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "MoveYearMonthPicker"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "F8F00BB4-72BC-46C3-83A4-FD2837A6FCD8 - 2da915881b59e8d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; Swift.String in variable initialization expression of DetectiveLog.MoveYearMonthPicker.allMonths : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "DetectiveLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLog/Search/MoveYearMonthPicker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "F8F00BB4-72BC-46C3-83A4-FD2837A6FCD8 - d99590bc00b32b16"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DetectiveLog.MoveYearMonthPicker.init(month: SwiftUI.Binding&lt;Foundation.Date&gt;, isMonthChange: SwiftUI.Binding&lt;Swift.Bool&gt;, viewModel: DetectiveLog.SearchTestViewModel) -&gt; DetectiveLog.MoveYearMonthPicker"
+                  moduleName = "DetectiveLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLog/Search/MoveYearMonthPicker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "1912">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4B0EEB2A-54B5-4059-B490-3C07C3E263DE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/MoveYearMonthPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "availableMonths"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "69026A2F-7C64-443C-8E3F-4C4E9EFD7350"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/MoveYearMonthPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "availableMonths"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9971539-261B-4365-A31E-C9D04E7E2BE3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/MoveYearMonthPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "availableMonths"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BD50CCAE-701E-43BB-9670-583F7E753076"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/MoveYearMonthPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "availableMonths"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "06FFC631-F1A3-435A-BA78-A6CCE648DEE5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/MoveYearMonthPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "availableMonths"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FEADE61A-83CC-4699-82C5-236D7E6F6D97"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/MoveYearMonthPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "availableMonths"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9D8655DA-BB51-4EA5-93BA-FA05FB960EC9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/MoveYearMonthPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "availableMonths"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0B676F9-1142-47FA-A321-7DC596DA3590"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/MoveYearMonthPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "availableMonths"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D1AC841-8E06-438F-B5D1-07ECB8B22F6A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/MoveYearMonthPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "availableMonths"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F96A775-A61A-4C8D-B126-6B3F3302D0A8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/Search/MoveYearMonthPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "availableMonths"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -13,6 +13,7 @@ struct SearchBarView: View {
     @State var searchText = ""
     @Binding var isSearch : Bool
     @State var showCalendar = false
+    @Binding var clickedCurrentMonthDates: Date?
     
     var body: some View {
         VStack{
@@ -54,6 +55,7 @@ struct SearchBarView: View {
             .foregroundColor(Color.black)
             .padding()
             .background(Color.white)
+
             Spacer()
         }
         .toolbar {
@@ -80,7 +82,7 @@ struct SearchBarView: View {
             
         }
         .sheet(isPresented: $showCalendar) {
-            CalendarView()
+            CalendarView(clickedCurrentMonthDates: $clickedCurrentMonthDates, showCalendar : $showCalendar)
                 .padding()
                 .presentationDetents([.fraction(0.45)])
         }

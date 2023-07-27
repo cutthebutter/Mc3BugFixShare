@@ -8,6 +8,7 @@
 import SwiftUI
 
 @main
+@available(iOS 16.0, *)
 struct DetectiveLogApp: App {
     let persistenceController = PersistenceController.shared
 
@@ -16,6 +17,7 @@ struct DetectiveLogApp: App {
 //            CategoryView()
             //LogView()
             SearchTestView()
+//            CalendarView()
         }
     }
 }

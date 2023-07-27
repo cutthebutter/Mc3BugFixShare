@@ -14,7 +14,6 @@ struct MoveYearMonthPicker: View {
     @State private var selectedYear: String = String(format: "%d년", Calendar.current.component(.year, from: Date()))
     @State private var selectedMonth: String = String(format: "%d월", Calendar.current.component(.month, from: Date()))
     
-//    let startYear = Calendar.current.component(.year, from: Date())
     let startYear: Int
     let startMonth : Int
     let endYear: Int
@@ -44,7 +43,9 @@ struct MoveYearMonthPicker: View {
         }
     
     var availableMonths: [String] {
-        if selectedYear == String(format: "%d년", endYear) {
+        if endYear == startYear {
+            return Array(allMonths[(startMonth-1)...(endMonth-1)])
+        } else if selectedYear == String(format: "%d년", endYear) {
             return Array(allMonths[0...(endMonth-1)])
         } else if selectedYear == String(format: "%d년", startYear){
             return Array(allMonths[(startMonth-1)...])
@@ -69,7 +70,7 @@ struct MoveYearMonthPicker: View {
                         selectedMonth = availableMonths.last!
                     }
                 }
-                
+
                 Picker("Month", selection: $selectedMonth) {
                     ForEach(availableMonths, id: \.self) { month in
                         Text(month).tag(month)

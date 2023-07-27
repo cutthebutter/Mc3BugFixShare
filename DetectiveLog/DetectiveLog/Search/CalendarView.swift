@@ -10,16 +10,10 @@ import SwiftUI
 struct CalendarView: View {
     @ObservedObject var viewModel = SearchTestViewModel()
     @State private var month: Date = Date()
-    @State private var clickedCurrentMonthDates: Date?
+    @Binding var clickedCurrentMonthDates: Date?
     @State private var isMonthChange = false
-    
-    init(
-        month: Date = Date(),
-        clickedCurrentMonthDates: Date? = nil
-    ) {
-        _month = State(initialValue: month)
-        _clickedCurrentMonthDates = State(initialValue: clickedCurrentMonthDates)
-    }
+    @Binding var showCalendar : Bool
+
     
     var body: some View {
         VStack {
@@ -42,7 +36,6 @@ struct CalendarView: View {
             
             Button {
                 isMonthChange.toggle()
-                
             } label: {
                 Text(month, formatter: Self.calendarHeaderDateFormatter)
                     .font(.title2)
@@ -80,7 +73,6 @@ struct CalendarView: View {
     }
     
     var calendarView : some View {
-        
         VStack{
             dayView
             calendarGridView
@@ -100,25 +92,43 @@ struct CalendarView: View {
     
     // MARK: - 날짜 그리드 뷰
     var calendarGridView: some View {
+//        @State var dateTakingMemoList = viewModel.logMemoDates()
         let daysInMonth: Int = numberOfDays(in: month)
         let firstWeekday: Int = firstWeekdayOfMonth(in: month) - 1
-        //        let numberOfRows = Int(ceil(Double(daysInMonth + firstWeekday) / 7.0))
-        
         let columns = Array(repeating: GridItem(), count: 7)
         let range = -firstWeekday ..< daysInMonth
         let indices = Array(range)
+        
+        // 날짜 형식 지정자
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         
         return LazyVGrid(columns: columns) {
             ForEach(indices, id: \.self) { index in
                 Group {
                     if index > -1 && index < daysInMonth {
-                        let date = getDate(for: index)
-                        let day = Calendar.current.component(.day, from: date)
-                        let clicked = clickedCurrentMonthDates == date
-                        let isToday = date.formattedCalendarDayDate == today.formattedCalendarDayDate
-                        /*let isMemoinDate = viewModel.logMemoDates().contains(date) // 수정되는 부분*/
+                        let date : Date = getDate(for: index)
+                        let dateString : String = dateFormatter.string(from: date)  // 새 변수
+                        let day : Int = Calendar.current.component(.day, from: date)
+                        let clicked : Bool = clickedCurrentMonthDates == date
+                        let isToday : Bool = date.formattedCalendarDayDate == today.formattedCalendarDayDate
+                        let isMemoInDate = viewModel.logMemoDates.contains(dateString) // 수정된 부분
 
-                        CellView(day: day, clicked: clicked, isToday: isToday/*, isMemoinDate: isMemoinDate*/)
+//                        CellView(day: day, clicked: clicked, isToday: isToday, isMemoinDate: isMemoInDate)
+//                            .disabled(!isMemoInDate)
+                        
+                        Button(action: {
+                            if isMemoInDate {
+                                clickedCurrentMonthDates = date
+                                print("@Log clickedCurrentMonthDates: \(clickedCurrentMonthDates)")
+                                showCalendar = false
+                            }
+                        }) {
+                            CellView(day: day, clicked: clicked, isToday: isToday, isMemoinDate: isMemoInDate)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        
                     } else if Calendar.current.date(
                         byAdding: .day,
                         value: index,
@@ -144,15 +154,14 @@ private struct CellView: View {
     private var day: Int
     private var clicked: Bool
     private var isToday: Bool
-    private var isCurrentMonthDay: Bool
-//    private var isMemoinDate: Bool
+    private var isMemoinDate: Bool
     private var textColor: Color {
         if clicked || isToday {
             return Color.white
-        } /*else if isToday{
+        } else if isMemoinDate{
             return Color.black
-        } */else {
-            return Color.black
+        } else {
+            return Color.gray.opacity(0.5)
         }
     }
     private var backgroundColor: Color {
@@ -169,14 +178,14 @@ private struct CellView: View {
         day: Int,
         clicked: Bool = false,
         isToday: Bool = false,
-        //isMemoinDate: Bool = true,
-        isCurrentMonthDay: Bool = true
+        isMemoinDate: Bool = true
+//        isCurrentMonthDay: Bool = true
     ) {
         self.day = day
         self.clicked = clicked
         self.isToday = isToday
-        //self.isMemoinDate = isMemoinDate
-        self.isCurrentMonthDay = isCurrentMonthDay
+        self.isMemoinDate = isMemoinDate
+//        self.isCurrentMonthDay = isCurrentMonthDay
     }
     
     ///기본적으로 캘린더가 동그라미로 구성
@@ -267,7 +276,7 @@ extension CalendarView {
     /// 이전 월로 이동 가능한지 확인
     func canMoveToPreviousMonth() -> Bool {
         let targetDate = viewModel.logMemoList.first?.date ?? Date()
-        if adjustedMonth(by: -1) < (targetDate-1) {
+        if adjustedMonth(by: -1) < (targetDate-2) {
             return false
         }
         return true
@@ -303,8 +312,8 @@ extension Date {
     }
 }
 
-struct CalenderView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalendarView()
-    }
-}
+//struct CalenderView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CalendarView()
+//    }
+//}
