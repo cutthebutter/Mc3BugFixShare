@@ -11,7 +11,7 @@ import SwiftUI
 struct DetectiveLogWatch_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
         }
     }
 }
