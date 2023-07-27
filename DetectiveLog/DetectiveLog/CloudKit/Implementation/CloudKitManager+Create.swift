@@ -11,7 +11,7 @@ import CloudKit
 extension CloudKitManager {
     /// func createLogRecord: CloudKit Database에 디테일뷰로 가기 이전의 데이터를 저장합니다.
     /// - Parameter: Log
-    func createLogRecord(log: Log) {
+    func createLogRecord(log: Log, _ completion: @escaping ((CKRecord.ID) -> ())) {
         let record = CKRecord(recordType: "Log")
         record.setValue(log.title, forKey: "title")
         record.setValue(log.category.rawValue, forKey: "category")
@@ -21,13 +21,14 @@ extension CloudKitManager {
         record.setValue(log.isLocked, forKey: "isLocked")
         record.setValue(log.isPinned, forKey: "isPinned")
         record.setValue(log.latestMemo, forKey: "latestMemo")
-        record.setValue(log.logMemoId, forKey: "logMemoId")
-        record.setValue(log.logMemoDates, forKey: "logMemoDates")
         container.save(record) { record, error in
             if let error = error {
                 print("@Log createLogRecord Error - \(error.localizedDescription)")
             }
-            print("@Log - \(log.title) Save 완료!")
+            if let record = record {
+                print("@Log createLogRecord 완료!")
+                completion(record.recordID)
+            }
         }
     }
     

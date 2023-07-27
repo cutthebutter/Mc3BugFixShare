@@ -8,10 +8,18 @@
 import Foundation
 import CloudKit
 
-struct LogMemo: Identifiable {
-    let id: CKRecord.ID
+struct LogMemo: Identifiable, Hashable {
+    
+    let id: UUID
+    let recordId: CKRecord.ID?
     let referenceId: CKRecord.Reference?
     var memo: String
     let logMemoDate: Date
     var createdAt: Date
+
+    static func fetchLogMemoRecord(log: Log) async -> [LogMemo] {
+        let cloudKitManager = CloudKitManager.shared
+        return await cloudKitManager.fetchLogMemoRecord(log: log)
+    }
+
 }

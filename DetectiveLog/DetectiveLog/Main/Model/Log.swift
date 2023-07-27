@@ -19,8 +19,6 @@ struct Log: Identifiable, Equatable{
     var isPinned: Int
     let createdAt: Date
     let updatedAt: Date
-    let logMemoDates: [Date]? // 데이터베이스에 저장된 날짜 불러오기 위함
-    let logMemoId: [CKRecord.Reference]? // 연관 테이블, Id로 서로 연관됨
 }
 
 enum LogCategory: Int {
