@@ -6,32 +6,26 @@
 //
 
 import SwiftUI
-import Combine
 
-@available(iOS 16.0, *)
-extension DetailLogView {
+
+struct MemoCell: View {
     
-    func memoCell(logMemo: Binding<LogMemo>) -> some View {
+    let logMemo: LogMemo
+    
+    var body: some View {
         HStack(alignment: .top, spacing: 0) {
-            Text(dateToTime(date: logMemo.createdAt.wrappedValue))
+            Text(dateToTime(date: logMemo.createdAt))
                 .font(.custom("AppleSDGothicNeo-Regular", size: 16))
                 .opacity(0.3)
                 .padding(.bottom, 22)
                 .padding(.leading, 28)
             
-            // 키보드 반응형 깔끔하게 하는 방법
-            // 키보드 올라갈때 스크롤의 최 하단에 위치하게 하는 방법
-            // 키보드 내려갈 때
-            Text(logMemo.memo.wrappedValue)
+            Text(logMemo.memo)
                 .font(.custom("AppleSDGothicNeo-Regular", size: 14))
                 .padding(.leading, 20)
                 .padding(.trailing, 50)
                 .padding(.bottom, 22)
             
-//            TextEditor(text: logMemo.memo)
-//                .padding(.top, 0)
-                
-        
             Spacer()
         }
 
@@ -44,11 +38,3 @@ extension DetailLogView {
     }
     
 }
-
-//
-//@available(iOS 16.0, *)
-//struct MemoCell_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MemoCell(logMemo: LogMemo(id: UUID(), recordId: nil, referenceId: nil, memo: "질곡동 사건", logMemoDate: Date(), createdAt: Date()))
-//    }
-//}
