@@ -13,9 +13,8 @@ struct DetailLog: Identifiable, Equatable {
         return true
     }
     
-    
     let id: UUID
     let date: Date
     var logMemo: [LogMemo] = []
-    let logOpinion: LogOpinion?
+    let logOpinion: LogOpinion
 }

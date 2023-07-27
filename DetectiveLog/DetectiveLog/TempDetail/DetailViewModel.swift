@@ -13,9 +13,7 @@ final class DetailViewModel: ObservableObject {
     let logCount: Int
     
     @Published var log: Log?
-//    @Published var logMemo: [Date: [LogMemo]] = [:]
-//    @Published var logOpinion: [Date: LogOpinion] = [:]
-    @Published var combineLogData: [CombineLogData] = []
+    @Published var detailLog: [DetailLog] = []
     var lastIndex: UUID?
     
     init(log: Log?, logCount: Int) {
@@ -38,7 +36,10 @@ final class DetailViewModel: ObservableObject {
         arrayToDictionary(logMemo: logMemo, logOpinion: logOpinion)
     }
     
-
+    func updateLogTitle() {
+        guard let log = log else { return }
+        cloudKitManager.updateLogRecordTitle(log: log, title: log.title)
+    }
     
     func createLog() {
         cloudKitManager.createLogRecord(log: Log(id: UUID(),
@@ -59,7 +60,7 @@ final class DetailViewModel: ObservableObject {
         }
     }
     
-    func createLogMemo(log: Log, memo: String) {
+    func createLogMemo(log: Log, memo: String, status: MemoStatus) {
         let logMemo = LogMemo(id: UUID(),
                               recordId: nil,
                               referenceId: nil,
@@ -67,34 +68,38 @@ final class DetailViewModel: ObservableObject {
                               logMemoDate: Date(),
                               createdAt: Date())
         cloudKitManager.createLogMemoRecord(log: log, logMemo: logMemo)
-        var latestMemo: [String] = []
-        for i in 0..<combineLogData.count {
-            //            guard let logMemo = combineLogData[i].logMemo else { return }
-            for j in 0..<combineLogData[i].logMemo.count {
-                latestMemo.append(combineLogData[i].logMemo[j].memo)
+        let today = Calendar.current.startOfDay(for: Date())
+        
+        switch status {
+        case .new:
+            let logOpinion = LogOpinion(id: UUID(), recordId: nil, referenceId: nil, opinion: "개인 사견을 적어주세요.", createdAt: Date())
+            cloudKitManager.createdLogOpinionRecord(log: log, logOpinion: logOpinion)
+            let newDetailLog = DetailLog(id: UUID(),
+                                              date: today,
+                                              logMemo: [logMemo],
+                                              logOpinion: logOpinion)
+            detailLog.append(newDetailLog)
+        case .exist:
+            if let index = detailLog.firstIndex(where: { $0.date == today }) {
+                // 이미 오늘 날짜와 같은 데이터가 있으면 해당 데이터에 logMemo를 추가합니다.
+                detailLog[index].logMemo.append(logMemo)
             }
         }
-        latestMemo.append(memo)
+        
+        var latestMemo: [String] = []
+        for i in 0..<detailLog.count {
+            for j in 0..<detailLog[i].logMemo.count {
+                latestMemo.append(detailLog[i].logMemo[j].memo)
+            }
+        }
         latestMemo.reverse()
+        
         print("@Log memo latest - \(latestMemo)")
         cloudKitManager.updateLogRecord(log: log,
                                         latestMemo: latestMemo,
                                         updatedAt: Date())
         
-        let today = Calendar.current.startOfDay(for: Date())
-        
-        if let index = combineLogData.firstIndex(where: { $0.date == today }) {
-            // 이미 오늘 날짜와 같은 데이터가 있으면 해당 데이터에 logMemo를 추가합니다.
-            combineLogData[index].logMemo.append(logMemo)
-        } else {
-            // 오늘 날짜와 같은 데이터가 없으면 새로운 CombineLogData를 생성하여 배열에 추가합니다.
-            let newCombineLogData = CombineLogData(id: UUID(),
-                                                   date: today,
-                                                   logMemo: [logMemo],
-                                                   logOpinion: nil)
-            combineLogData.append(newCombineLogData)
-        }
-        lastIndex = logMemo.id
+        lastIndex = detailLog.last?.logOpinion.id
     }
     
     func arrayToDictionary(logMemo: [LogMemo],
@@ -118,19 +123,19 @@ final class DetailViewModel: ObservableObject {
                 if let opinions = logOpinion?[date] {
                     print("@Log kozi - \(memos)")
                     let memo = memos.sorted(by: { $0.createdAt < $1.createdAt })
-                    let data = CombineLogData(id: UUID(), date: date, logMemo: memo, logOpinion: opinions)
-                    self.combineLogData.append(data)
+                    let data = DetailLog(id: UUID(), date: date, logMemo: memo, logOpinion: opinions)
+                    self.detailLog.append(data)
                 } else {
                     print("@Log kozi - \(memos)")
                     let memo = memos.sorted(by: { $0.createdAt < $1.createdAt })
-                    let data = CombineLogData(id: UUID(), date: date, logMemo: memo, logOpinion: nil)
-                    self.combineLogData.append(data)
+                    let data = DetailLog(id: UUID(), date: date, logMemo: memo, logOpinion: LogOpinion(id: UUID(), recordId: nil, referenceId: nil, opinion: "개인 사견을 적어주세요", createdAt: Date()))
+                    self.detailLog.append(data)
                 }
             }
-            self.lastIndex = self.combineLogData.last?.logMemo.last?.id
+            self.lastIndex = self.detailLog.last?.logOpinion.id
             
         }
-        print("@Log combine - \(self.combineLogData)")
+        
     }
     
 }

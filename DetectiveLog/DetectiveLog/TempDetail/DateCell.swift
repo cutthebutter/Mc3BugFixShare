@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DateCell: View {
     
-    let combineLogData: CombineLogData
+    let detailLog: DetailLog
     
     var body: some View {
         Rectangle()
@@ -19,12 +19,13 @@ struct DateCell: View {
             .frame(height: 52)
             .overlay {
                 HStack(spacing: 0) {
-                    Text(formatDateToString(date: combineLogData.date))
+                    Text(formatDateToString(date: detailLog.date))
                         .font(.custom("AppleSDGothicNeo-bold", size: 20))
                         .padding(.leading, 20)
                     Spacer()
                 }
             }
+            .padding(.bottom, 16)
             
 //            .overlay {
 //                Rectangle()
@@ -40,8 +41,9 @@ struct DateCell: View {
     
 }
 
-struct DateCell_Previews: PreviewProvider {
-    static var previews: some View {
-        DateCell(combineLogData: CombineLogData(id: UUID(), date: Date(), logOpinion: nil))
-    }
-}
+//struct DateCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DateCell(combineLogData: DetailLog(id: UUID(), date: Date(), logOpinion: nil))
+//    }
+//}
+

@@ -7,52 +7,73 @@
 
 import SwiftUI
 
-@available(iOS 16.0, *)
 struct DetailLogView: View {
     
     @ObservedObject var viewModel: DetailViewModel
+    @Environment(\.presentationMode) var presentationMode
+    @State private var isKeyboardVisible: Bool = false
+    @State private var logIsEmpty: Bool = false
     
     var body: some View {
-        NavigationView {
+        ZStack {
             VStack(spacing: 0) {
                 title
-                if viewModel.combineLogData == [] {
+                if viewModel.detailLog == [] {
                     VStack(alignment: .center) {
-                        ProgressView()
+                        if !logIsEmpty {
+                            Spacer()
+                            ProgressView()
+                        } else {
+                            Image("glass")
+                                .padding(.top, 126)
+                            Text("아직 단서가 없네요!\n단서를 추가해주세요.")
+                                .multilineTextAlignment(.center)
+                                .font(.custom("AppleSDGothicNeo-SemiBold", size: 20))
+                                .opacity(0.2)
+                                .frame(height: 64)
+                                .lineLimit(2)
+                                .padding(.top, 34)
+                                
+                        }
                     }
                 }
                 combineLogCell
+                Rectangle()
+                    .fill(.white)
+                    .frame(height: 51)
             }
-
-            .toolbar {
-                ToolbarItemGroup(placement: .bottomBar) {
-                    Button("testBtn") {
-                        // 테스트용 입니다.
-                    }
-                    Button {
-                        if let log = viewModel.log {
-                            viewModel.createLogMemo(log: log, memo: "키오")
-                        }
-                    } label: {
-                        Text("단서추가")
-                            .font(.custom("AppleSDGothicNeo-SemiBold", size: 20))
-                            .foregroundColor(.black)
-                            
-                    }
-
+            VStack {
+                Spacer()
+                Divider()
+                bottomBar
+            }
+            .ignoresSafeArea()
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                backButton
+            }
+        }
+        .navigationBarBackButtonHidden()
+        .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
+            self.isKeyboardVisible = true
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
+            self.isKeyboardVisible = false
+        }
+        .onTapGesture {
+            endEditing()
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                self.logIsEmpty = true
+            }
+            if let log = viewModel.log {
+                Task {
+                    await viewModel.fetchLogData(log: log)
                 }
-            }
-            .onTapGesture {
-                hideKeyboard()
-            }
-            .onAppear {
-                if let log = viewModel.log {
-                    Task {
-                        await viewModel.fetchLogData(log: log)
-                    }
-                } else {
-                    viewModel.createLog()
-                }
+            } else {
+                viewModel.createLog()
             }
         }
     }
@@ -64,11 +85,14 @@ struct DetailLogView: View {
                 .frame(height: 66)
                 .frame(maxWidth: .infinity)
             
-            if let log = viewModel.log {
-                Text(log.title)
+            Binding($viewModel.log).map {
+                TextField("사건일지를 입력하세요.", text: $0.title)
                     .font(.custom("AppleSDGothicNeo-Bold", size: 22))
                     .padding(.top, 16)
                     .padding(.leading, 20)
+                    .onSubmit {
+                        viewModel.updateLogTitle()
+                    }
             }
         }
         
@@ -77,92 +101,82 @@ struct DetailLogView: View {
     var combineLogCell: some View {
         ScrollViewReader { list in
             List {
-                ForEach(viewModel.combineLogData.indices, id: \.self) { dataIndex in
-                    DateCell(combineLogData: viewModel.combineLogData[dataIndex])
-                        .listRowInsets(EdgeInsets())
-                        .listRowSeparatorTint(.white)
-                    ForEach(viewModel.combineLogData[dataIndex].logMemo.indices, id: \.self) { memoIndex in
-                        memoCell(logMemo: $viewModel.combineLogData[dataIndex].logMemo[memoIndex])
-                            .id(viewModel.combineLogData[dataIndex].logMemo[memoIndex].id)
-                            .onTapGesture {
-                                viewModel.updateTextField = viewModel.combineLogData[dataIndex].logMemo[memoIndex].id
-                            }
+                ForEach(viewModel.detailLog.indices, id: \.self) { dataIndex in
+                    DateCell(detailLog: viewModel.detailLog[dataIndex])
+                    VStack(spacing: 0) {
+                        ForEach(viewModel.detailLog[dataIndex].logMemo.indices, id: \.self) { memoIndex in
+                            MemoCell(logMemo: viewModel.detailLog[dataIndex].logMemo[memoIndex])
+                        }
                     }
-                    .listRowInsets(EdgeInsets())
-                    .listRowSeparatorTint(.white)
+                    OpinionCell(logOpinion: viewModel.detailLog[dataIndex].logOpinion)
+                        .id(viewModel.detailLog[dataIndex].logOpinion.id)
                 }
+                .listRowInsets(EdgeInsets())
+                .listRowSeparatorTint(.white)
             }
-            
             .listStyle(.plain)
             .onChange(of: viewModel.lastIndex) { _ in
                 withAnimation {
                     list.scrollTo(viewModel.lastIndex)
                 }
             }
-//            .onChange(of: viewModel.updateTextField) { _ in
-//                print("@Log UpdateTextField")
-//                list.scrollTo(viewModel.updateTextField)
-//            }
         }
     }
-
+    
+    var backButton: some View {
+        Button {
+            presentationMode.wrappedValue.dismiss()
+        } label: {
+            Image("backButton")
+        }
+    }
+    
+    var bottomBar: some View {
+        Rectangle()
+            .fill(.white)
+            .frame(height: 85)
+            .overlay(alignment: .top) {
+                HStack(alignment: .top, spacing: 0) {
+                    Spacer()
+                    Button {
+                        if let log = viewModel.log {
+                            if viewModel.detailLog.isEmpty {
+//                                viewModel.createLogMemo(log: log, memo: "isEmpty", status: .new)
+                                viewModel.createLogMemo(log: log, memo: "isEmpty", status: .new)
+                            } else {
+//                                viewModel.createLogMemo(log: log, memo: "isEmpty", status: .exist)
+                                viewModel.createLogMemo(log: log, memo: "isExist", status: .exist)
+                            }
+                        }
+                    } label: {
+                        Text("단서추가")
+                            .font(.custom("AppleSDGothicNeo-SemiBold", size: 20))
+                            .foregroundColor(.black)
+                    }
+                    .padding(.top, 13)
+                    .padding(.trailing, 20)
+                }
+            }
+    }
+    
     func formatDateToString(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:MM"
         return dateFormatter.string(from: date)
     }
     
+    private func endEditing() {
+        if isKeyboardVisible {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            viewModel.updateLogTitle()
+        }
+    }
+    
 }
 
-//struct HideRowSeparatorModifier: ViewModifier {
-//
-//    static let defaultListRowHeight: CGFloat = 44
-//
-//    var insets: EdgeInsets
-//    var background: Color
-//
-//    init(insets: EdgeInsets, background: Color) {
-//        self.insets = insets
-//
-//        var alpha: CGFloat = 0
-//        UIColor(background).getWhite(nil, alpha: &alpha)
-//        assert(alpha == 1, "Setting background to a non-opaque color will result in separators remaining visible.")
-//        self.background = background
-//    }
-//
-//    func body(content: Content) -> some View {
-//        content
-//            .padding(insets)
-//            .frame(
-//            minWidth: 0, maxWidth: .infinity,
-//            minHeight: Self.defaultListRowHeight,
-//            alignment: .leading
-//        )
-//            .listRowInsets(EdgeInsets())
-//            .background(background)
-//    }
-//}
-//
-//extension EdgeInsets {
-//
-//    static let defaultListRowInsets = Self(top: 0, leading: 16, bottom: 0, trailing: 16)
-//}
-//
-//extension View {
-//
-//    func hideRowSeparator(
-//        insets: EdgeInsets = .defaultListRowInsets,
-//        background: Color = .white
-//    ) -> some View {
-//        modifier(HideRowSeparatorModifier(
-//            insets: insets,
-//            background: background
-//            ))
-//    }
-//}
-
-//struct DetailLogView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DetailLogView()
-//    }
-//}
+extension UINavigationController: ObservableObject, UIGestureRecognizerDelegate {
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        interactivePopGestureRecognizer?.delegate = nil
+    }
+}

@@ -167,8 +167,7 @@ struct LogView: View {
                 if log.category == category {
                     ZStack {
                         NavigationLink {
-                            TempDetailView(viewModel: DetailViewModel(log: log,
-                                                                      logCount: viewModel.log.count))
+                            DetailLogView(viewModel: DetailViewModel(log: log, logCount: viewModel.log.count))
                         } label: {
                             EmptyView()
                         }

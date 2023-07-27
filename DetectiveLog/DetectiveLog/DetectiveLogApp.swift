@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 16.0, *)
 @main
 struct DetectiveLogApp: App {
     let persistenceController = PersistenceController.shared
