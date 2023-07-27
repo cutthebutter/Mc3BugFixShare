@@ -91,7 +91,7 @@ struct DetailLogView: View {
                     .padding(.top, 16)
                     .padding(.leading, 20)
                     .onSubmit {
-                        viewModel.updateLogTitle()
+//                        viewModel.updateLogTitle()
                     }
             }
         }
@@ -141,9 +141,11 @@ struct DetailLogView: View {
                     Button {
                         if let log = viewModel.log {
                             if viewModel.detailLog.isEmpty {
-                                viewModel.createLogMemo(log: log, memo: "isEmpty", status: .new)
+//                                viewModel.createLogMemo(log: log, memo: "isEmpty", status: .new)
+                                viewModel.createLogMemo(log: log, memo: "isEmpty")
                             } else {
-                                viewModel.createLogMemo(log: log, memo: "isEmpty", status: .exist)
+//                                viewModel.createLogMemo(log: log, memo: "isEmpty", status: .exist)
+                                viewModel.createLogMemo(log: log, memo: "isEmpty")
                             }
                         }
                     } label: {
@@ -166,7 +168,7 @@ struct DetailLogView: View {
     private func endEditing() {
         if isKeyboardVisible {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-            viewModel.updateLogTitle()
+//            viewModel.updateLogTitle()
         }
     }
     
