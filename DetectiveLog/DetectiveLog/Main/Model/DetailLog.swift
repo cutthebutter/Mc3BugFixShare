@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct CombineLogData: Identifiable, Equatable {
+struct DetailLog: Identifiable, Equatable {
     
-    static func == (lhs: CombineLogData, rhs: CombineLogData) -> Bool {
+    static func == (lhs: DetailLog, rhs: DetailLog) -> Bool {
         return true
     }
     
