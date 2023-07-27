@@ -53,6 +53,8 @@ extension CloudKitManager {
         }
     }
     
+    /// func updateLogRecordIsPinned: 메인 뷰에서 Log의 카테고리를 이동할 때 사용합니다.
+    /// - Parameter: Log, isPinned
     func updateLogRecordIsPinned(log: Log, isPinned: Int) {
         guard let recordId = log.recordId else { return }
         container.fetch(withRecordID: recordId) { record, error in
@@ -73,8 +75,30 @@ extension CloudKitManager {
         }
     }
     
+    /// func updateLogRecordTitle: 디테일 뷰에서 사건일지의 타이틀을 수정합니다.
+    /// - Parameter: Log, isPinned
+    func updateLogRecordTitle(log: Log, title: String) {
+        guard let recordId = log.recordId else { return }
+        container.fetch(withRecordID: recordId) { record, error in
+            guard let record = record else {
+                if let error = error {
+                    print("@Log updateLogRecordTitle - \(error.localizedDescription)")
+                }
+                return
+            }
+            record["title"] = title
+            self.container.save(record) { record, error in
+                if let error = error {
+                    print("@Log updateLogRecordTitle - \(error.localizedDescription)")
+                } else {
+                    print("@Log updateLogRecordTitle 완료!")
+                }
+            }
+        }
+    }
+    
     func updateLogMemoRecord(logMemo: LogMemo) {
-        let recordId = logMemo.id
+        guard let recordId = logMemo.recordId else { return }
         container.fetch(withRecordID: recordId) { record, error in
             guard let record = record else {
                 if let error = error {
@@ -94,7 +118,7 @@ extension CloudKitManager {
     }
     
     func updateLogOpinionRecord(logOpinion: LogOpinion) {
-        let recordId = logOpinion.id
+        guard let recordId = logOpinion.recordId else { return }
         container.fetch(withRecordID: recordId) { record, error in
             guard let record = record else {
                 if let error = error {
