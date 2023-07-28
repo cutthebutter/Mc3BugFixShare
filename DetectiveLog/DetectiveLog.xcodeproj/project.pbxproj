@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66BD95F12A739D65007253F2 /* TempDetail in Resources */ = {isa = PBXBuildFile; fileRef = 66BD95F02A739D65007253F2 /* TempDetail */; };
 		66D1764E2A6E964200194690 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5DD2A67F436004AFD1A /* Log.swift */; };
 		66D176502A6E97DE00194690 /* FakeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1764F2A6E97DE00194690 /* FakeLog.swift */; };
 		66D176592A6F507D00194690 /* FakeEachLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176582A6F507D00194690 /* FakeEachLog.swift */; };
@@ -119,6 +120,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		66BD95F02A739D65007253F2 /* TempDetail */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TempDetail; sourceTree = "<group>"; };
 		66D1764F2A6E97DE00194690 /* FakeLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLog.swift; sourceTree = "<group>"; };
 		66D176582A6F507D00194690 /* FakeEachLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEachLog.swift; sourceTree = "<group>"; };
 		66D1765A2A6F526200194690 /* LogListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListViewModel.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 		AFEFF5AB2A67CFD3004AFD1A /* DetectiveLog */ = {
 			isa = PBXGroup;
 			children = (
+				66BD95F02A739D65007253F2 /* TempDetail */,
 				66D176C52A6FE65900194690 /* Search */,
 				A950B1882A6FC15800FB9080 /* Detail */,
 				AF73FA302A6C25FE00213DBE /* Category */,
@@ -576,6 +579,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66BD95F12A739D65007253F2 /* TempDetail in Resources */,
 				AFEFF5BA2A67CFD4004AFD1A /* Preview Assets.xcassets in Resources */,
 				AFEFF5B62A67CFD4004AFD1A /* Assets.xcassets in Resources */,
 			);
