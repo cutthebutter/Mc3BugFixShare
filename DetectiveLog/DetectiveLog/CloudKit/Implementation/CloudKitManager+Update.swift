@@ -97,6 +97,28 @@ extension CloudKitManager {
         }
     }
     
+    ///func updateLogRecordIsLocked: FaceID로 메모를 잠굽니다.
+    func updateLogRecordIsLocked(log: Log, isLocked: Int) {
+        guard let recordId = log.recordId else { return }
+        container.fetch(withRecordID: recordId) { record, error in
+            guard let record = record else {
+                if let error = error {
+                    print("@Log updateLogRecordIsLocked - \(error.localizedDescription)")
+                }
+                return
+            }
+            record["isLocked"] = isLocked
+            print("@Log updateLogRecordIsLocked - \(record["isLocked"])")
+            self.container.save(record) { record, error in
+                if let error = error {
+                    print("@Log updateLogRecordIsLocked - \(error.localizedDescription)")
+                } else {
+                    print("@Log updateLogRecordIsLocked 완료!")
+                }
+            }
+        }
+    }
+    
     func updateLogMemoRecord(logMemo: LogMemo) {
         guard let recordId = logMemo.recordId else { return }
         container.fetch(withRecordID: recordId) { record, error in
