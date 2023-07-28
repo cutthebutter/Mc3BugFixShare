@@ -99,7 +99,8 @@ final class DetailViewModel: ObservableObject {
                                         latestMemo: latestMemo,
                                         updatedAt: Date())
         
-        lastIndex = detailLog.last?.logOpinion.id
+        lastIndex = detailLog.last?.logMemo.last?.id
+//        lastIndex = detailLog.last?.logOpinion.id
     }
     
     func arrayToDictionary(logMemo: [LogMemo],
@@ -132,7 +133,7 @@ final class DetailViewModel: ObservableObject {
                     self.detailLog.append(data)
                 }
             }
-            self.lastIndex = self.detailLog.last?.logOpinion.id
+            self.lastIndex = self.detailLog.last?.logMemo.last?.id
             
         }
         
