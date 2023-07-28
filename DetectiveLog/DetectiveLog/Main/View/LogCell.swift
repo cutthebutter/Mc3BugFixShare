@@ -11,44 +11,72 @@ struct LogCell: View {
     
     var log: Log
     
+    // AppleSDGothicNeoB
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
+        VStack(alignment: .leading, spacing: 0) {
+            
+            //MARK: 제목
+            HStack(spacing: 0) {
+                // AppleSDGothicNeoB
                 Text("")
-                    .frame(width: 0, height: 0)
-                Image(systemName: "pin")
-                    .opacity(log.isPinned == 1 ? 1 : 0)
-                    .padding(.leading)
+                    .frame(width: 32, height: 0)
                 Text(log.title)
-                    .font(Font.system(size: 18, weight: .bold))
-                Text("\(formatDateToString(date: log.createdAt)) ~ \(formatDateToString(date: log.updatedAt))")
-                    .foregroundColor(.gray)
-                    .font(Font.system(size: 13))
+                    .font(.custom("AppleSDGothicNeo-Bold", size: 18))
+                    .frame(height: 29)
+//                    .background(.black)
+                    
+                Image("pin")
+                    .opacity(log.isPinned == 1 ? 1 : 0)
+                    .padding(.leading, 10)
+                    
                 Spacer()
             }
-            .padding(.bottom, 2)
+//            .padding(.leading, 32)
+            .padding(.top, 12)
+            
+            //MARK: 최근 메모
             VStack(alignment: .leading, spacing: 3) {
-                ForEach(log.latestMemo!.indices, id: \.self) { index in
-                    Text("•  \(log.latestMemo![index])")
-                        .font(Font.system(size: 13))
-                        .padding(.leading, 45)
+                if let latestMemo = log.latestMemo {
+                    let range = 0..<min(latestMemo.count, 2)
+                    ForEach(range, id: \.self) { index in
+                        Text("•  \(latestMemo[index])")
+                            .font(.custom("AppleSDGothicNeo-Regular", size: 13))
+                    }
                 }
             }
+            .padding(.leading, 32)
+            .padding(.top, 4)
+            
+            //MARK: 메모 날짜
+            Text("\(formatDateToString(date: log.createdAt)) ~ \(formatDateToString(date: log.updatedAt))")
+                .foregroundColor(.gray)
+                .font(.custom("AppleSDGothicNeo-Medium", size: 13))
+                .frame(height: 21)
+                .padding(.top, 2)
+                .padding(.leading, 52)
+            
+            Spacer()
         }
-
-        .frame(height: 117)
+        .frame(height: 118)
         .frame(maxWidth: .infinity)
+//        .background(.indigo.opacity(0.1))
+        
     }
     
     func formatDateToString(date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "M.d"
+        dateFormatter.dateFormat = "y.M.d"
         return dateFormatter.string(from: date)
     }
 }
 
-//struct LogCell_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LogCell(tempLog: TempLog(id: UUID(), title: "질곡동 사건", createdAt: "7.17", updatedAt: "7.29", latestMemo: ["자라 한마리에 가격이 수백만원. 주변의 가게도 모두", "남자한테 좋다."], isPinned: true, category: LogCategory(rawValue: 0)!))
-//    }
-//}
+struct LogCell_Previews: PreviewProvider {
+    static var previews: some View {
+        LogCell(log: Log(id: UUID(),
+                         recordId: nil,
+                         category: .inProgress,
+                         title: "슈프림 양념치킨",
+                         latestMemo: ["한지석", "코지"], isBookmarked: 0, isLocked: 0, isPinned: 1, createdAt: Date(), updatedAt: Date()))
+    }
+}

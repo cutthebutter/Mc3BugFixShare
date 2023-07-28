@@ -9,8 +9,16 @@ import Foundation
 import CloudKit
 
 struct LogOpinion: Identifiable {
-    let id: CKRecord.ID
-    let referenceId: CKRecord.Reference
-    let opinion: String
+    
+    let id: UUID
+    let recordId: CKRecord.ID?
+    let referenceId: CKRecord.Reference?
+    var opinion: String
     let createdAt: Date
+    
+    static func fetchLogOpinion(log: Log) async -> [LogOpinion]  {
+        let cloudKitManager = CloudKitManager.shared
+        return await cloudKitManager.fetchLogOpinionRecord(log: log)
+    }
+    
 }

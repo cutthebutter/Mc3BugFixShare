@@ -8,20 +8,22 @@
 import SwiftUI
 import CloudKit
 
+@available(iOS 16.0, *)
 struct LogView: View {
     
-    @Environment(\.editMode) private var editMode
+    @Environment(\.editMode) var editMode
     @State var isPresented = false
     @State var isEditing = false
     @State var selection = 0
-    @State var multiSelection = Set<CKRecord.ID>()
+    @State var multiSelection = Set<UUID>()
     var category = ["진행 중", "완결", "미완결"]
     
     @ObservedObject var viewModel = LogViewModel()
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 0) {
+                title
                 categoryPickerView
                     .onChange(of: selection) { _ in
                         viewModel.logForCategoryChange = []
@@ -37,9 +39,36 @@ struct LogView: View {
                 default:
                     Text("Error Occured")
                 }
+
                 Spacer()
+
             }
-            .navigationTitle("사건 일지")
+            .sheet(isPresented: $isPresented) {
+                CategoryView(viewModel: viewModel, isPresented: $isPresented)
+            }
+            .environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive))
+            .animation(Animation.linear(duration: 0.2), value: isEditing)
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button {
+                        print("Text")
+                    } label: {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(.black)
+                    }
+                    // EditButton을 활용하여 특정 값의 변화를 체크해서 이동하는 로직을 만들어야 할듯!
+                    Menu {
+                        Button {
+                            self.isEditing.toggle()
+                        } label: {
+                            Text(isEditing ? "Done" : "선택하기")
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis")
+                            .foregroundColor(.black)
+                    }
+                }
+            }
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
                     if !isEditing {
@@ -47,38 +76,32 @@ struct LogView: View {
                     } else {
                         bottomToolbarItemIsEditing
                     }
-                    
-                }
-            }
-            .environment(\.editMode, .constant(self.isEditing ? EditMode.active : EditMode.inactive)).animation(Animation.linear(duration: 0.2), value: isEditing)
-            .toolbar {
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Button {
-                        print("Text")
-                    } label: {
-                        Image(systemName: "magnifyingglass")
-                    }
-                    // EditButton을 활용하여 특정 값의 변화를 체크해서 이동하는 로직을 만들어야 할듯!
-                    Menu {
-                        Button {
-                            self.isEditing.toggle()
-                            if isEditing {
-                                    
-                            }
-                        } label: {
-                            Text(isEditing ? "Done" : "Edit")
-                        }
 
-                    } label: {
-                        Image(systemName: "ellipsis")
-                    }
                 }
             }
-            .sheet(isPresented: $isPresented) {
-                CategoryView(viewModel: viewModel, isPresented: $isPresented)
+            .onAppear {
+                print("@main On Appear")
+                viewModel.fetchLog()
             }
         }
     }
+    
+    //MARK: Title
+    
+    var title: some View {
+        Rectangle()
+            .fill(.clear)
+            .frame(height: 66)
+            .frame(maxWidth: .infinity)
+            .overlay(alignment: .topLeading) {
+                Text("사건 일지")
+                    .font(.custom("AppleSDGothicNeo-Bold", size: 22))
+                    .padding(.top, 16)
+                    .padding(.leading, 20)
+            }
+    }
+    
+    //MARK: PickerView
     
     var categoryPickerView: some View {
         Picker("Picker", selection: $selection) {
@@ -87,7 +110,8 @@ struct LogView: View {
             }
         }
         .pickerStyle(.segmented)
-        .padding()
+        .padding(.horizontal, 20)
+//        .padding()
     }
     
     //MARK: Bottom Toolbar - 바텀 툴바. 디폴트 & Editing시 Bottom Toolbar
@@ -97,10 +121,11 @@ struct LogView: View {
             Button("") {
                 print("IIII")
             }
-            Button {
-                print("글쓰기")
+            NavigationLink {
+                TempDetailView(viewModel: DetailViewModel(log: nil,
+                                                          logCount: viewModel.log.count + 1))
             } label: {
-                Image(systemName: "square.and.pencil")
+                Image("write")
                     .foregroundColor(.black)
             }
         }
@@ -108,7 +133,7 @@ struct LogView: View {
     
     var bottomToolbarItemIsEditing: some View {
         Group {
-            Button("이동") {
+            Button {
                 viewModel.logForCategoryChange = []
                 for selection in multiSelection {
                     print("@Log - \(selection)")
@@ -117,35 +142,50 @@ struct LogView: View {
                     )
                 }
                 self.isPresented.toggle()
+            } label: {
+                Text("재분류하기")
+                    .font(.custom("AppleSDGothicNeo-Regular", size: 16))
+                    .foregroundColor(.black)
             }
             Button {
                 print("글쓰기")
                 // 데이터베이스
             } label: {
-                Text("삭제")
+                Text("삭제하기")
+                    .font(.custom("AppleSDGothicNeo-Regular", size: 16))
+                    .foregroundColor(.red)
             }
         }
     }
     
-    
-    
     //MARK: Log List - 카테고리 별 리스트
-    
+    /// List EditMode는 ID가 옵셔널일 경우 작동하지 않음. id는 무조건 있어야 함.!
+
     func logList(category: LogCategory) -> some View {
         return List(selection: $multiSelection) {
             ForEach(viewModel.log) { log in
                 if log.category == category {
-                    LogCell(log: log)
-                        .listRowInsets(EdgeInsets())
-                        .contextMenu {
-                            setPinnedButton(log: log)
-                            categoryChangeButton(log: log)
-                            contextMenuItems
+                    ZStack {
+                        NavigationLink {
+                            DetailLogView(viewModel: DetailViewModel(log: log, logCount: viewModel.log.count))
+                        } label: {
+                            EmptyView()
                         }
+                        .opacity(0)
+                        LogCell(log: log)
+                            .contextMenu {
+                                setPinnedButton(log: log)
+                                categoryChangeButton(log: log)
+                                contextMenuItems
+                            }
+                    }
+                    .listRowInsets(EdgeInsets())
                 }
             }
         }
+        .padding(.top, 12)
         .listStyle(.inset)
+
     }
     
     //MARK: Context Menu - 꾹 눌렀을 때 나오는 메뉴
@@ -179,8 +219,8 @@ struct LogView: View {
     
 }
 
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        LogView()
-    }
-}
+//struct MainView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LogView()
+//    }
+//}
