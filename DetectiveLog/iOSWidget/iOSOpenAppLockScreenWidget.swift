@@ -72,7 +72,7 @@ struct iOSOpenAppLockScreenWidget: Widget {
         }
         // 추가할 때 설명을 작성.
         .configurationDisplayName("메모앱")
-        .description("메모앱을 실행합니다..")
+        .description("메모앱을 실행합니다.")
 
         //accessoryCircular 만 지원.
         .supportedFamilies([.accessoryCircular])

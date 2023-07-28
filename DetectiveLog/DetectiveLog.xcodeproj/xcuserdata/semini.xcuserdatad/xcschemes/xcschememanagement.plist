@@ -7,12 +7,12 @@
 		<key>DetectiveLog.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
-		<key>DetectiveLogWatch Watch App.xcscheme_^#shared#^_</key>
+		<key>DetectiveLogWatch Watch App 1.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>4</integer>
 		</dict>
 		<key>IOSAppIntent.xcscheme_^#shared#^_</key>
 		<dict>
@@ -24,10 +24,23 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>iOSWidgetExtension.xcscheme_^#shared#^_</key>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>66D176962A6F773300194690</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFEFF5A82A67CFD3004AFD1A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFEFF5C32A67D001004AFD1A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

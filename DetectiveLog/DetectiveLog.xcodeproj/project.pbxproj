@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
+		66BD95F12A739D65007253F2 /* TempDetail in Resources */ = {isa = PBXBuildFile; fileRef = 66BD95F02A739D65007253F2 /* TempDetail */; };
 		AF0115E62A6FE7670021E462 /* TempDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0115E52A6FE7670021E462 /* TempDetailView.swift */; };
 		AF0115EA2A6FE7BE0021E462 /* OpinionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0115E92A6FE7BE0021E462 /* OpinionCell.swift */; };
 		AF0115EE2A6FE8F50021E462 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0115ED2A6FE8F50021E462 /* DetailViewModel.swift */; };
@@ -20,8 +20,6 @@
 		66D176592A6F507D00194690 /* FakeEachLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176582A6F507D00194690 /* FakeEachLog.swift */; };
 		66D1765B2A6F526200194690 /* LogListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1765A2A6F526200194690 /* LogListViewModel.swift */; };
 		66D1765D2A6F557800194690 /* LogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1765C2A6F557800194690 /* LogDetailView.swift */; };
-		66D176732A6F658D00194690 /* OpenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176722A6F658D00194690 /* OpenApp.swift */; };
-		66D176742A6F658D00194690 /* OpenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176722A6F658D00194690 /* OpenApp.swift */; };
 		66D1769A2A6F773300194690 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D176992A6F773300194690 /* WidgetKit.framework */; };
 		66D1769C2A6F773300194690 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D1769B2A6F773300194690 /* SwiftUI.framework */; };
 		66D1769F2A6F773300194690 /* iOSWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1769E2A6F773300194690 /* iOSWidgetBundle.swift */; };
@@ -30,18 +28,19 @@
 		66D176A82A6F773400194690 /* iOSWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 66D176A42A6F773300194690 /* iOSWidget.intentdefinition */; };
 		66D176A92A6F773400194690 /* iOSWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 66D176A42A6F773300194690 /* iOSWidget.intentdefinition */; };
 		66D176AC2A6F773400194690 /* iOSWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 66D176972A6F773300194690 /* iOSWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		66E066772A6E4F8E00BE3751 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5DB2A67D765004AFD1A /* CloudKitManager.swift */; };
+		66D176C72A6FE69500194690 /* FakeLogMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176C62A6FE69500194690 /* FakeLogMemo.swift */; };
+		66D176C92A6FE82300194690 /* SearchTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176C82A6FE82300194690 /* SearchTestView.swift */; };
+		66D176CB2A6FE95E00194690 /* SearchTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176CA2A6FE95E00194690 /* SearchTestViewModel.swift */; };
+		66D176EF2A70036800194690 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176EE2A70036800194690 /* SearchBarView.swift */; };
+		66D176F72A70F4DC00194690 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176F62A70F4DC00194690 /* CalendarView.swift */; };
+		66D176FB2A71452500194690 /* MoveYearMonthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176FA2A71452500194690 /* MoveYearMonthPicker.swift */; };
 		66E0667B2A6E5C9700BE3751 /* LogRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E0667A2A6E5C9700BE3751 /* LogRecordView.swift */; };
 		66E0667D2A6E5CA400BE3751 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E0667C2A6E5CA400BE3751 /* MainTabView.swift */; };
 		66E0667F2A6E5CCE00BE3751 /* LogTitleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E0667E2A6E5CCE00BE3751 /* LogTitleSelectionView.swift */; };
 		66E066812A6E5CDF00BE3751 /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E066802A6E5CDF00BE3751 /* LogListView.swift */; };
 		66E066862A6E632D00BE3751 /* LogTitleSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E066852A6E632D00BE3751 /* LogTitleSelectionViewModel.swift */; };
-		A950B18A2A6FC23400FB9080 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A950B1892A6FC23400FB9080 /* DetailView.swift */; };
 		AF73FA2F2A6A705A00213DBE /* LogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA2E2A6A705A00213DBE /* LogViewModel.swift */; };
 		AF73FA332A6E5E5E00213DBE /* LogMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA322A6E5E5E00213DBE /* LogMemo.swift */; };
-		AF73FA352A6E6B7E00213DBE /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA342A6E6B7E00213DBE /* TempView.swift */; };
-		AF73FA372A6E6B8800213DBE /* TempViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA362A6E6B8800213DBE /* TempViewModel.swift */; };
-		AF73FA392A6EC3F300213DBE /* TempWriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA382A6EC3F300213DBE /* TempWriteView.swift */; };
 		AF73FA3B2A6EEF4900213DBE /* LogOpinion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA3A2A6EEF4900213DBE /* LogOpinion.swift */; };
 		AF73FA3D2A6EF4BE00213DBE /* CloudKitManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA3C2A6EF4BE00213DBE /* CloudKitManagerInterface.swift */; };
 		AF73FA412A6EFB7000213DBE /* CloudKitManager+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA402A6EFB7000213DBE /* CloudKitManager+Create.swift */; };
@@ -104,6 +103,16 @@
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		66D176C12A6FA42F00194690 /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFEFF5D52A67D002004AFD1A /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -118,9 +127,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-
+		66BD95F02A739D65007253F2 /* TempDetail */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TempDetail; sourceTree = "<group>"; };
 		AF0115E32A6FA5830021E462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-
 		AF0115E52A6FE7670021E462 /* 
     .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempDetailView.swift; sourceTree = "<group>"; };
 		AF0115E92A6FE7BE0021E462 /* OpinionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpinionCell.swift; sourceTree = "<group>"; };
@@ -133,7 +141,6 @@
 		66D176582A6F507D00194690 /* FakeEachLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEachLog.swift; sourceTree = "<group>"; };
 		66D1765A2A6F526200194690 /* LogListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListViewModel.swift; sourceTree = "<group>"; };
 		66D1765C2A6F557800194690 /* LogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetailView.swift; sourceTree = "<group>"; };
-		66D176722A6F658D00194690 /* OpenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenApp.swift; sourceTree = "<group>"; };
 		66D176972A6F773300194690 /* iOSWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iOSWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D176992A6F773300194690 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		66D1769B2A6F773300194690 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -141,7 +148,13 @@
 		66D176A22A6F773300194690 /* iOSOpenAppLockScreenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSOpenAppLockScreenWidget.swift; sourceTree = "<group>"; };
 		66D176A42A6F773300194690 /* iOSWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = iOSWidget.intentdefinition; sourceTree = "<group>"; };
 		66D176A52A6F773400194690 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-
+		66D176A72A6F773400194690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66D176C62A6FE69500194690 /* FakeLogMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLogMemo.swift; sourceTree = "<group>"; };
+		66D176C82A6FE82300194690 /* SearchTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTestView.swift; sourceTree = "<group>"; };
+		66D176CA2A6FE95E00194690 /* SearchTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTestViewModel.swift; sourceTree = "<group>"; };
+		66D176EE2A70036800194690 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		66D176F62A70F4DC00194690 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		66D176FA2A71452500194690 /* MoveYearMonthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveYearMonthPicker.swift; sourceTree = "<group>"; };
 		66E0667A2A6E5C9700BE3751 /* LogRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRecordView.swift; sourceTree = "<group>"; };
 		66E0667C2A6E5CA400BE3751 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		66E0667E2A6E5CCE00BE3751 /* LogTitleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTitleSelectionView.swift; sourceTree = "<group>"; };
@@ -153,9 +166,6 @@
 
 		AF73FA2E2A6A705A00213DBE /* LogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModel.swift; sourceTree = "<group>"; };
 		AF73FA322A6E5E5E00213DBE /* LogMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMemo.swift; sourceTree = "<group>"; };
-		AF73FA342A6E6B7E00213DBE /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
-		AF73FA362A6E6B8800213DBE /* TempViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewModel.swift; sourceTree = "<group>"; };
-		AF73FA382A6EC3F300213DBE /* TempWriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempWriteView.swift; sourceTree = "<group>"; };
 		AF73FA3A2A6EEF4900213DBE /* LogOpinion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOpinion.swift; sourceTree = "<group>"; };
 		AF73FA3C2A6EF4BE00213DBE /* CloudKitManagerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManagerInterface.swift; sourceTree = "<group>"; };
 		AF73FA402A6EFB7000213DBE /* CloudKitManager+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKitManager+Create.swift"; sourceTree = "<group>"; };
@@ -220,7 +230,7 @@
 				AF37212B2A710C31007DC9B0 /* DetailLogView.swift */,
 			);
 			path = TempDetail;
-
+    };
 		66D176512A6E984B00194690 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,14 +274,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		66D176712A6F651A00194690 /* AppIntents */ = {
-			isa = PBXGroup;
-			children = (
-				66D176722A6F658D00194690 /* OpenApp.swift */,
-			);
-			path = AppIntents;
-			sourceTree = "<group>";
-		};
 		66D176982A6F773300194690 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +293,19 @@
 				66D176A72A6F773400194690 /* Info.plist */,
 			);
 			path = iOSWidget;
+			sourceTree = "<group>";
+		};
+		66D176C52A6FE65900194690 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				66D176C62A6FE69500194690 /* FakeLogMemo.swift */,
+				66D176CA2A6FE95E00194690 /* SearchTestViewModel.swift */,
+				66D176C82A6FE82300194690 /* SearchTestView.swift */,
+				66D176EE2A70036800194690 /* SearchBarView.swift */,
+				66D176F62A70F4DC00194690 /* CalendarView.swift */,
+				66D176FA2A71452500194690 /* MoveYearMonthPicker.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		66E066702A6E4D1100BE3751 /* Model */ = {
@@ -342,9 +357,6 @@
 			children = (
 				AFEFF5D82A67D112004AFD1A /* LogView.swift */,
 				AFE38E9F2A683B0500B4FF9E /* LogCell.swift */,
-				AF73FA342A6E6B7E00213DBE /* TempView.swift */,
-				AF73FA362A6E6B8800213DBE /* TempViewModel.swift */,
-				AF73FA382A6EC3F300213DBE /* TempWriteView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -420,6 +432,8 @@
 		AFEFF5AB2A67CFD3004AFD1A /* DetectiveLog */ = {
 			isa = PBXGroup;
 			children = (
+				66BD95F02A739D65007253F2 /* TempDetail */,
+				66D176C52A6FE65900194690 /* Search */,
 				AF0115E42A6FC42F0021E462 /* TempDetail */,
 				AF0115E32A6FA5830021E462 /* Info.plist */,
 				A950B1882A6FC15800FB9080 /* Detail */,
@@ -431,7 +445,6 @@
 				AFEFF5B52A67CFD4004AFD1A /* Assets.xcassets */,
 				AFEFF5B72A67CFD4004AFD1A /* DetectiveLog.entitlements */,
 				AFEFF5B02A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld */,
-				66D176712A6F651A00194690 /* AppIntents */,
 				AFEFF5B82A67CFD4004AFD1A /* Preview Content */,
 			);
 			path = DetectiveLog;
@@ -536,6 +549,7 @@
 				AFEFF5C02A67D001004AFD1A /* Sources */,
 				AFEFF5C12A67D001004AFD1A /* Frameworks */,
 				AFEFF5C22A67D001004AFD1A /* Resources */,
+				66D176C12A6FA42F00194690 /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
@@ -600,6 +614,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66BD95F12A739D65007253F2 /* TempDetail in Resources */,
 				AFEFF5BA2A67CFD4004AFD1A /* Preview Assets.xcassets in Resources */,
 				AFEFF5B62A67CFD4004AFD1A /* Assets.xcassets in Resources */,
 			);
@@ -631,6 +646,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66D176FB2A71452500194690 /* MoveYearMonthPicker.swift in Sources */,
 				AF0115F02A7024670021E462 /* DetailLog.swift in Sources */,
 				AF37212C2A710C31007DC9B0 /* DetailLogView.swift in Sources */,
 				AF73FA412A6EFB7000213DBE /* CloudKitManager+Create.swift in Sources */,
@@ -640,23 +656,24 @@
 				AF0115E62A6FE7670021E462 /* TempDetailView.swift in Sources */,
 				AF73FA432A6EFBB300213DBE /* CloudKitManager+Read.swift in Sources */,
 				AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */,
+				66D176C92A6FE82300194690 /* SearchTestView.swift in Sources */,
+				66D176F72A70F4DC00194690 /* CalendarView.swift in Sources */,
+				66D176CB2A6FE95E00194690 /* SearchTestViewModel.swift in Sources */,
 				AF0115EA2A6FE7BE0021E462 /* OpinionCell.swift in Sources */,
 				AF73FA332A6E5E5E00213DBE /* LogMemo.swift in Sources */,
 				AFEFF5DE2A67F436004AFD1A /* Log.swift in Sources */,
-				AF73FA372A6E6B8800213DBE /* TempViewModel.swift in Sources */,
 				AFEFF5D92A67D112004AFD1A /* LogView.swift in Sources */,
 				AF0115EE2A6FE8F50021E462 /* DetailViewModel.swift in Sources */,
 				AFE38EA02A683B0500B4FF9E /* LogCell.swift in Sources */,
 				AF73FA3B2A6EEF4900213DBE /* LogOpinion.swift in Sources */,
 				AF37212E2A710D01007DC9B0 /* MemoCell.swift in Sources */,
 				AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */,
+				66D176C72A6FE69500194690 /* FakeLogMemo.swift in Sources */,
+				66D176EF2A70036800194690 /* SearchBarView.swift in Sources */,
 				66D176A92A6F773400194690 /* iOSWidget.intentdefinition in Sources */,
 				AF773DFB2A69825E00EF9E1D /* CategoryView.swift in Sources */,
-				66D176732A6F658D00194690 /* OpenApp.swift in Sources */,
 				AF73FA2F2A6A705A00213DBE /* LogViewModel.swift in Sources */,
 				AF73FA3D2A6EF4BE00213DBE /* CloudKitManagerInterface.swift in Sources */,
-				AF73FA352A6E6B7E00213DBE /* TempView.swift in Sources */,
-				AF73FA392A6EC3F300213DBE /* TempWriteView.swift in Sources */,
 				AFEFF5DC2A67D765004AFD1A /* CloudKitManager.swift in Sources */,
 				AF73FA472A6EFC2800213DBE /* CloudKitManager+Delete.swift in Sources */,
 			);
@@ -672,14 +689,12 @@
 				66D1765B2A6F526200194690 /* LogListViewModel.swift in Sources */,
 				66D1764E2A6E964200194690 /* Log.swift in Sources */,
 				66D176502A6E97DE00194690 /* FakeLog.swift in Sources */,
-				66E066772A6E4F8E00BE3751 /* CloudKitManager.swift in Sources */,
 				66E0667B2A6E5C9700BE3751 /* LogRecordView.swift in Sources */,
 				66E066862A6E632D00BE3751 /* LogTitleSelectionViewModel.swift in Sources */,
 				66E066812A6E5CDF00BE3751 /* LogListView.swift in Sources */,
 				66E0667F2A6E5CCE00BE3751 /* LogTitleSelectionView.swift in Sources */,
 				66E0667D2A6E5CA400BE3751 /* MainTabView.swift in Sources */,
 				66D1765D2A6F557800194690 /* LogDetailView.swift in Sources */,
-				66D176742A6F658D00194690 /* OpenApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -919,7 +934,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DetectiveLog/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8R3N359429;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -990,7 +1005,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DetectiveLogWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = ULM4SQD73B;
+				DEVELOPMENT_TEAM = 8R3N359429;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = DetectiveLogWatch;
