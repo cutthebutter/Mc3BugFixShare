@@ -40,7 +40,7 @@ struct DetailLogView: View {
                 combineLogCell
                 Rectangle()
                     .fill(.white)
-                    .frame(height: 51)
+                    .frame(height: 55)
             }
             VStack {
                 Spacer()
@@ -103,22 +103,21 @@ struct DetailLogView: View {
             List {
                 ForEach(viewModel.detailLog.indices, id: \.self) { dataIndex in
                     DateCell(detailLog: viewModel.detailLog[dataIndex])
-                    VStack(spacing: 0) {
+//                    VStack(spacing: 0) {
                         ForEach(viewModel.detailLog[dataIndex].logMemo.indices, id: \.self) { memoIndex in
                             MemoCell(logMemo: viewModel.detailLog[dataIndex].logMemo[memoIndex])
+                                .id(viewModel.detailLog[dataIndex].logMemo[memoIndex].id)
                         }
-                    }
+//                    }
                     OpinionCell(logOpinion: viewModel.detailLog[dataIndex].logOpinion)
-                        .id(viewModel.detailLog[dataIndex].logOpinion.id)
+//                        .id(viewModel.detailLog[dataIndex].logOpinion.id)
                 }
                 .listRowInsets(EdgeInsets())
                 .listRowSeparatorTint(.white)
             }
             .listStyle(.plain)
             .onChange(of: viewModel.lastIndex) { _ in
-                withAnimation {
                     list.scrollTo(viewModel.lastIndex)
-                }
             }
         }
     }
@@ -134,17 +133,15 @@ struct DetailLogView: View {
     var bottomBar: some View {
         Rectangle()
             .fill(.white)
-            .frame(height: 85)
+            .frame(height: 82)
             .overlay(alignment: .top) {
                 HStack(alignment: .top, spacing: 0) {
                     Spacer()
                     Button {
                         if let log = viewModel.log {
                             if viewModel.detailLog.isEmpty {
-//                                viewModel.createLogMemo(log: log, memo: "isEmpty", status: .new)
                                 viewModel.createLogMemo(log: log, memo: "isEmpty", status: .new)
                             } else {
-//                                viewModel.createLogMemo(log: log, memo: "isEmpty", status: .exist)
                                 viewModel.createLogMemo(log: log, memo: "isExist", status: .exist)
                             }
                         }
