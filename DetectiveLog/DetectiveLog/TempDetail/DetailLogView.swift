@@ -13,11 +13,20 @@ struct DetailLogView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var isKeyboardVisible: Bool = false
     @State private var logIsEmpty: Bool = false
+    @State var isLocked: Bool = false
+    
+    init(viewModel: DetailViewModel, isLocked: Bool) {
+        self.viewModel = viewModel
+        self.isLocked = isLocked
+    }
     
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
                 title
+                if isLocked {
+                    
+                }
                 if viewModel.detailLog == [] {
                     VStack(alignment: .center) {
                         if !logIsEmpty {
@@ -98,6 +107,10 @@ struct DetailLogView: View {
         
     }
     
+    var faceIdView: some View {
+        
+    }
+    
     var combineLogCell: some View {
         ScrollViewReader { list in
             List {
@@ -118,6 +131,7 @@ struct DetailLogView: View {
             .listStyle(.plain)
             .onChange(of: viewModel.lastIndex) { _ in
                     list.scrollTo(viewModel.lastIndex)
+                
             }
         }
     }
