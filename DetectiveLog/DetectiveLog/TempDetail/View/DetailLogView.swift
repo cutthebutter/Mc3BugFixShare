@@ -18,7 +18,7 @@ struct DetailLogView: View {
     @State var isMenuPresented: Bool = false
     @State var isEditButtonClicked: Bool = false
     @State var isCreatePresented: Bool = false
-    @State var isCreateMemoClicked: Bool = false
+    @State var isCreateButtonClicked: Bool = false
     
     var body: some View {
         ZStack {
@@ -98,36 +98,47 @@ struct DetailLogView: View {
                 viewModel.createLog()
             }
         }
-        .sheet(isPresented: $isMenuPresented) {
+        //        .sheet(isPresented: $isMenuPresented) {
+        //            DetailLogMenuSheet(logMemo: $viewModel.detailLog[viewModel.detailLogIndex].logMemo[viewModel.logMemoIndex],
+        //                               isPresented: $isMenuPresented,
+        //                               isEditButtonClicked: $isEditButtonClicked)
+        //            .presentationDetents([.height(247)])
+        //        }
+        .sheet(isPresented: $isMenuPresented, content: {
             DetailLogMenuSheet(logMemo: $viewModel.detailLog[viewModel.detailLogIndex].logMemo[viewModel.logMemoIndex],
                                isPresented: $isMenuPresented,
                                isEditButtonClicked: $isEditButtonClicked)
             .presentationDetents([.height(247)])
-        }
+        })
         .sheet(isPresented: $isCreatePresented) {
-            LogMemoWriteView(logMemo: $viewModel.detailLog[viewModel.detailLogIndex].logMemo[viewModel.logMemoIndex],
-                             isPresented: $isCreatePresented,
-                             isEditButtonClicked: $isEditButtonClicked,
-                             memo: $viewModel.newMemo)
+            LogWriteSheet(memo: $viewModel.newMemo,
+                          isPresented: Binding.constant(nil),
+                          isFinishButtonClicked: $isCreateButtonClicked)
             .presentationDetents([.height(247)])
         }
-        .onChange(of: isEditButtonClicked) { _ in
-            viewModel.updateLogMemo(logMemo: viewModel.detailLog[viewModel.detailLogIndex].logMemo[viewModel.logMemoIndex])
-            isEditButtonClicked = false
-        }
-        .onChange(of: isCreateMemoClicked) { _ in
+        .onChange(of: isCreateButtonClicked) { _ in
             if let log = viewModel.log {
                 let today = Calendar.current.startOfDay(for: Date())
                 if viewModel.detailLog.contains(where: { $0.date == today }) {
-                    viewModel.createLogMemo(log: log, memo: "isExist", status: .exist)
+                    viewModel.createLogMemo(log: log, memo: viewModel.newMemo, status: .exist)
                     print("@Log create Exist")
                 } else {
-                    viewModel.createLogMemo(log: log, memo: "isEmpty", status: .new)
+                    viewModel.createLogMemo(log: log, memo: viewModel.newMemo, status: .new)
                     print("@Log create New")
                 }
             }
         }
-
+        .onChange(of: isEditButtonClicked) { _ in
+            viewModel.updateLogMemo(logMemo: viewModel.detailLog[viewModel.detailLogIndex].logMemo[viewModel.logMemoIndex])
+        }
+        //        .onChange(of: isEditButtonClicked) { _ in
+        //            viewModel.updateLogMemo(logMemo: viewModel.detailLog[viewModel.detailLogIndex].logMemo[viewModel.logMemoIndex])
+        //            isEditButtonClicked = false
+        //        }
+        //        .onChange(of: isCreateMemoClicked) { _ in
+        
+        //        }
+        
     }
     
     var title: some View {
@@ -208,18 +219,7 @@ struct DetailLogView: View {
                 HStack(alignment: .top, spacing: 0) {
                     Spacer()
                     Button {
-                        if let log = viewModel.log {
-                            let today = Calendar.current.startOfDay(for: Date())
-                            if viewModel.detailLog.contains(where: { $0.date == today }) {
-                                viewModel.createLogMemo(log: log, memo: "isExist", status: .exist)
-                                print("@Log create Exist")
-                            } else {
-                                viewModel.createLogMemo(log: log, memo: "isEmpty", status: .new)
-                                print("@Log create New")
-                                
-                            }
-                        }
-//                        self.isCreatePresented.toggle()
+                        self.isCreatePresented.toggle()
                     } label: {
                         Text("단서추가")
                             .font(.custom("AppleSDGothicNeo-SemiBold", size: 20))
