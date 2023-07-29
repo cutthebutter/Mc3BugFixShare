@@ -12,25 +12,39 @@ import SwiftUI
 class FaceIDManager {
     
     let cloudKitManager = CloudKitManager.shared
-
-    func authenticate(log: Log) {
-        print("@Log authenticate - \(log)")
+    
+    enum AuthCase {
+        case updateAuth(log: Log, completion: (Int) -> ())
+        case detailAuth(completion: (Bool) -> ())
+    }
+    
+    func authenticate(authCase: AuthCase) {
         let context = LAContext()
         var error: NSError?
-        // password 제외 생체인증(FaceID, 지문인증)
+        
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "메모를 잠그기 위해서는 생체인증이 필요합니다."
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, error in
-                if success {
-                    if log.isLocked == 0 {
-                        self.cloudKitManager.updateLogRecordIsLocked(log: log, isLocked: 1)
+            switch authCase {
+            case .updateAuth(let log, let completion):
+                let reason = "메모를 잠그기 위해서는 생체인증이 필요합니다."
+                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, error in
+                    if success {
+                        self.cloudKitManager.updateLogRecordIsLocked(log: log, isLocked: log.isLocked == 0 ? 1 : 0)
+                        completion(log.isLocked == 0 ? 1 : 0)
+                    }
+                }
+            case .detailAuth(let completion):
+                let reason = "잠겨있는 메모를 확인하기 위해서는 생체인증이 필요합니다."
+                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, error in
+                    if success {
+                        completion(success)
                     } else {
-                        self.cloudKitManager.updateLogRecordIsLocked(log: log, isLocked: 0)
+                        completion(false)
                     }
                 }
             }
-        } else {
-            print("생체인증을 하지 않아요")
         }
     }
+    
 }
+
+
