@@ -10,10 +10,14 @@ import Foundation
 final class DetailViewModel: ObservableObject {
     
     let cloudKitManager = CloudKitManager.shared
+    let faceIdManager = FaceIDManager()
     let logCount: Int
     
-    @Published var log: Log?
     @Published var detailLog: [DetailLog] = []
+    @Published var log: Log?
+    @Published var detailLogIndex = 0
+    @Published var logMemoIndex = 0
+    @Published var newMemo = ""
     var lastIndex: UUID?
     
     init(log: Log?, logCount: Int) {
@@ -58,6 +62,10 @@ final class DetailViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    func updateLogMemo(logMemo: LogMemo) {
+        cloudKitManager.updateLogMemoRecord(logMemo: logMemo)
     }
     
     func createLogMemo(log: Log, memo: String, status: MemoStatus) {
@@ -134,9 +142,13 @@ final class DetailViewModel: ObservableObject {
                 }
             }
             self.lastIndex = self.detailLog.last?.logMemo.last?.id
-            
         }
-        
+    }
+    
+    func detailLogIsLocked(_ completion: @escaping ((Bool) -> ())) {
+        faceIdManager.authenticate(authCase: .detailAuth(completion: { bool in
+            completion(bool)
+        }))
     }
     
 }
