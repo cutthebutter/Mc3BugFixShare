@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CloudKit
+import LocalAuthentication
 
 @available(iOS 16.0, *)
 struct LogView: View {
@@ -17,6 +18,7 @@ struct LogView: View {
     @State var selection = 0
     @State var multiSelection = Set<UUID>()
     var category = ["진행 중", "완결", "미완결"]
+    let faceIDManager = FaceIDManager()
     
     @ObservedObject var viewModel = LogViewModel()
     
@@ -39,7 +41,6 @@ struct LogView: View {
                 default:
                     Text("Error Occured")
                 }
-
                 Spacer()
 
             }
@@ -51,7 +52,7 @@ struct LogView: View {
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button {
-                        print("Text")
+//                        faceIDManager.authenticate(log: viewModel.log[2])
                     } label: {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.black)
@@ -163,20 +164,27 @@ struct LogView: View {
 
     func logList(category: LogCategory) -> some View {
         return List(selection: $multiSelection) {
-            ForEach(viewModel.log) { log in
-                if log.category == category {
+            ForEach(viewModel.log.indices, id: \.self) { index in
+                if viewModel.log[index].category == category {
                     ZStack {
                         NavigationLink {
-                            DetailLogView(viewModel: DetailViewModel(log: log, logCount: viewModel.log.count))
+                            // 사건일지가 잠겼을 때, faceID로 true를 반환받은 후에야 뷰를 띄워줘야 함. 어떻게?
+                            if viewModel.log[index].isLocked == 1 {
+                                DetailLogView(viewModel: DetailViewModel(log: viewModel.log[index],
+                                                                         logCount: viewModel.log.count), isLocked: true)
+                            } else {
+                                DetailLogView(viewModel: DetailViewModel(log: viewModel.log[index],
+                                                                         logCount: viewModel.log.count), isLocked: false)
+                            }
                         } label: {
                             EmptyView()
                         }
                         .opacity(0)
-                        LogCell(log: log)
+                        LogCell(log: viewModel.log[index])
                             .contextMenu {
-                                setPinnedButton(log: log)
-                                categoryChangeButton(log: log)
-                                contextMenuItems
+                                setPinnedButton(log: viewModel.log[index])
+                                categoryChangeButton(log: viewModel.log[index])
+                                isLockedButton(log: viewModel.log[index])
                             }
                     }
                     .listRowInsets(EdgeInsets())
@@ -207,6 +215,14 @@ struct LogView: View {
         }
     }
     
+    func isLockedButton(log: Log) -> some View {
+        return Button {
+            viewModel.updateIsLocked(selectedLog: log)
+        } label: {
+            Text("메모 잠그기")
+        }
+    }
+    
     var contextMenuItems: some View {
         Group {
             Button {
@@ -216,6 +232,8 @@ struct LogView: View {
             }
         }
     }
+    
+
     
 }
 
