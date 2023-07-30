@@ -32,18 +32,20 @@ extension CloudKitManager {
         }
     }
     
-    func createLogMemoRecord(log: Log, logMemo: LogMemo) {
-        guard let logId = log.recordId else { return }
+    // 
+    func createLogMemoRecord(log: Log, logMemo: LogMemo) async -> CKRecord.ID? {
+        guard let logId = log.recordId else { return nil }
         let record = CKRecord(recordType: "LogMemo")
         record.setValue(CKRecord.Reference(recordID: logId, action: .none), forKey: "id") // 데이터 연관을 위함.
         record.setValue(logMemo.memo, forKey: "memo")
         record.setValue(logMemo.logMemoDate, forKey: "logMemoDate")
         record.setValue(logMemo.createdAt, forKey: "createdAt")
-        container.save(record) { record, error in
-            if let error = error {
-                print("@Log createLogMemoRecord Error - \(error.localizedDescription)")
-            }
-            print("@Log createLogMemoRecord 완료!")
+        do {
+            let saveRecord = try await container.save(record)
+            return saveRecord.recordID
+        } catch {
+            print("@Log createLogMemoRecord - \(error.localizedDescription)")
+            return nil
         }
     }
     
