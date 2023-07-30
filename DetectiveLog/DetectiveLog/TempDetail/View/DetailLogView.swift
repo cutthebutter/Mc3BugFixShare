@@ -19,6 +19,8 @@ struct DetailLogView: View {
     @State var isEditButtonClicked: Bool = false
     @State var isCreatePresented: Bool = false
     @State var isCreateButtonClicked: Bool = false
+    @State var isOpinionPresented: Bool = false
+    @State var isOpinionUpdateButtonClicked: Bool = false
     
     var body: some View {
         ZStack {
@@ -100,17 +102,25 @@ struct DetailLogView: View {
         }
         //MARK: 새로 메모 입력 후 수정 시 안됨. 각각은 된다.. 이유는 모르겠음
         .sheet(isPresented: $isMenuPresented, content: {
-            DetailLogMenuSheet(logMemo: $viewModel.detailLog[viewModel.detailLogIndex].logMemo[viewModel.logMemoIndex],
+            DetailLogMenuSheet(viewModel: viewModel,
+                               logMemo: $viewModel.detailLog[viewModel.detailLogIndex].logMemo[viewModel.logMemoIndex],
                                isPresented: $isMenuPresented,
                                isEditButtonClicked: $isEditButtonClicked)
             .presentationDetents([.height(247)])
         })
         .sheet(isPresented: $isCreatePresented) {
-            LogWriteSheet(memo: $viewModel.newMemo,
+            LogWriteSheet(writeType: .memo, text: $viewModel.newMemo,
                           isPresented: $isCreatePresented,
                           isFinishButtonClicked: $isCreateButtonClicked)
             .presentationDetents([.height(247)])
         }
+        .sheet(isPresented: $isOpinionPresented, content: {
+            LogWriteSheet(writeType: .opinion,
+                          text: $viewModel.detailLog[viewModel.detailLogIndex].logOpinion.opinion,
+                          isPresented: $isOpinionPresented,
+                          isFinishButtonClicked: $isOpinionUpdateButtonClicked)
+            .presentationDetents([.height(247)])
+        })
         // 작성한 메모는 recordID와 referenceId가 없기에 일어나는 일
         .onChange(of: isCreateButtonClicked) { _ in
             if let log = viewModel.log {
@@ -126,6 +136,9 @@ struct DetailLogView: View {
         .onChange(of: isEditButtonClicked) { _ in
             print("@Log is EditButtonClicked")
             viewModel.updateLogMemo(logMemo: viewModel.detailLog[viewModel.detailLogIndex].logMemo[viewModel.logMemoIndex])
+        }
+        .onChange(of: isOpinionUpdateButtonClicked) { _ in
+            
         }
         
     }
@@ -173,13 +186,14 @@ struct DetailLogView: View {
                             .onTapGesture {
                                 viewModel.detailLogIndex = dataIndex
                                 viewModel.logMemoIndex = memoIndex
-                                withAnimation {
-                                    isMenuPresented.toggle()
-                                }
-                                
+                                isMenuPresented.toggle()
                             }
                     }
                     OpinionCell(logOpinion: viewModel.detailLog[dataIndex].logOpinion)
+                        .onTapGesture {
+                            viewModel.detailLogIndex = dataIndex
+                            isOpinionPresented.toggle()
+                        }
                 }
                 .listRowInsets(EdgeInsets())
                 .listRowSeparatorTint(.white)
