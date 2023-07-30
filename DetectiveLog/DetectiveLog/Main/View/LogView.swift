@@ -7,7 +7,9 @@
 
 import SwiftUI
 import CloudKit
+import LocalAuthentication
 
+///MARK: 네비게이션 뷰 전환 후 다시 메인뷰로 돌아왔을 때 뷰가 전체적으로 내려가고, 그 상태에서 다른 뷰로 전환 시 데이터가 안넘어가는 버그가 있음.
 @available(iOS 16.0, *)
 struct LogView: View {
     
@@ -17,6 +19,7 @@ struct LogView: View {
     @State var selection = 0
     @State var multiSelection = Set<UUID>()
     var category = ["진행 중", "완결", "미완결"]
+    let faceIDManager = FaceIDManager()
     
     @ObservedObject var viewModel = LogViewModel()
     
@@ -39,7 +42,6 @@ struct LogView: View {
                 default:
                     Text("Error Occured")
                 }
-
                 Spacer()
 
             }
@@ -51,7 +53,7 @@ struct LogView: View {
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button {
-                        print("Text")
+//                        faceIDManager.authenticate(log: viewModel.log[2])
                     } label: {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.black)
@@ -83,7 +85,9 @@ struct LogView: View {
                 print("@main On Appear")
                 viewModel.fetchLog()
             }
+            .navigationViewStyle(.stack)
         }
+//        .navigationViewStyle(.stack)
     }
     
     //MARK: Title
@@ -118,12 +122,17 @@ struct LogView: View {
     
     var bottomToolbarItem: some View {
         Group {
-            Button("") {
-                print("IIII")
-            }
             NavigationLink {
-                TempDetailView(viewModel: DetailViewModel(log: nil,
-                                                          logCount: viewModel.log.count + 1))
+                EmptyView()
+            } label: {
+                EmptyView()
+            }
+            .opacity(0)
+            
+            NavigationLink {
+                DetailLogView(viewModel:  DetailViewModel(log: nil,
+                                                          logCount: viewModel.log.count + 1),
+                              isLocked: false)
             } label: {
                 Image("write")
                     .foregroundColor(.black)
@@ -163,20 +172,28 @@ struct LogView: View {
 
     func logList(category: LogCategory) -> some View {
         return List(selection: $multiSelection) {
-            ForEach(viewModel.log) { log in
-                if log.category == category {
+            ForEach(viewModel.log.indices, id: \.self) { index in
+                if viewModel.log[index].category == category {
                     ZStack {
                         NavigationLink {
-                            DetailLogView(viewModel: DetailViewModel(log: log, logCount: viewModel.log.count))
+                            // 사건일지가 잠겼을 때, faceID로 true를 반환받은 후에야 뷰를 띄워줘야 함. 어떻게?
+                            if viewModel.log[index].isLocked == 1 {
+                                DetailLogView(viewModel: DetailViewModel(log: viewModel.log[index],
+                                                                         logCount: viewModel.log.count), isLocked: true)
+                            } else {
+                                DetailLogView(viewModel: DetailViewModel(log: viewModel.log[index],
+                                                                         logCount: viewModel.log.count), isLocked: false)
+                            }
                         } label: {
                             EmptyView()
                         }
                         .opacity(0)
-                        LogCell(log: log)
+                        
+                        LogCell(log: viewModel.log[index])
                             .contextMenu {
-                                setPinnedButton(log: log)
-                                categoryChangeButton(log: log)
-                                contextMenuItems
+                                setPinnedButton(log: viewModel.log[index])
+                                categoryChangeButton(log: viewModel.log[index])
+                                isLockedButton(log: viewModel.log[index])
                             }
                     }
                     .listRowInsets(EdgeInsets())
@@ -207,6 +224,14 @@ struct LogView: View {
         }
     }
     
+    func isLockedButton(log: Log) -> some View {
+        return Button {
+            viewModel.updateIsLocked(selectedLog: log)
+        } label: {
+            Text("메모 잠그기")
+        }
+    }
+    
     var contextMenuItems: some View {
         Group {
             Button {
@@ -216,6 +241,8 @@ struct LogView: View {
             }
         }
     }
+    
+
     
 }
 

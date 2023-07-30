@@ -10,6 +10,7 @@ import Foundation
 final class LogViewModel: ObservableObject {
     
     let cloudKitManager = CloudKitManager.shared
+    let faceIdManager = FaceIDManager()
     
     //AppIntents, Shortcuts을 위한 코드
     static let shared = LogViewModel()
@@ -53,6 +54,15 @@ final class LogViewModel: ObservableObject {
         log.sort(by: { $0.createdAt > $1.createdAt })
         // 고정된 메모 상단으로 정렬(내림차순-최신순)
         log.sort { $0.isPinned > $1.isPinned }
+    }
+    
+    func updateIsLocked(selectedLog: Log) {
+        guard let changeIndex = log.firstIndex(where: { $0.id == selectedLog.id }) else { return }
+        faceIdManager.authenticate(authCase: .updateAuth(log: selectedLog) { [weak self] isLocked in
+            DispatchQueue.main.async {
+                self?.log[changeIndex].isLocked = isLocked
+            }
+        })
     }
     
 }

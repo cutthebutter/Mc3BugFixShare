@@ -48,7 +48,10 @@
 		AF73FA452A6EFBF300213DBE /* CloudKitManager+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA442A6EFBF300213DBE /* CloudKitManager+Update.swift */; };
 		AF73FA472A6EFC2800213DBE /* CloudKitManager+Delete.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA462A6EFC2800213DBE /* CloudKitManager+Delete.swift */; };
 		AF773DFB2A69825E00EF9E1D /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF773DFA2A69825E00EF9E1D /* CategoryView.swift */; };
+		AF967B842A730C1300CB5786 /* FaceIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF967B832A730C1300CB5786 /* FaceIDManager.swift */; };
 		AFE38EA02A683B0500B4FF9E /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE38E9F2A683B0500B4FF9E /* LogCell.swift */; };
+		AFEB5CB22A754D8F00F53EFD /* LogWriteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEB5CB12A754D8F00F53EFD /* LogWriteSheet.swift */; };
+		AFEB5CB42A7556AE00F53EFD /* DetailLogMenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEB5CB32A7556AE00F53EFD /* DetailLogMenuSheet.swift */; };
 		AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */; };
 		AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5AE2A67CFD3004AFD1A /* Persistence.swift */; };
 		AFEFF5B22A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5B02A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld */; };
@@ -173,7 +176,10 @@
 		AF73FA442A6EFBF300213DBE /* CloudKitManager+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKitManager+Update.swift"; sourceTree = "<group>"; };
 		AF73FA462A6EFC2800213DBE /* CloudKitManager+Delete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKitManager+Delete.swift"; sourceTree = "<group>"; };
 		AF773DFA2A69825E00EF9E1D /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		AF967B832A730C1300CB5786 /* FaceIDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIDManager.swift; sourceTree = "<group>"; };
 		AFE38E9F2A683B0500B4FF9E /* LogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
+		AFEB5CB12A754D8F00F53EFD /* LogWriteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogWriteSheet.swift; sourceTree = "<group>"; };
+		AFEB5CB32A7556AE00F53EFD /* DetailLogMenuSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLogMenuSheet.swift; sourceTree = "<group>"; };
 		AFEFF5A92A67CFD3004AFD1A /* DetectiveLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DetectiveLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectiveLogApp.swift; sourceTree = "<group>"; };
 		AFEFF5AE2A67CFD3004AFD1A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -222,12 +228,9 @@
 		AF0115E42A6FC42F0021E462 /* TempDetail */ = {
 			isa = PBXGroup;
 			children = (
-				AF0115E52A6FE7670021E462 /* TempDetailView.swift */,
-				AF37212F2A7113E8007DC9B0 /* DateCell.swift */,
-				AF37212D2A710D01007DC9B0 /* MemoCell.swift */,
-				AF0115E92A6FE7BE0021E462 /* OpinionCell.swift */,
-				AF0115ED2A6FE8F50021E462 /* DetailViewModel.swift */,
-				AF37212B2A710C31007DC9B0 /* DetailLogView.swift */,
+				AFD538FE2A758AE0008E9BB7 /* ViewModel */,
+				AFD538FD2A758ADC008E9BB7 /* Model */,
+				AFD538FC2A758AD9008E9BB7 /* View */,
 			);
 			path = TempDetail;
     };
@@ -408,6 +411,59 @@
 			path = Implementation;
 			sourceTree = "<group>";
 		};
+		AF967B822A730C0600CB5786 /* FaceID */ = {
+			isa = PBXGroup;
+			children = (
+				AF967B832A730C1300CB5786 /* FaceIDManager.swift */,
+			);
+			path = FaceID;
+			sourceTree = "<group>";
+		};
+		AFD538FC2A758AD9008E9BB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AF37212B2A710C31007DC9B0 /* DetailLogView.swift */,
+				AFD539002A758B42008E9BB7 /* Sheet */,
+				AFD538FF2A758AFD008E9BB7 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AFD538FD2A758ADC008E9BB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AFD538FE2A758AE0008E9BB7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AF0115E52A6FE7670021E462 /* TempDetailView.swift */,
+				AF0115ED2A6FE8F50021E462 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AFD538FF2A758AFD008E9BB7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AF37212F2A7113E8007DC9B0 /* DateCell.swift */,
+				AF37212D2A710D01007DC9B0 /* MemoCell.swift */,
+				AF0115E92A6FE7BE0021E462 /* OpinionCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		AFD539002A758B42008E9BB7 /* Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				AFEB5CB32A7556AE00F53EFD /* DetailLogMenuSheet.swift */,
+				AFEB5CB12A754D8F00F53EFD /* LogWriteSheet.swift */,
+			);
+			path = Sheet;
+			sourceTree = "<group>";
+		};
 		AFEFF5A02A67CFD3004AFD1A = {
 			isa = PBXGroup;
 			children = (
@@ -432,6 +488,7 @@
 		AFEFF5AB2A67CFD3004AFD1A /* DetectiveLog */ = {
 			isa = PBXGroup;
 			children = (
+				AF967B822A730C0600CB5786 /* FaceID */,
 				66BD95F02A739D65007253F2 /* TempDetail */,
 				66D176C52A6FE65900194690 /* Search */,
 				AF0115E42A6FC42F0021E462 /* TempDetail */,
@@ -660,6 +717,8 @@
 				66D176F72A70F4DC00194690 /* CalendarView.swift in Sources */,
 				66D176CB2A6FE95E00194690 /* SearchTestViewModel.swift in Sources */,
 				AF0115EA2A6FE7BE0021E462 /* OpinionCell.swift in Sources */,
+				AF967B842A730C1300CB5786 /* FaceIDManager.swift in Sources */,
+				AFEB5CB42A7556AE00F53EFD /* DetailLogMenuSheet.swift in Sources */,
 				AF73FA332A6E5E5E00213DBE /* LogMemo.swift in Sources */,
 				AFEFF5DE2A67F436004AFD1A /* Log.swift in Sources */,
 				AFEFF5D92A67D112004AFD1A /* LogView.swift in Sources */,
@@ -676,6 +735,7 @@
 				AF73FA3D2A6EF4BE00213DBE /* CloudKitManagerInterface.swift in Sources */,
 				AFEFF5DC2A67D765004AFD1A /* CloudKitManager.swift in Sources */,
 				AF73FA472A6EFC2800213DBE /* CloudKitManager+Delete.swift in Sources */,
+				AFEB5CB22A754D8F00F53EFD /* LogWriteSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

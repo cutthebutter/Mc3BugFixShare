@@ -12,7 +12,7 @@ protocol CloudKitManagerInterface {
     
     //MARK: Create
     func createLogRecord(log: Log, _ completion: @escaping ((CKRecord.ID) -> ()))
-    func createLogMemoRecord(log: Log, logMemo: LogMemo)
+    func createLogMemoRecord(log: Log, logMemo: LogMemo) async -> CKRecord.ID?
     func createdLogOpinionRecord(log: Log, logOpinion: LogOpinion)
 
     //MARK: Read

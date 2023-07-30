@@ -15,7 +15,7 @@ struct Log: Identifiable, Equatable{
     var title: String
     let latestMemo: [String]?
     let isBookmarked: Int // 0 == false <-> 1 == true
-    let isLocked: Int
+    var isLocked: Int
     var isPinned: Int
     let createdAt: Date
     let updatedAt: Date
