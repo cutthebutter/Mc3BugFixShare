@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CloudKit
 
 final class DetailViewModel: ObservableObject {
     
@@ -18,6 +19,7 @@ final class DetailViewModel: ObservableObject {
     @Published var detailLogIndex = 0
     @Published var logMemoIndex = 0
     @Published var newMemo = ""
+    @Published var editMemo = ""
     var lastIndex: UUID?
     
     init(log: Log?, logCount: Int) {
@@ -65,17 +67,20 @@ final class DetailViewModel: ObservableObject {
     }
     
     func updateLogMemo(logMemo: LogMemo) {
+        print("@Log updateLogMemo - \(logMemo)")
         cloudKitManager.updateLogMemoRecord(logMemo: logMemo)
     }
     
-    func createLogMemo(log: Log, memo: String, status: MemoStatus) {
-        let logMemo = LogMemo(id: UUID(),
+    func createLogMemo(log: Log, memo: String, status: MemoStatus) async {
+        guard let referenceId = log.recordId else { return }
+        var logMemo = LogMemo(id: UUID(),
                               recordId: nil,
-                              referenceId: nil,
+                              referenceId: CKRecord.Reference(recordID: referenceId, action: .none),
                               memo: memo,
                               logMemoDate: Date(),
                               createdAt: Date())
-        cloudKitManager.createLogMemoRecord(log: log, logMemo: logMemo)
+        let newLogMemo = await cloudKitManager.createLogMemoRecord(log: log, logMemo: logMemo)
+        logMemo.recordId = newLogMemo
         let today = Calendar.current.startOfDay(for: Date())
         
         switch status {
@@ -89,7 +94,7 @@ final class DetailViewModel: ObservableObject {
             detailLog.append(newDetailLog)
         case .exist:
             if let index = detailLog.firstIndex(where: { $0.date == today }) {
-                // 이미 오늘 날짜와 같은 데이터가 있으면 해당 데이터에 logMemo를 추가합니다.
+
                 detailLog[index].logMemo.append(logMemo)
             }
         }
