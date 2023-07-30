@@ -12,6 +12,8 @@ struct DetailLogMenuSheet: View {
     
     @Environment(\.dismiss) var dismiss
     @State var isEditPresented: Bool = false
+    
+    @ObservedObject var viewModel: DetailViewModel
     @Binding var logMemo: LogMemo
     @Binding var isPresented: Bool
     @Binding var isEditButtonClicked: Bool
@@ -27,15 +29,21 @@ struct DetailLogMenuSheet: View {
             }
             HStack(spacing: 0 ) {
                 Button {
-                    
+                    if let log = viewModel.log {
+                        Task {
+                            await viewModel.deleteLogMemo(log: log, logMemo: logMemo)
+                        }
+                    }
+                    isPresented.toggle()
                 } label: {
                     Text("삭제하기")
                 }
             }
         }
         .sheet(isPresented: $isEditPresented, content: {
-            LogWriteSheet(memo: $logMemo.memo,
-                          isPresented: Binding.constant(isPresented),
+            LogWriteSheet(writeType: .memo,
+                          text: $logMemo.memo,
+                          isPresented: $isPresented,
                           isFinishButtonClicked: $isEditButtonClicked)
             .presentationDetents([.height(247)])
         })
