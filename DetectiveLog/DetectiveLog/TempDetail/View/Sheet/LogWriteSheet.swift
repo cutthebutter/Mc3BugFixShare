@@ -9,35 +9,26 @@ import SwiftUI
 
 struct LogWriteSheet: View {
     
-//    @State var existLogMemo: String = ""
+    @State var existLogMemo: String = ""
     @Environment(\.dismiss) var dismiss
     @Binding var memo: String
-    @Binding var isPresented: Bool? //  수정 화면을 같이 내려주기 위함
+    @Binding var isPresented: Bool //  수정 화면을 같이 내려주기 위함
     @Binding var isFinishButtonClicked: Bool
-
     
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
                 Button {
-                    if isPresented != nil {
-                        isPresented?.toggle()
-                    }
-                    dismiss()
+                    memo = existLogMemo
+                    isPresented.toggle()
                 } label: {
                     Text("취소")
                 }
                 .padding(.leading, 20)
                 Spacer()
                 Button {
-                    if isPresented != nil {
-                        isPresented?.toggle()
-                    } else {
-                        isFinishButtonClicked.toggle()
-                    }
-                    dismiss()
-                    // "" 일 경우 뭐싯기?
-                    
+                    isPresented.toggle()
+                    isFinishButtonClicked.toggle()
                 } label: {
                     Text("완료")
                 }
@@ -67,29 +58,18 @@ struct LogWriteSheet: View {
                             .font(.custom("AppleSDGothicNeo", size: 14))
                             .padding(.horizontal, 20)
                             .padding(.vertical, 2)
-//                        switch status {
-//                        case .new:
-
-//                        case .exist:
-//                            TextEditor(text: $logMemo.memo)
-//                                .font(.custom("AppleSDGothicNeo", size: 14))
-//                                .padding(.horizontal, 20)
-//                                .padding(.vertical, 2)
-//                        }
-                        
                     }
             }
             Spacer()
         }
         .onAppear {
-            print("@Log isPresented - \(isPresented)")
-//            existLogMemo = logMemo.memo
+            existLogMemo = memo
         }
     }
     
     func dateToTime(date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:MM"
+        dateFormatter.dateFormat = "HH:mm"
         return dateFormatter.string(from: date)
     }
 }
