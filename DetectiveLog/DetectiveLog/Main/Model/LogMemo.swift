@@ -11,7 +11,7 @@ import CloudKit
 struct LogMemo: Identifiable, Hashable {
     
     let id: UUID
-    let recordId: CKRecord.ID?
+    var recordId: CKRecord.ID?
     let referenceId: CKRecord.Reference?
     var memo: String
     let logMemoDate: Date
