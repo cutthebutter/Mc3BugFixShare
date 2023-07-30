@@ -27,15 +27,6 @@ final class DetailViewModel: ObservableObject {
         self.logCount = logCount
     }
     
-//    func fetchMemo(log: Log) {
-//        Task {
-//            do {
-//                let logMemo = await cloudKitManager.fetchMemoRecord(log: log)
-//                print("@Log temp2 - \(logMemo)")
-//            }
-//        }
-//    }
-    
     func fetchLogData(log: Log) async {
         let logMemo = await LogMemo.fetchLogMemoRecord(log: log)
         let logOpinion = await LogOpinion.fetchLogOpinion(log: log)
@@ -71,6 +62,7 @@ final class DetailViewModel: ObservableObject {
         cloudKitManager.updateLogMemoRecord(logMemo: logMemo)
     }
     
+    @MainActor
     func createLogMemo(log: Log, memo: String, status: MemoStatus) async {
         guard let referenceId = log.recordId else { return }
         var logMemo = LogMemo(id: UUID(),
@@ -82,19 +74,19 @@ final class DetailViewModel: ObservableObject {
         let newLogMemo = await cloudKitManager.createLogMemoRecord(log: log, logMemo: logMemo)
         logMemo.recordId = newLogMemo
         let today = Calendar.current.startOfDay(for: Date())
-        
+
         switch status {
         case .new:
-            let logOpinion = LogOpinion(id: UUID(), recordId: nil, referenceId: nil, opinion: "개인 사견을 적어주세요.", createdAt: Date())
+            let logOpinion = LogOpinion(id: UUID(), recordId: nil, referenceId: nil, opinion: "", createdAt: Date())
             cloudKitManager.createdLogOpinionRecord(log: log, logOpinion: logOpinion)
             let newDetailLog = DetailLog(id: UUID(),
                                               date: today,
                                               logMemo: [logMemo],
                                               logOpinion: logOpinion)
             detailLog.append(newDetailLog)
+            
         case .exist:
             if let index = detailLog.firstIndex(where: { $0.date == today }) {
-
                 detailLog[index].logMemo.append(logMemo)
             }
         }
@@ -113,7 +105,12 @@ final class DetailViewModel: ObservableObject {
                                         updatedAt: Date())
         
         lastIndex = detailLog.last?.logMemo.last?.id
-//        lastIndex = detailLog.last?.logOpinion.id
+    }
+    
+    //MARK: 데이터 패치하지 않고, 배열에서 pop하는 방식을 채택할 예정
+    func deleteLogMemo(log: Log, logMemo: LogMemo) async {
+        await cloudKitManager.deleteLogMemoRecord(logMemo: logMemo)
+        await fetchLogData(log: log)
     }
     
     func arrayToDictionary(logMemo: [LogMemo],
