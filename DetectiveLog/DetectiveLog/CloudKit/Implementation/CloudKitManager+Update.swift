@@ -128,7 +128,7 @@ extension CloudKitManager {
                 }
                 return
             }
-            record["logMemo"] = logMemo.memo
+            record["memo"] = logMemo.memo
             self.container.save(record) { record, error in
                 if let error = error {
                     print("@Log updateLogMemoRecord - \(error.localizedDescription)")
