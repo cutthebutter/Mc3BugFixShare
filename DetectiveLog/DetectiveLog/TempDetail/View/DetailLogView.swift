@@ -98,12 +98,7 @@ struct DetailLogView: View {
                 viewModel.createLog()
             }
         }
-        //        .sheet(isPresented: $isMenuPresented) {
-        //            DetailLogMenuSheet(logMemo: $viewModel.detailLog[viewModel.detailLogIndex].logMemo[viewModel.logMemoIndex],
-        //                               isPresented: $isMenuPresented,
-        //                               isEditButtonClicked: $isEditButtonClicked)
-        //            .presentationDetents([.height(247)])
-        //        }
+        //MARK: 새로 메모 입력 후 수정 시 안됨. 각각은 된다.. 이유는 모르겠음
         .sheet(isPresented: $isMenuPresented, content: {
             DetailLogMenuSheet(logMemo: $viewModel.detailLog[viewModel.detailLogIndex].logMemo[viewModel.logMemoIndex],
                                isPresented: $isMenuPresented,
@@ -112,32 +107,26 @@ struct DetailLogView: View {
         })
         .sheet(isPresented: $isCreatePresented) {
             LogWriteSheet(memo: $viewModel.newMemo,
-                          isPresented: Binding.constant(nil),
+                          isPresented: $isCreatePresented,
                           isFinishButtonClicked: $isCreateButtonClicked)
             .presentationDetents([.height(247)])
         }
+        // 작성한 메모는 recordID와 referenceId가 없기에 일어나는 일
         .onChange(of: isCreateButtonClicked) { _ in
             if let log = viewModel.log {
                 let today = Calendar.current.startOfDay(for: Date())
-                if viewModel.detailLog.contains(where: { $0.date == today }) {
-                    viewModel.createLogMemo(log: log, memo: viewModel.newMemo, status: .exist)
-                    print("@Log create Exist")
-                } else {
-                    viewModel.createLogMemo(log: log, memo: viewModel.newMemo, status: .new)
-                    print("@Log create New")
+                Task {
+                    await viewModel.createLogMemo(log: log,
+                                                  memo: viewModel.newMemo,
+                                                  status: viewModel.detailLog.contains(where: { $0.date == today }) ? .exist : .new)
+                    viewModel.newMemo = ""
                 }
             }
         }
         .onChange(of: isEditButtonClicked) { _ in
+            print("@Log is EditButtonClicked")
             viewModel.updateLogMemo(logMemo: viewModel.detailLog[viewModel.detailLogIndex].logMemo[viewModel.logMemoIndex])
         }
-        //        .onChange(of: isEditButtonClicked) { _ in
-        //            viewModel.updateLogMemo(logMemo: viewModel.detailLog[viewModel.detailLogIndex].logMemo[viewModel.logMemoIndex])
-        //            isEditButtonClicked = false
-        //        }
-        //        .onChange(of: isCreateMemoClicked) { _ in
-        
-        //        }
         
     }
     
