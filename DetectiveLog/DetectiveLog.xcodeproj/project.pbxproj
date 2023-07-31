@@ -154,9 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				AFEFF5DD2A67F436004AFD1A /* Log.swift */,
-				AF73FA322A6E5E5E00213DBE /* LogMemo.swift */,
-				AF73FA3A2A6EEF4900213DBE /* LogOpinion.swift */,
-				AF0115EF2A7024670021E462 /* DetailLog.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +207,9 @@
 		AFD538FD2A758ADC008E9BB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AF73FA322A6E5E5E00213DBE /* LogMemo.swift */,
+				AF73FA3A2A6EEF4900213DBE /* LogOpinion.swift */,
+				AF0115EF2A7024670021E462 /* DetailLog.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -265,13 +265,13 @@
 			children = (
 				AF967B822A730C0600CB5786 /* FaceID */,
 				AF0115E42A6FC42F0021E462 /* TempDetail */,
-				AF0115E32A6FA5830021E462 /* Info.plist */,
 				AF73FA302A6C25FE00213DBE /* Category */,
 				AFEFF5DA2A67D757004AFD1A /* CloudKit */,
 				AFEFF5D62A67D0B9004AFD1A /* Main */,
 				AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */,
 				AFEFF5AE2A67CFD3004AFD1A /* Persistence.swift */,
 				AFEFF5B52A67CFD4004AFD1A /* Assets.xcassets */,
+				AF0115E32A6FA5830021E462 /* Info.plist */,
 				AFEFF5B72A67CFD4004AFD1A /* DetectiveLog.entitlements */,
 				AFEFF5B02A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld */,
 				AFEFF5B82A67CFD4004AFD1A /* Preview Content */,
