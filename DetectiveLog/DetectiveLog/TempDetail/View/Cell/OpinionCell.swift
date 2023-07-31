@@ -20,7 +20,7 @@ struct OpinionCell: View {
                 .foregroundColor(.gray)
                 .padding(.leading, 28)
 
-            Text(logOpinion.opinion)
+            Text(logOpinion.opinion.isEmpty ? "개인 사견을 적어주세요." : logOpinion.opinion)
                 .font(.custom("AppleSDGothicNeo-Medium", size: 14))
                 .foregroundColor(Color(red: 193 / 255, green: 205 / 255, blue: 225 / 255))
                 .padding(.leading, 40)

@@ -20,4 +20,17 @@ extension CloudKitManager {
             print("@Log - \(log.title) 삭제 완료!")
         }
     }
+    
+    
+    /// func deleteLogMemoRecord: CloudKit Database에서 LogMemo Record를 삭제합니다.
+    /// - Parameter: Log
+    func deleteLogMemoRecord(logMemo: LogMemo) async {
+        guard let recordId = logMemo.recordId else { return }
+        do {
+            let deleteRecord = try await container.deleteRecord(withID: recordId)
+        } catch {
+            print("@Log deleteLogMemoRecord Error - \(error.localizedDescription)")
+        }
+    }
+    
 }

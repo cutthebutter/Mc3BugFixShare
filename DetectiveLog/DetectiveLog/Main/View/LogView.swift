@@ -87,7 +87,6 @@ struct LogView: View {
             }
             .navigationViewStyle(.stack)
         }
-//        .navigationViewStyle(.stack)
     }
     
     //MARK: Title
@@ -115,7 +114,6 @@ struct LogView: View {
         }
         .pickerStyle(.segmented)
         .padding(.horizontal, 20)
-//        .padding()
     }
     
     //MARK: Bottom Toolbar - 바텀 툴바. 디폴트 & Editing시 Bottom Toolbar
@@ -130,7 +128,7 @@ struct LogView: View {
             .opacity(0)
             
             NavigationLink {
-                DetailLogView(viewModel:  DetailViewModel(log: nil,
+                DetailLogView(viewModel: DetailViewModel(log: nil,
                                                           logCount: viewModel.log.count + 1),
                               isLocked: false)
             } label: {
@@ -146,9 +144,9 @@ struct LogView: View {
                 viewModel.logForCategoryChange = []
                 for selection in multiSelection {
                     print("@Log - \(selection)")
-                    viewModel.logForCategoryChange.append(
-                        viewModel.log[viewModel.log.firstIndex(where: { $0.id == selection })!]
-                    )
+                    if let index = viewModel.log.firstIndex(where: { $0.id == selection }) {
+                        viewModel.logForCategoryChange.append(viewModel.log[index])
+                    }
                 }
                 self.isPresented.toggle()
             } label: {
@@ -168,32 +166,35 @@ struct LogView: View {
     }
     
     //MARK: Log List - 카테고리 별 리스트
+//        .indices, id: \.self
     /// List EditMode는 ID가 옵셔널일 경우 작동하지 않음. id는 무조건 있어야 함.!
 
     func logList(category: LogCategory) -> some View {
         return List(selection: $multiSelection) {
-            ForEach(viewModel.log.indices, id: \.self) { index in
-                if viewModel.log[index].category == category {
+            ForEach(viewModel.log) { log in
+                if log.category == category {
                     ZStack {
                         NavigationLink {
                             // 사건일지가 잠겼을 때, faceID로 true를 반환받은 후에야 뷰를 띄워줘야 함. 어떻게?
-                            if viewModel.log[index].isLocked == 1 {
-                                DetailLogView(viewModel: DetailViewModel(log: viewModel.log[index],
-                                                                         logCount: viewModel.log.count), isLocked: true)
+                            if log.isLocked == 1 {
+                                DetailLogView(viewModel: DetailViewModel(log: log,
+                                                                         logCount: viewModel.log.count),
+                                              isLocked: true)
                             } else {
-                                DetailLogView(viewModel: DetailViewModel(log: viewModel.log[index],
-                                                                         logCount: viewModel.log.count), isLocked: false)
+                                DetailLogView(viewModel: DetailViewModel(log: log,
+                                                                         logCount: viewModel.log.count),
+                                              isLocked: false)
                             }
                         } label: {
                             EmptyView()
                         }
                         .opacity(0)
                         
-                        LogCell(log: viewModel.log[index])
+                        LogCell(log: log)
                             .contextMenu {
-                                setPinnedButton(log: viewModel.log[index])
-                                categoryChangeButton(log: viewModel.log[index])
-                                isLockedButton(log: viewModel.log[index])
+                                setPinnedButton(log: log)
+                                categoryChangeButton(log: log)
+                                isLockedButton(log: log)
                             }
                     }
                     .listRowInsets(EdgeInsets())
@@ -228,7 +229,7 @@ struct LogView: View {
         return Button {
             viewModel.updateIsLocked(selectedLog: log)
         } label: {
-            Text("메모 잠그기")
+            Text(log.isLocked == 0 ? "메모 잠그기" : "메모 잠금해제")
         }
     }
     
