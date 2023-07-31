@@ -62,6 +62,10 @@ final class DetailViewModel: ObservableObject {
         cloudKitManager.updateLogMemoRecord(logMemo: logMemo)
     }
     
+    func updateLogOpinion(logOpinion: LogOpinion) {
+        cloudKitManager.updateLogOpinionRecord(logOpinion: logOpinion)
+    }
+    
     @MainActor
     func createLogMemo(log: Log, memo: String, status: MemoStatus) async {
         guard let referenceId = log.recordId else { return }
