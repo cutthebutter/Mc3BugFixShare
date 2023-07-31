@@ -24,6 +24,7 @@ struct LogWriteSheet: View {
                     isPresented.toggle()
                 } label: {
                     Text("취소")
+                        .foregroundColor(.gray)
                 }
                 .padding(.leading, 20)
                 Spacer()
@@ -32,6 +33,7 @@ struct LogWriteSheet: View {
                     isFinishButtonClicked.toggle()
                 } label: {
                     Text("완료")
+                        .foregroundColor(.black)
                 }
                 .padding(.trailing, 20)
             }
