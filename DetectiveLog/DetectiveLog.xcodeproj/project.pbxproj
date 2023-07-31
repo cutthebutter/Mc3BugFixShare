@@ -8,14 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		663E38192A756B1C00BDE5DB /* LogRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663E38182A756B1C00BDE5DB /* LogRecordViewModel.swift */; };
-		66BD95F12A739D65007253F2 /* TempDetail in Resources */ = {isa = PBXBuildFile; fileRef = 66BD95F02A739D65007253F2 /* TempDetail */; };
-		AF0115E62A6FE7670021E462 /* TempDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0115E52A6FE7670021E462 /* TempDetailView.swift */; };
-		AF0115EA2A6FE7BE0021E462 /* OpinionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0115E92A6FE7BE0021E462 /* OpinionCell.swift */; };
-		AF0115EE2A6FE8F50021E462 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0115ED2A6FE8F50021E462 /* DetailViewModel.swift */; };
-		AF0115F02A7024670021E462 /* DetailLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0115EF2A7024670021E462 /* DetailLog.swift */; };
-		AF37212C2A710C31007DC9B0 /* DetailLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37212B2A710C31007DC9B0 /* DetailLogView.swift */; };
-		AF37212E2A710D01007DC9B0 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37212D2A710D01007DC9B0 /* MemoCell.swift */; };
-		AF3721302A7113E8007DC9B0 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37212F2A7113E8007DC9B0 /* DateCell.swift */; };
 		66D1764E2A6E964200194690 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5DD2A67F436004AFD1A /* Log.swift */; };
 		66D176592A6F507D00194690 /* FakeEachLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176582A6F507D00194690 /* FakeEachLog.swift */; };
 		66D1765B2A6F526200194690 /* LogListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1765A2A6F526200194690 /* LogListViewModel.swift */; };
@@ -39,9 +31,18 @@
 		66E0667F2A6E5CCE00BE3751 /* LogTitleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E0667E2A6E5CCE00BE3751 /* LogTitleSelectionView.swift */; };
 		66E066812A6E5CDF00BE3751 /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E066802A6E5CDF00BE3751 /* LogListView.swift */; };
 		66E066862A6E632D00BE3751 /* LogTitleSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E066852A6E632D00BE3751 /* LogTitleSelectionViewModel.swift */; };
+		AF0579FE2A779ABA004577E7 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0579EF2A779ABA004577E7 /* DetailViewModel.swift */; };
+		AF0579FF2A779ABA004577E7 /* TempDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0579F02A779ABA004577E7 /* TempDetailView.swift */; };
+		AF057A002A779ABA004577E7 /* DetailLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0579F22A779ABA004577E7 /* DetailLog.swift */; };
+		AF057A012A779ABA004577E7 /* LogOpinion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0579F32A779ABA004577E7 /* LogOpinion.swift */; };
+		AF057A022A779ABA004577E7 /* LogMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0579F42A779ABA004577E7 /* LogMemo.swift */; };
+		AF057A032A779ABA004577E7 /* OpinionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0579F72A779ABA004577E7 /* OpinionCell.swift */; };
+		AF057A042A779ABA004577E7 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0579F82A779ABA004577E7 /* DateCell.swift */; };
+		AF057A052A779ABA004577E7 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0579F92A779ABA004577E7 /* MemoCell.swift */; };
+		AF057A062A779ABA004577E7 /* DetailLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0579FA2A779ABA004577E7 /* DetailLogView.swift */; };
+		AF057A072A779ABA004577E7 /* LogWriteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0579FC2A779ABA004577E7 /* LogWriteSheet.swift */; };
+		AF057A082A779ABA004577E7 /* DetailLogMenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0579FD2A779ABA004577E7 /* DetailLogMenuSheet.swift */; };
 		AF73FA2F2A6A705A00213DBE /* LogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA2E2A6A705A00213DBE /* LogViewModel.swift */; };
-		AF73FA332A6E5E5E00213DBE /* LogMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA322A6E5E5E00213DBE /* LogMemo.swift */; };
-		AF73FA3B2A6EEF4900213DBE /* LogOpinion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA3A2A6EEF4900213DBE /* LogOpinion.swift */; };
 		AF73FA3D2A6EF4BE00213DBE /* CloudKitManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA3C2A6EF4BE00213DBE /* CloudKitManagerInterface.swift */; };
 		AF73FA412A6EFB7000213DBE /* CloudKitManager+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA402A6EFB7000213DBE /* CloudKitManager+Create.swift */; };
 		AF73FA432A6EFBB300213DBE /* CloudKitManager+Read.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA422A6EFBB300213DBE /* CloudKitManager+Read.swift */; };
@@ -50,8 +51,6 @@
 		AF773DFB2A69825E00EF9E1D /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF773DFA2A69825E00EF9E1D /* CategoryView.swift */; };
 		AF967B842A730C1300CB5786 /* FaceIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF967B832A730C1300CB5786 /* FaceIDManager.swift */; };
 		AFE38EA02A683B0500B4FF9E /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE38E9F2A683B0500B4FF9E /* LogCell.swift */; };
-		AFEB5CB22A754D8F00F53EFD /* LogWriteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEB5CB12A754D8F00F53EFD /* LogWriteSheet.swift */; };
-		AFEB5CB42A7556AE00F53EFD /* DetailLogMenuSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEB5CB32A7556AE00F53EFD /* DetailLogMenuSheet.swift */; };
 		AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */; };
 		AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5AE2A67CFD3004AFD1A /* Persistence.swift */; };
 		AFEFF5B22A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5B02A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld */; };
@@ -131,17 +130,6 @@
 
 /* Begin PBXFileReference section */
 		663E38182A756B1C00BDE5DB /* LogRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRecordViewModel.swift; sourceTree = "<group>"; };
-		66BD95F02A739D65007253F2 /* TempDetail */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TempDetail; sourceTree = "<group>"; };
-		AF0115E32A6FA5830021E462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		AF0115E52A6FE7670021E462 /* 
-    .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempDetailView.swift; sourceTree = "<group>"; };
-		AF0115E92A6FE7BE0021E462 /* OpinionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpinionCell.swift; sourceTree = "<group>"; };
-		AF0115ED2A6FE8F50021E462 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		AF0115EF2A7024670021E462 /* DetailLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLog.swift; sourceTree = "<group>"; };
-		AF37212B2A710C31007DC9B0 /* DetailLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLogView.swift; sourceTree = "<group>"; };
-		AF37212D2A710D01007DC9B0 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
-		AF37212F2A7113E8007DC9B0 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
-		66D1764F2A6E97DE00194690 /* FakeLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLog.swift; sourceTree = "<group>"; };
 		66D176582A6F507D00194690 /* FakeEachLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEachLog.swift; sourceTree = "<group>"; };
 		66D1765A2A6F526200194690 /* LogListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListViewModel.swift; sourceTree = "<group>"; };
 		66D1765C2A6F557800194690 /* LogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetailView.swift; sourceTree = "<group>"; };
@@ -166,11 +154,19 @@
 		66E066852A6E632D00BE3751 /* LogTitleSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTitleSelectionViewModel.swift; sourceTree = "<group>"; };
 		66E066872A6E6F0D00BE3751 /* DetectiveLogWatch Watch AppRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DetectiveLogWatch Watch AppRelease.entitlements"; sourceTree = "<group>"; };
 		A950B1892A6FC23400FB9080 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-
-
+		AF0115E32A6FA5830021E462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AF0579EF2A779ABA004577E7 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		AF0579F02A779ABA004577E7 /* TempDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempDetailView.swift; sourceTree = "<group>"; };
+		AF0579F22A779ABA004577E7 /* DetailLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailLog.swift; sourceTree = "<group>"; };
+		AF0579F32A779ABA004577E7 /* LogOpinion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOpinion.swift; sourceTree = "<group>"; };
+		AF0579F42A779ABA004577E7 /* LogMemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogMemo.swift; sourceTree = "<group>"; };
+		AF0579F72A779ABA004577E7 /* OpinionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpinionCell.swift; sourceTree = "<group>"; };
+		AF0579F82A779ABA004577E7 /* DateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		AF0579F92A779ABA004577E7 /* MemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
+		AF0579FA2A779ABA004577E7 /* DetailLogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailLogView.swift; sourceTree = "<group>"; };
+		AF0579FC2A779ABA004577E7 /* LogWriteSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWriteSheet.swift; sourceTree = "<group>"; };
+		AF0579FD2A779ABA004577E7 /* DetailLogMenuSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailLogMenuSheet.swift; sourceTree = "<group>"; };
 		AF73FA2E2A6A705A00213DBE /* LogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModel.swift; sourceTree = "<group>"; };
-		AF73FA322A6E5E5E00213DBE /* LogMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMemo.swift; sourceTree = "<group>"; };
-		AF73FA3A2A6EEF4900213DBE /* LogOpinion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOpinion.swift; sourceTree = "<group>"; };
 		AF73FA3C2A6EF4BE00213DBE /* CloudKitManagerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManagerInterface.swift; sourceTree = "<group>"; };
 		AF73FA402A6EFB7000213DBE /* CloudKitManager+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKitManager+Create.swift"; sourceTree = "<group>"; };
 		AF73FA422A6EFBB300213DBE /* CloudKitManager+Read.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKitManager+Read.swift"; sourceTree = "<group>"; };
@@ -179,8 +175,6 @@
 		AF773DFA2A69825E00EF9E1D /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		AF967B832A730C1300CB5786 /* FaceIDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIDManager.swift; sourceTree = "<group>"; };
 		AFE38E9F2A683B0500B4FF9E /* LogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
-		AFEB5CB12A754D8F00F53EFD /* LogWriteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogWriteSheet.swift; sourceTree = "<group>"; };
-		AFEB5CB32A7556AE00F53EFD /* DetailLogMenuSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLogMenuSheet.swift; sourceTree = "<group>"; };
 		AFEFF5A92A67CFD3004AFD1A /* DetectiveLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DetectiveLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFEFF5AC2A67CFD3004AFD1A /* DetectiveLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectiveLogApp.swift; sourceTree = "<group>"; };
 		AFEFF5AE2A67CFD3004AFD1A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -250,16 +244,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-
-		AF0115E42A6FC42F0021E462 /* TempDetail */ = {
-			isa = PBXGroup;
-			children = (
-				AFD538FE2A758AE0008E9BB7 /* ViewModel */,
-				AFD538FD2A758ADC008E9BB7 /* Model */,
-				AFD538FC2A758AD9008E9BB7 /* View */,
-			);
-			path = TempDetail;
-    };
 		66D176512A6E984B00194690 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,7 +352,64 @@
 				A950B1892A6FC23400FB9080 /* DetailView.swift */,
 			);
 			path = Detail;
-
+			sourceTree = "<group>";
+		};
+		AF0579ED2A779ABA004577E7 /* TempDetail */ = {
+			isa = PBXGroup;
+			children = (
+				AF0579EE2A779ABA004577E7 /* ViewModel */,
+				AF0579F12A779ABA004577E7 /* Model */,
+				AF0579F52A779ABA004577E7 /* View */,
+			);
+			path = TempDetail;
+			sourceTree = "<group>";
+		};
+		AF0579EE2A779ABA004577E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AF0579EF2A779ABA004577E7 /* DetailViewModel.swift */,
+				AF0579F02A779ABA004577E7 /* TempDetailView.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AF0579F12A779ABA004577E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF0579F22A779ABA004577E7 /* DetailLog.swift */,
+				AF0579F32A779ABA004577E7 /* LogOpinion.swift */,
+				AF0579F42A779ABA004577E7 /* LogMemo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF0579F52A779ABA004577E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AF0579F62A779ABA004577E7 /* Cell */,
+				AF0579FA2A779ABA004577E7 /* DetailLogView.swift */,
+				AF0579FB2A779ABA004577E7 /* Sheet */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AF0579F62A779ABA004577E7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AF0579F72A779ABA004577E7 /* OpinionCell.swift */,
+				AF0579F82A779ABA004577E7 /* DateCell.swift */,
+				AF0579F92A779ABA004577E7 /* MemoCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		AF0579FB2A779ABA004577E7 /* Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				AF0579FC2A779ABA004577E7 /* LogWriteSheet.swift */,
+				AF0579FD2A779ABA004577E7 /* DetailLogMenuSheet.swift */,
+			);
+			path = Sheet;
 			sourceTree = "<group>";
 		};
 		AF73FA2B2A6A703B00213DBE /* View */ = {
@@ -432,54 +473,6 @@
 			path = FaceID;
 			sourceTree = "<group>";
 		};
-		AFD538FC2A758AD9008E9BB7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AF37212B2A710C31007DC9B0 /* DetailLogView.swift */,
-				AFD539002A758B42008E9BB7 /* Sheet */,
-				AFD538FF2A758AFD008E9BB7 /* Cell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AFD538FD2A758ADC008E9BB7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				AF73FA322A6E5E5E00213DBE /* LogMemo.swift */,
-				AF73FA3A2A6EEF4900213DBE /* LogOpinion.swift */,
-				AF0115EF2A7024670021E462 /* DetailLog.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		AFD538FE2A758AE0008E9BB7 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				AF0115E52A6FE7670021E462 /* TempDetailView.swift */,
-				AF0115ED2A6FE8F50021E462 /* DetailViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AFD538FF2A758AFD008E9BB7 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				AF37212F2A7113E8007DC9B0 /* DateCell.swift */,
-				AF37212D2A710D01007DC9B0 /* MemoCell.swift */,
-				AF0115E92A6FE7BE0021E462 /* OpinionCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		AFD539002A758B42008E9BB7 /* Sheet */ = {
-			isa = PBXGroup;
-			children = (
-				AFEB5CB32A7556AE00F53EFD /* DetailLogMenuSheet.swift */,
-				AFEB5CB12A754D8F00F53EFD /* LogWriteSheet.swift */,
-			);
-			path = Sheet;
-			sourceTree = "<group>";
-		};
 		AFEFF5A02A67CFD3004AFD1A = {
 			isa = PBXGroup;
 			children = (
@@ -504,11 +497,9 @@
 		AFEFF5AB2A67CFD3004AFD1A /* DetectiveLog */ = {
 			isa = PBXGroup;
 			children = (
+				AF0579ED2A779ABA004577E7 /* TempDetail */,
 				AF967B822A730C0600CB5786 /* FaceID */,
-				66BD95F02A739D65007253F2 /* TempDetail */,
 				66D176C52A6FE65900194690 /* Search */,
-				AF0115E42A6FC42F0021E462 /* TempDetail */,
-				AF0115E32A6FA5830021E462 /* Info.plist */,
 				A950B1882A6FC15800FB9080 /* Detail */,
 				AF73FA302A6C25FE00213DBE /* Category */,
 				AFEFF5DA2A67D757004AFD1A /* CloudKit */,
@@ -689,7 +680,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66BD95F12A739D65007253F2 /* TempDetail in Resources */,
 				AFEFF5BA2A67CFD4004AFD1A /* Preview Assets.xcassets in Resources */,
 				AFEFF5B62A67CFD4004AFD1A /* Assets.xcassets in Resources */,
 			);
@@ -722,38 +712,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				66D176FB2A71452500194690 /* MoveYearMonthPicker.swift in Sources */,
-				AF0115F02A7024670021E462 /* DetailLog.swift in Sources */,
-				AF37212C2A710C31007DC9B0 /* DetailLogView.swift in Sources */,
 				AF73FA412A6EFB7000213DBE /* CloudKitManager+Create.swift in Sources */,
 				AF73FA452A6EFBF300213DBE /* CloudKitManager+Update.swift in Sources */,
+				AF057A012A779ABA004577E7 /* LogOpinion.swift in Sources */,
+				AF057A032A779ABA004577E7 /* OpinionCell.swift in Sources */,
+				AF0579FF2A779ABA004577E7 /* TempDetailView.swift in Sources */,
 				AFEFF5B22A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld in Sources */,
-				AF3721302A7113E8007DC9B0 /* DateCell.swift in Sources */,
-				AF0115E62A6FE7670021E462 /* TempDetailView.swift in Sources */,
 				AF73FA432A6EFBB300213DBE /* CloudKitManager+Read.swift in Sources */,
 				AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */,
 				66D176C92A6FE82300194690 /* SearchTestView.swift in Sources */,
 				66D176F72A70F4DC00194690 /* CalendarView.swift in Sources */,
+				AF057A052A779ABA004577E7 /* MemoCell.swift in Sources */,
 				66D176CB2A6FE95E00194690 /* SearchTestViewModel.swift in Sources */,
-				AF0115EA2A6FE7BE0021E462 /* OpinionCell.swift in Sources */,
 				AF967B842A730C1300CB5786 /* FaceIDManager.swift in Sources */,
-				AFEB5CB42A7556AE00F53EFD /* DetailLogMenuSheet.swift in Sources */,
-				AF73FA332A6E5E5E00213DBE /* LogMemo.swift in Sources */,
 				AFEFF5DE2A67F436004AFD1A /* Log.swift in Sources */,
+				AF057A062A779ABA004577E7 /* DetailLogView.swift in Sources */,
+				AF0579FE2A779ABA004577E7 /* DetailViewModel.swift in Sources */,
 				AFEFF5D92A67D112004AFD1A /* LogView.swift in Sources */,
-				AF0115EE2A6FE8F50021E462 /* DetailViewModel.swift in Sources */,
 				AFE38EA02A683B0500B4FF9E /* LogCell.swift in Sources */,
-				AF73FA3B2A6EEF4900213DBE /* LogOpinion.swift in Sources */,
-				AF37212E2A710D01007DC9B0 /* MemoCell.swift in Sources */,
 				AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */,
+				AF057A082A779ABA004577E7 /* DetailLogMenuSheet.swift in Sources */,
+				AF057A072A779ABA004577E7 /* LogWriteSheet.swift in Sources */,
 				66D176C72A6FE69500194690 /* FakeLogMemo.swift in Sources */,
+				AF057A002A779ABA004577E7 /* DetailLog.swift in Sources */,
 				66D176EF2A70036800194690 /* SearchBarView.swift in Sources */,
+				AF057A022A779ABA004577E7 /* LogMemo.swift in Sources */,
+				AF057A042A779ABA004577E7 /* DateCell.swift in Sources */,
 				66D176A92A6F773400194690 /* iOSWidget.intentdefinition in Sources */,
 				AF773DFB2A69825E00EF9E1D /* CategoryView.swift in Sources */,
 				AF73FA2F2A6A705A00213DBE /* LogViewModel.swift in Sources */,
 				AF73FA3D2A6EF4BE00213DBE /* CloudKitManagerInterface.swift in Sources */,
 				AFEFF5DC2A67D765004AFD1A /* CloudKitManager.swift in Sources */,
 				AF73FA472A6EFC2800213DBE /* CloudKitManager+Delete.swift in Sources */,
-				AFEB5CB22A754D8F00F53EFD /* LogWriteSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,24 +753,16 @@
 			files = (
 				AFEFF5C92A67D001004AFD1A /* ContentView.swift in Sources */,
 				AFEFF5C72A67D001004AFD1A /* DetectiveLogWatchApp.swift in Sources */,
-				66BD95FE2A73A3B5007253F2 /* CloudKitManager+Create.swift in Sources */,
 				66D176592A6F507D00194690 /* FakeEachLog.swift in Sources */,
 				66D1765B2A6F526200194690 /* LogListViewModel.swift in Sources */,
-				66BD95FD2A73A3B0007253F2 /* CloudKitManagerInterface.swift in Sources */,
 				66D1764E2A6E964200194690 /* Log.swift in Sources */,
-				66BD95FA2A73A3A6007253F2 /* CloudKitManager+Read.swift in Sources */,
 				663E38192A756B1C00BDE5DB /* LogRecordViewModel.swift in Sources */,
-				66BD96002A73A3BE007253F2 /* LogMemo.swift in Sources */,
 				66E0667B2A6E5C9700BE3751 /* LogRecordView.swift in Sources */,
 				66E066862A6E632D00BE3751 /* LogTitleSelectionViewModel.swift in Sources */,
-				66BD95FF2A73A3BA007253F2 /* LogOpinion.swift in Sources */,
 				66E066812A6E5CDF00BE3751 /* LogListView.swift in Sources */,
-				66BD96012A73A40A007253F2 /* CloudKitManager.swift in Sources */,
 				66E0667F2A6E5CCE00BE3751 /* LogTitleSelectionView.swift in Sources */,
 				66E0667D2A6E5CA400BE3751 /* MainTabView.swift in Sources */,
 				66D1765D2A6F557800194690 /* LogDetailView.swift in Sources */,
-				66BD95FB2A73A3AA007253F2 /* CloudKitManager+Update.swift in Sources */,
-				66BD95FC2A73A3AD007253F2 /* CloudKitManager+Delete.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
