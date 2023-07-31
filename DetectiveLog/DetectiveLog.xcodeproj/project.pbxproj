@@ -712,6 +712,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66D176FB2A71452500194690 /* MoveYearMonthPicker.swift in Sources */,
+				AF0115F02A7024670021E462 /* DetailLog.swift in Sources */,
 				AF73FA412A6EFB7000213DBE /* CloudKitManager+Create.swift in Sources */,
 				AF73FA452A6EFBF300213DBE /* CloudKitManager+Update.swift in Sources */,
 				AF057A012A779ABA004577E7 /* LogOpinion.swift in Sources */,
@@ -725,11 +726,13 @@
 				AF057A052A779ABA004577E7 /* MemoCell.swift in Sources */,
 				66D176CB2A6FE95E00194690 /* SearchTestViewModel.swift in Sources */,
 				AF967B842A730C1300CB5786 /* FaceIDManager.swift in Sources */,
+				AF73FA332A6E5E5E00213DBE /* LogMemo.swift in Sources */,
 				AFEFF5DE2A67F436004AFD1A /* Log.swift in Sources */,
 				AF057A062A779ABA004577E7 /* DetailLogView.swift in Sources */,
 				AF0579FE2A779ABA004577E7 /* DetailViewModel.swift in Sources */,
 				AFEFF5D92A67D112004AFD1A /* LogView.swift in Sources */,
 				AFE38EA02A683B0500B4FF9E /* LogCell.swift in Sources */,
+				AF73FA3B2A6EEF4900213DBE /* LogOpinion.swift in Sources */,
 				AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */,
 				AF057A082A779ABA004577E7 /* DetailLogMenuSheet.swift in Sources */,
 				AF057A072A779ABA004577E7 /* LogWriteSheet.swift in Sources */,

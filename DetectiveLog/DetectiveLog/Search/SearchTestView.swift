@@ -106,20 +106,20 @@ struct SearchTestView: View {
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     if isSearch != true {
-                        Button {
-                            isSearch = true
-                        } label: {
-                            Image(systemName: "magnifyingglass")
-                        }
+                        Button { //
+                            isSearch = true //
+                        } label: { //
+                            Image("magnifyingglass") //
+                        } //
                     }
                 }
                 
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     if isSearch != true {
-                        Button {
+                        Button { //
                             
-                        } label: {
-                            Image(systemName: "ellipsis.circle.fill")
+                        } label: { //
+                            Image(systemName: "ellipsis.circle.fill") //
                         }
                     }
                 }

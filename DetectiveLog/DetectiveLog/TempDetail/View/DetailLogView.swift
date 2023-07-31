@@ -21,6 +21,7 @@ struct DetailLogView: View {
     @State var isCreateButtonClicked: Bool = false
     @State var isOpinionPresented: Bool = false
     @State var isOpinionUpdateButtonClicked: Bool = false
+    @State var isSearch: Bool = false
     
     var body: some View {
         ZStack {
@@ -61,11 +62,23 @@ struct DetailLogView: View {
                 bottomBar
             }
             .ignoresSafeArea()
+            
+            if isSearch {
+                
+            }
         }
         .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
+            ToolbarItemGroup(placement: .navigationBarLeading) {
                 backButton
             }
+            
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                searchButton
+            }
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                detailMenuButton
+            }
+            
         }
         .navigationBarBackButtonHidden()
         .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
@@ -215,6 +228,23 @@ struct DetailLogView: View {
             Image("backButton")
         }
     }
+    
+    var searchButton: some View {
+        Button{
+            isSearch = true
+        } label : {
+            Image(systemName: "magnifyingglass")
+        }
+    }
+    
+    var detailMenuButton: some View {
+        Button {
+            //TODO: detailMenuButton
+        } label: {
+            Image("ellipsis.circle")
+        }
+    }
+    
     
     var bottomBar: some View {
         Rectangle()
