@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CalendarView: View {
-    @ObservedObject var viewModel = SearchTestViewModel()
+    @EnvironmentObject var viewModel : DetailViewModel
     @State private var month: Date = Date()
     @Binding var clickedCurrentMonthDates: Date?
     @State private var isMonthChange = false
@@ -278,9 +278,11 @@ extension CalendarView {
     
     /// 이전 월로 이동 가능한지 확인
     func canMoveToPreviousMonth() -> Bool {
-        let targetDate = viewModel.logMemoList.first?.date ?? Date()
-        if adjustedMonth(by: -1) < (targetDate-2) {
-            return false
+        if let earliestDate = viewModel.detailLog.min(by: { $0.date < $1.date })?.date {
+            let targetDate = earliestDate
+            if adjustedMonth(by: -1) < (targetDate-2) {
+                return false
+            }
         }
         return true
     }

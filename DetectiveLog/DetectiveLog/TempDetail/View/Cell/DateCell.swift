@@ -10,6 +10,7 @@ import SwiftUI
 struct DateCell: View {
     
     let detailLog: DetailLog
+    var id: String { formatDateToString(date: detailLog.date) }
     
     var body: some View {
         Rectangle()
@@ -26,6 +27,7 @@ struct DateCell: View {
                 }
             }
             .padding(.bottom, 16)
+            .id(id)
             
 //            .overlay {
 //                Rectangle()

@@ -157,6 +157,20 @@ final class DetailViewModel: ObservableObject {
         }))
     }
     
+    var logMemoDates : [String] {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        let datesWithTime = detailLog.map { $0.date }
+        var datesWithoutTime = [String]()
+        
+        for date in datesWithTime {
+            datesWithoutTime.append(dateFormatter.string(from: date))
+        }
+        return Array(Set(datesWithoutTime)).sorted{ $0 < $1 }
+    }
+    
 }
 
 

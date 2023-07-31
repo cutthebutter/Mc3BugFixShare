@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-@available(iOS 16.0, *)
+//@available(iOS 16.0, *)
 
 struct SearchBarView: View {
     @State var searchInput = ""

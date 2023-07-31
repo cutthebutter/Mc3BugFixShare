@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@available(iOS 16.0, *)
 struct DetailLogView: View {
     
     @ObservedObject var viewModel: DetailViewModel
@@ -22,6 +21,11 @@ struct DetailLogView: View {
     @State var isOpinionPresented: Bool = false
     @State var isOpinionUpdateButtonClicked: Bool = false
     @State var isSearch: Bool = false
+    @State var clickedCurrentMonthDates: Date?
+    @State var searchText :String = ""
+    @State var matchingIDs: [UUID] = []
+    @State var currentIDIndex: Int?
+    @State private var showingAlert = false
     
     var body: some View {
         ZStack {
@@ -64,6 +68,7 @@ struct DetailLogView: View {
             .ignoresSafeArea()
             
             if isSearch {
+                SearchBarView(isSearch: $isSearch, clickedCurrentMonthDates: $clickedCurrentMonthDates, searchText: $searchText)
                 
             }
         }
@@ -218,6 +223,13 @@ struct DetailLogView: View {
                 list.scrollTo(viewModel.lastIndex)
                 
             }
+            .onChange(of: clickedCurrentMonthDates) { newValue in
+                if let date = newValue {
+                    let dateString = formatDateToStringYyyyMdd(date: date)
+                    list.scrollTo(dateString, anchor: .top)
+                }
+            }
+            
         }
     }
     
@@ -274,6 +286,12 @@ struct DetailLogView: View {
     func formatDateToString(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:MM"
+        return dateFormatter.string(from: date)
+    }
+    
+    func formatDateToStringYyyyMdd(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy. M. dd"
         return dateFormatter.string(from: date)
     }
     
