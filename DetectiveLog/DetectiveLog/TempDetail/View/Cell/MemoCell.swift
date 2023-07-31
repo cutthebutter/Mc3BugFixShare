@@ -11,6 +11,7 @@ import SwiftUI
 struct MemoCell: View {
     
     let logMemo: LogMemo
+    let isMatching: Bool
     
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
@@ -26,6 +27,7 @@ struct MemoCell: View {
                 .padding(.leading, 20)
                 .padding(.trailing, 50)
                 .padding(.bottom, 22)
+                .foregroundColor(isMatching ? .red : .primary)
             
             Spacer()
         }

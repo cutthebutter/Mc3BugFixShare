@@ -71,6 +71,34 @@ struct DetailLogView: View {
                 SearchBarView(isSearch: $isSearch, clickedCurrentMonthDates: $clickedCurrentMonthDates, searchText: $searchText)
                 
             }
+            if isSearch {
+                HStack{
+                    Spacer()
+                    //이전 버튼
+                    Button {
+                        currentIDIndex = max(currentIDIndex! - 1, 0)
+                    } label: {
+                        Image(systemName: "chevron.up")
+                    }
+                    .padding(.trailing)
+                    .foregroundColor((searchText.isEmpty || currentIDIndex == 0) ? .gray.opacity(0.5) : .black)
+                    .disabled(searchText.isEmpty || currentIDIndex == 0)
+                    
+                    //디음 버튼
+                    Button {
+                        currentIDIndex = min(currentIDIndex! + 1, matchingIDs.count - 1)
+                    } label: {
+                        Image(systemName: "chevron.down")
+                    }
+                    .padding(.trailing)
+                    .foregroundColor((searchText.isEmpty || currentIDIndex == matchingIDs.count - 1) ? .gray.opacity(0.5) : .black)
+                    .disabled(searchText.isEmpty || currentIDIndex == matchingIDs.count - 1)
+                    
+                }
+                .padding(.vertical)
+                .background(Color.white)
+                
+            }
         }
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarLeading) {
@@ -79,6 +107,7 @@ struct DetailLogView: View {
             
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 searchButton
+                    .disabled(logIsEmpty)
             }
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 detailMenuButton
@@ -160,6 +189,20 @@ struct DetailLogView: View {
         .onChange(of: isOpinionUpdateButtonClicked) { _ in
             viewModel.updateLogOpinion(logOpinion: viewModel.detailLog[viewModel.detailLogIndex].logOpinion)
         }
+        .onChange(of: searchText) { newValue in
+            matchingIDs.removeAll()
+            for detailLog in viewModel.detailLog {
+                for logMemo in detailLog.logMemo {
+                    if logMemo.memo.contains(newValue) {
+                        matchingIDs.append(logMemo.id)
+                    }
+                }
+            }
+            currentIDIndex = matchingIDs.isEmpty ? nil : 0
+            if matchingIDs.isEmpty {
+                showingAlert = true
+            }
+        }
         
     }
     
@@ -201,7 +244,7 @@ struct DetailLogView: View {
                 ForEach(viewModel.detailLog.indices, id: \.self) { dataIndex in
                     DateCell(detailLog: viewModel.detailLog[dataIndex])
                     ForEach(viewModel.detailLog[dataIndex].logMemo.indices, id: \.self) { memoIndex in
-                        MemoCell(logMemo: viewModel.detailLog[dataIndex].logMemo[memoIndex])
+                        MemoCell(logMemo: viewModel.detailLog[dataIndex].logMemo[memoIndex], isMatching: matchingIDs.contains(viewModel.detailLog[dataIndex].logMemo[memoIndex].id))
                             .id(viewModel.detailLog[dataIndex].logMemo[memoIndex].id)
                             .onTapGesture {
                                 viewModel.detailLogIndex = dataIndex
@@ -227,6 +270,11 @@ struct DetailLogView: View {
                 if let date = newValue {
                     let dateString = formatDateToStringYyyyMdd(date: date)
                     list.scrollTo(dateString, anchor: .top)
+                }
+            }
+            .onChange(of: currentIDIndex) { newValue in
+                if let index = newValue {
+                    list.scrollTo(matchingIDs[index], anchor: .top)
                 }
             }
             
