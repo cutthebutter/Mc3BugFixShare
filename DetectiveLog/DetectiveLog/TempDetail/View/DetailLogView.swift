@@ -101,26 +101,28 @@ struct DetailLogView: View {
             }
         }
         //MARK: 새로 메모 입력 후 수정 시 안됨. 각각은 된다.. 이유는 모르겠음
-        .sheet(isPresented: $isMenuPresented, content: {
+        .sheet(isPresented: $isMenuPresented) { // 일지 탭 할 경우 수정 - 삭제 열기
             DetailLogMenuSheet(viewModel: viewModel,
                                logMemo: $viewModel.detailLog[viewModel.detailLogIndex].logMemo[viewModel.logMemoIndex],
                                isPresented: $isMenuPresented,
                                isEditButtonClicked: $isEditButtonClicked)
             .presentationDetents([.height(247)])
-        })
-        .sheet(isPresented: $isCreatePresented) {
-            LogWriteSheet(writeType: .memo, text: $viewModel.newMemo,
+            .presentationDragIndicator(.visible)
+        }
+        .sheet(isPresented: $isCreatePresented) { // 새로운 일지 작성
+            LogWriteSheet(writeType: .memo,
+                          text: $viewModel.newMemo,
                           isPresented: $isCreatePresented,
                           isFinishButtonClicked: $isCreateButtonClicked)
             .presentationDetents([.height(247)])
         }
-        .sheet(isPresented: $isOpinionPresented, content: {
+        .sheet(isPresented: $isOpinionPresented) { // 사견 탭 클릭
             LogWriteSheet(writeType: .opinion,
                           text: $viewModel.detailLog[viewModel.detailLogIndex].logOpinion.opinion,
                           isPresented: $isOpinionPresented,
                           isFinishButtonClicked: $isOpinionUpdateButtonClicked)
             .presentationDetents([.height(247)])
-        })
+        }
         // 작성한 메모는 recordID와 referenceId가 없기에 일어나는 일
         .onChange(of: isCreateButtonClicked) { _ in
             if let log = viewModel.log {
@@ -138,7 +140,7 @@ struct DetailLogView: View {
             viewModel.updateLogMemo(logMemo: viewModel.detailLog[viewModel.detailLogIndex].logMemo[viewModel.logMemoIndex])
         }
         .onChange(of: isOpinionUpdateButtonClicked) { _ in
-            
+            viewModel.updateLogOpinion(logOpinion: viewModel.detailLog[viewModel.detailLogIndex].logOpinion)
         }
         
     }
@@ -224,9 +226,14 @@ struct DetailLogView: View {
                     Button {
                         self.isCreatePresented.toggle()
                     } label: {
-                        Text("단서추가")
-                            .font(.custom("AppleSDGothicNeo-SemiBold", size: 20))
-                            .foregroundColor(.black)
+                        HStack(spacing: 0) {
+                            Image(systemName: "plus.circle.fill")
+                                .foregroundColor(.black)
+                                .padding(.trailing, 10)
+                            Text("단서추가")
+                                .font(.custom("AppleSDGothicNeo-SemiBold", size: 20))
+                                .foregroundColor(.black)
+                        }
                     }
                     .padding(.top, 13)
                     .padding(.trailing, 20)
