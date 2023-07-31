@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66BD95F12A739D65007253F2 /* TempDetail in Resources */ = {isa = PBXBuildFile; fileRef = 66BD95F02A739D65007253F2 /* TempDetail */; };
 		AF0115E62A6FE7670021E462 /* TempDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0115E52A6FE7670021E462 /* TempDetailView.swift */; };
 		AF0115EA2A6FE7BE0021E462 /* OpinionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0115E92A6FE7BE0021E462 /* OpinionCell.swift */; };
 		AF0115EE2A6FE8F50021E462 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0115ED2A6FE8F50021E462 /* DetailViewModel.swift */; };
@@ -14,6 +15,30 @@
 		AF37212C2A710C31007DC9B0 /* DetailLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37212B2A710C31007DC9B0 /* DetailLogView.swift */; };
 		AF37212E2A710D01007DC9B0 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37212D2A710D01007DC9B0 /* MemoCell.swift */; };
 		AF3721302A7113E8007DC9B0 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37212F2A7113E8007DC9B0 /* DateCell.swift */; };
+		66D1764E2A6E964200194690 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5DD2A67F436004AFD1A /* Log.swift */; };
+		66D176502A6E97DE00194690 /* FakeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1764F2A6E97DE00194690 /* FakeLog.swift */; };
+		66D176592A6F507D00194690 /* FakeEachLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176582A6F507D00194690 /* FakeEachLog.swift */; };
+		66D1765B2A6F526200194690 /* LogListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1765A2A6F526200194690 /* LogListViewModel.swift */; };
+		66D1765D2A6F557800194690 /* LogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1765C2A6F557800194690 /* LogDetailView.swift */; };
+		66D1769A2A6F773300194690 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D176992A6F773300194690 /* WidgetKit.framework */; };
+		66D1769C2A6F773300194690 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D1769B2A6F773300194690 /* SwiftUI.framework */; };
+		66D1769F2A6F773300194690 /* iOSWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1769E2A6F773300194690 /* iOSWidgetBundle.swift */; };
+		66D176A32A6F773300194690 /* iOSOpenAppLockScreenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176A22A6F773300194690 /* iOSOpenAppLockScreenWidget.swift */; };
+		66D176A62A6F773400194690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66D176A52A6F773400194690 /* Assets.xcassets */; };
+		66D176A82A6F773400194690 /* iOSWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 66D176A42A6F773300194690 /* iOSWidget.intentdefinition */; };
+		66D176A92A6F773400194690 /* iOSWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 66D176A42A6F773300194690 /* iOSWidget.intentdefinition */; };
+		66D176AC2A6F773400194690 /* iOSWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 66D176972A6F773300194690 /* iOSWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		66D176C72A6FE69500194690 /* FakeLogMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176C62A6FE69500194690 /* FakeLogMemo.swift */; };
+		66D176C92A6FE82300194690 /* SearchTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176C82A6FE82300194690 /* SearchTestView.swift */; };
+		66D176CB2A6FE95E00194690 /* SearchTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176CA2A6FE95E00194690 /* SearchTestViewModel.swift */; };
+		66D176EF2A70036800194690 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176EE2A70036800194690 /* SearchBarView.swift */; };
+		66D176F72A70F4DC00194690 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176F62A70F4DC00194690 /* CalendarView.swift */; };
+		66D176FB2A71452500194690 /* MoveYearMonthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176FA2A71452500194690 /* MoveYearMonthPicker.swift */; };
+		66E0667B2A6E5C9700BE3751 /* LogRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E0667A2A6E5C9700BE3751 /* LogRecordView.swift */; };
+		66E0667D2A6E5CA400BE3751 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E0667C2A6E5CA400BE3751 /* MainTabView.swift */; };
+		66E0667F2A6E5CCE00BE3751 /* LogTitleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E0667E2A6E5CCE00BE3751 /* LogTitleSelectionView.swift */; };
+		66E066812A6E5CDF00BE3751 /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E066802A6E5CDF00BE3751 /* LogListView.swift */; };
+		66E066862A6E632D00BE3751 /* LogTitleSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E066852A6E632D00BE3751 /* LogTitleSelectionViewModel.swift */; };
 		AF73FA2F2A6A705A00213DBE /* LogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA2E2A6A705A00213DBE /* LogViewModel.swift */; };
 		AF73FA332A6E5E5E00213DBE /* LogMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA322A6E5E5E00213DBE /* LogMemo.swift */; };
 		AF73FA3B2A6EEF4900213DBE /* LogOpinion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA3A2A6EEF4900213DBE /* LogOpinion.swift */; };
@@ -43,6 +68,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		66D176AA2A6F773400194690 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AFEFF5A12A67CFD3004AFD1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66D176962A6F773300194690;
+			remoteInfo = iOSWidgetExtension;
+		};
 		AFEFF5CF2A67D002004AFD1A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AFEFF5A12A67CFD3004AFD1A /* Project object */;
@@ -53,6 +85,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		66D1766F2A6F5FCA00194690 /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66D176922A6F72DF00194690 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				66D176AC2A6F773400194690 /* iOSWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66D176C12A6FA42F00194690 /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFEFF5D52A67D002004AFD1A /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -67,14 +130,43 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		66BD95F02A739D65007253F2 /* TempDetail */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TempDetail; sourceTree = "<group>"; };
 		AF0115E32A6FA5830021E462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		AF0115E52A6FE7670021E462 /* TempDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempDetailView.swift; sourceTree = "<group>"; };
+		AF0115E52A6FE7670021E462 /* 
+    .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempDetailView.swift; sourceTree = "<group>"; };
 		AF0115E92A6FE7BE0021E462 /* OpinionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpinionCell.swift; sourceTree = "<group>"; };
 		AF0115ED2A6FE8F50021E462 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		AF0115EF2A7024670021E462 /* DetailLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLog.swift; sourceTree = "<group>"; };
 		AF37212B2A710C31007DC9B0 /* DetailLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLogView.swift; sourceTree = "<group>"; };
 		AF37212D2A710D01007DC9B0 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		AF37212F2A7113E8007DC9B0 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		66D1764F2A6E97DE00194690 /* FakeLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLog.swift; sourceTree = "<group>"; };
+		66D176582A6F507D00194690 /* FakeEachLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEachLog.swift; sourceTree = "<group>"; };
+		66D1765A2A6F526200194690 /* LogListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListViewModel.swift; sourceTree = "<group>"; };
+		66D1765C2A6F557800194690 /* LogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetailView.swift; sourceTree = "<group>"; };
+		66D176972A6F773300194690 /* iOSWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iOSWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		66D176992A6F773300194690 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		66D1769B2A6F773300194690 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		66D1769E2A6F773300194690 /* iOSWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSWidgetBundle.swift; sourceTree = "<group>"; };
+		66D176A22A6F773300194690 /* iOSOpenAppLockScreenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSOpenAppLockScreenWidget.swift; sourceTree = "<group>"; };
+		66D176A42A6F773300194690 /* iOSWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = iOSWidget.intentdefinition; sourceTree = "<group>"; };
+		66D176A52A6F773400194690 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		66D176A72A6F773400194690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66D176C62A6FE69500194690 /* FakeLogMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLogMemo.swift; sourceTree = "<group>"; };
+		66D176C82A6FE82300194690 /* SearchTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTestView.swift; sourceTree = "<group>"; };
+		66D176CA2A6FE95E00194690 /* SearchTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTestViewModel.swift; sourceTree = "<group>"; };
+		66D176EE2A70036800194690 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		66D176F62A70F4DC00194690 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		66D176FA2A71452500194690 /* MoveYearMonthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveYearMonthPicker.swift; sourceTree = "<group>"; };
+		66E0667A2A6E5C9700BE3751 /* LogRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRecordView.swift; sourceTree = "<group>"; };
+		66E0667C2A6E5CA400BE3751 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		66E0667E2A6E5CCE00BE3751 /* LogTitleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTitleSelectionView.swift; sourceTree = "<group>"; };
+		66E066802A6E5CDF00BE3751 /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
+		66E066852A6E632D00BE3751 /* LogTitleSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTitleSelectionViewModel.swift; sourceTree = "<group>"; };
+		66E066872A6E6F0D00BE3751 /* DetectiveLogWatch Watch AppRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DetectiveLogWatch Watch AppRelease.entitlements"; sourceTree = "<group>"; };
+		A950B1892A6FC23400FB9080 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+
+
 		AF73FA2E2A6A705A00213DBE /* LogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModel.swift; sourceTree = "<group>"; };
 		AF73FA322A6E5E5E00213DBE /* LogMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMemo.swift; sourceTree = "<group>"; };
 		AF73FA3A2A6EEF4900213DBE /* LogOpinion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOpinion.swift; sourceTree = "<group>"; };
@@ -106,6 +198,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		66D176942A6F773300194690 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66D1769C2A6F773300194690 /* SwiftUI.framework in Frameworks */,
+				66D1769A2A6F773300194690 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFEFF5A62A67CFD3004AFD1A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -123,6 +224,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+
 		AF0115E42A6FC42F0021E462 /* TempDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +233,126 @@
 				AFD538FC2A758AD9008E9BB7 /* View */,
 			);
 			path = TempDetail;
+    };
+		66D176512A6E984B00194690 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66E0667E2A6E5CCE00BE3751 /* LogTitleSelectionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		66D176542A6F4FED00194690 /* LogList */ = {
+			isa = PBXGroup;
+			children = (
+				66D176562A6F4FFE00194690 /* Model */,
+				66D176572A6F500300194690 /* ViewModel */,
+				66D176552A6F4FF800194690 /* View */,
+			);
+			path = LogList;
+			sourceTree = "<group>";
+		};
+		66D176552A6F4FF800194690 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66E066802A6E5CDF00BE3751 /* LogListView.swift */,
+				66D1765C2A6F557800194690 /* LogDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		66D176562A6F4FFE00194690 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				66D176582A6F507D00194690 /* FakeEachLog.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		66D176572A6F500300194690 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				66D1765A2A6F526200194690 /* LogListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		66D176982A6F773300194690 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66D176992A6F773300194690 /* WidgetKit.framework */,
+				66D1769B2A6F773300194690 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		66D1769D2A6F773300194690 /* iOSWidget */ = {
+			isa = PBXGroup;
+			children = (
+				66D1769E2A6F773300194690 /* iOSWidgetBundle.swift */,
+				66D176A22A6F773300194690 /* iOSOpenAppLockScreenWidget.swift */,
+				66D176A42A6F773300194690 /* iOSWidget.intentdefinition */,
+				66D176A52A6F773400194690 /* Assets.xcassets */,
+				66D176A72A6F773400194690 /* Info.plist */,
+			);
+			path = iOSWidget;
+			sourceTree = "<group>";
+		};
+		66D176C52A6FE65900194690 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				66D176C62A6FE69500194690 /* FakeLogMemo.swift */,
+				66D176CA2A6FE95E00194690 /* SearchTestViewModel.swift */,
+				66D176C82A6FE82300194690 /* SearchTestView.swift */,
+				66D176EE2A70036800194690 /* SearchBarView.swift */,
+				66D176F62A70F4DC00194690 /* CalendarView.swift */,
+				66D176FA2A71452500194690 /* MoveYearMonthPicker.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		66E066702A6E4D1100BE3751 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				66D1764F2A6E97DE00194690 /* FakeLog.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		66E066792A6E5C8400BE3751 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66E0667C2A6E5CA400BE3751 /* MainTabView.swift */,
+				66E0667A2A6E5C9700BE3751 /* LogRecordView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		66E066822A6E612800BE3751 /* LogTitleSelection */ = {
+			isa = PBXGroup;
+			children = (
+				66E066702A6E4D1100BE3751 /* Model */,
+				66E066832A6E613C00BE3751 /* ViewModel */,
+				66D176512A6E984B00194690 /* View */,
+			);
+			path = LogTitleSelection;
+			sourceTree = "<group>";
+		};
+		66E066832A6E613C00BE3751 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				66E066852A6E632D00BE3751 /* LogTitleSelectionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A950B1882A6FC15800FB9080 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A950B1892A6FC23400FB9080 /* DetailView.swift */,
+			);
+			path = Detail;
+
 			sourceTree = "<group>";
 		};
 		AF73FA2B2A6A703B00213DBE /* View */ = {
@@ -247,6 +469,8 @@
 			children = (
 				AFEFF5AB2A67CFD3004AFD1A /* DetectiveLog */,
 				AFEFF5C52A67D001004AFD1A /* DetectiveLogWatch Watch App */,
+				66D1769D2A6F773300194690 /* iOSWidget */,
+				66D176982A6F773300194690 /* Frameworks */,
 				AFEFF5AA2A67CFD3004AFD1A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -256,6 +480,7 @@
 			children = (
 				AFEFF5A92A67CFD3004AFD1A /* DetectiveLog.app */,
 				AFEFF5C42A67D001004AFD1A /* DetectiveLogWatch Watch App.app */,
+				66D176972A6F773300194690 /* iOSWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,7 +489,11 @@
 			isa = PBXGroup;
 			children = (
 				AF967B822A730C0600CB5786 /* FaceID */,
+				66BD95F02A739D65007253F2 /* TempDetail */,
+				66D176C52A6FE65900194690 /* Search */,
 				AF0115E42A6FC42F0021E462 /* TempDetail */,
+				AF0115E32A6FA5830021E462 /* Info.plist */,
+				A950B1882A6FC15800FB9080 /* Detail */,
 				AF73FA302A6C25FE00213DBE /* Category */,
 				AFEFF5DA2A67D757004AFD1A /* CloudKit */,
 				AFEFF5D62A67D0B9004AFD1A /* Main */,
@@ -290,6 +519,10 @@
 		AFEFF5C52A67D001004AFD1A /* DetectiveLogWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				66D176542A6F4FED00194690 /* LogList */,
+				66E066872A6E6F0D00BE3751 /* DetectiveLogWatch Watch AppRelease.entitlements */,
+				66E066822A6E612800BE3751 /* LogTitleSelection */,
+				66E066792A6E5C8400BE3751 /* View */,
 				AFEFF5C62A67D001004AFD1A /* DetectiveLogWatchApp.swift */,
 				AFEFF5C82A67D001004AFD1A /* ContentView.swift */,
 				AFEFF5CA2A67D002004AFD1A /* Assets.xcassets */,
@@ -328,6 +561,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		66D176962A6F773300194690 /* iOSWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66D176AD2A6F773400194690 /* Build configuration list for PBXNativeTarget "iOSWidgetExtension" */;
+			buildPhases = (
+				66D176932A6F773300194690 /* Sources */,
+				66D176942A6F773300194690 /* Frameworks */,
+				66D176952A6F773300194690 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOSWidgetExtension;
+			productName = iOSWidgetExtension;
+			productReference = 66D176972A6F773300194690 /* iOSWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		AFEFF5A82A67CFD3004AFD1A /* DetectiveLog */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFEFF5BD2A67CFD4004AFD1A /* Build configuration list for PBXNativeTarget "DetectiveLog" */;
@@ -336,11 +586,14 @@
 				AFEFF5A62A67CFD3004AFD1A /* Frameworks */,
 				AFEFF5A72A67CFD3004AFD1A /* Resources */,
 				AFEFF5D52A67D002004AFD1A /* Embed Watch Content */,
+				66D1766F2A6F5FCA00194690 /* Embed ExtensionKit Extensions */,
+				66D176922A6F72DF00194690 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				AFEFF5D02A67D002004AFD1A /* PBXTargetDependency */,
+				66D176AB2A6F773400194690 /* PBXTargetDependency */,
 			);
 			name = DetectiveLog;
 			productName = DetectiveLog;
@@ -354,6 +607,7 @@
 				AFEFF5C02A67D001004AFD1A /* Sources */,
 				AFEFF5C12A67D001004AFD1A /* Frameworks */,
 				AFEFF5C22A67D001004AFD1A /* Resources */,
+				66D176C12A6FA42F00194690 /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
@@ -374,6 +628,9 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					66D176962A6F773300194690 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
 					AFEFF5A82A67CFD3004AFD1A = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -397,15 +654,25 @@
 			targets = (
 				AFEFF5A82A67CFD3004AFD1A /* DetectiveLog */,
 				AFEFF5C32A67D001004AFD1A /* DetectiveLogWatch Watch App */,
+				66D176962A6F773300194690 /* iOSWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		66D176952A6F773300194690 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66D176A62A6F773400194690 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFEFF5A72A67CFD3004AFD1A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66BD95F12A739D65007253F2 /* TempDetail in Resources */,
 				AFEFF5BA2A67CFD4004AFD1A /* Preview Assets.xcassets in Resources */,
 				AFEFF5B62A67CFD4004AFD1A /* Assets.xcassets in Resources */,
 			);
@@ -423,10 +690,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		66D176932A6F773300194690 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66D176A32A6F773300194690 /* iOSOpenAppLockScreenWidget.swift in Sources */,
+				66D176A82A6F773400194690 /* iOSWidget.intentdefinition in Sources */,
+				66D1769F2A6F773300194690 /* iOSWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFEFF5A52A67CFD3004AFD1A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66D176FB2A71452500194690 /* MoveYearMonthPicker.swift in Sources */,
 				AF0115F02A7024670021E462 /* DetailLog.swift in Sources */,
 				AF37212C2A710C31007DC9B0 /* DetailLogView.swift in Sources */,
 				AF73FA412A6EFB7000213DBE /* CloudKitManager+Create.swift in Sources */,
@@ -436,6 +714,9 @@
 				AF0115E62A6FE7670021E462 /* TempDetailView.swift in Sources */,
 				AF73FA432A6EFBB300213DBE /* CloudKitManager+Read.swift in Sources */,
 				AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */,
+				66D176C92A6FE82300194690 /* SearchTestView.swift in Sources */,
+				66D176F72A70F4DC00194690 /* CalendarView.swift in Sources */,
+				66D176CB2A6FE95E00194690 /* SearchTestViewModel.swift in Sources */,
 				AF0115EA2A6FE7BE0021E462 /* OpinionCell.swift in Sources */,
 				AF967B842A730C1300CB5786 /* FaceIDManager.swift in Sources */,
 				AFEB5CB42A7556AE00F53EFD /* DetailLogMenuSheet.swift in Sources */,
@@ -447,6 +728,9 @@
 				AF73FA3B2A6EEF4900213DBE /* LogOpinion.swift in Sources */,
 				AF37212E2A710D01007DC9B0 /* MemoCell.swift in Sources */,
 				AFEFF5AF2A67CFD3004AFD1A /* Persistence.swift in Sources */,
+				66D176C72A6FE69500194690 /* FakeLogMemo.swift in Sources */,
+				66D176EF2A70036800194690 /* SearchBarView.swift in Sources */,
+				66D176A92A6F773400194690 /* iOSWidget.intentdefinition in Sources */,
 				AF773DFB2A69825E00EF9E1D /* CategoryView.swift in Sources */,
 				AF73FA2F2A6A705A00213DBE /* LogViewModel.swift in Sources */,
 				AF73FA3D2A6EF4BE00213DBE /* CloudKitManagerInterface.swift in Sources */,
@@ -462,12 +746,27 @@
 			files = (
 				AFEFF5C92A67D001004AFD1A /* ContentView.swift in Sources */,
 				AFEFF5C72A67D001004AFD1A /* DetectiveLogWatchApp.swift in Sources */,
+				66D176592A6F507D00194690 /* FakeEachLog.swift in Sources */,
+				66D1765B2A6F526200194690 /* LogListViewModel.swift in Sources */,
+				66D1764E2A6E964200194690 /* Log.swift in Sources */,
+				66D176502A6E97DE00194690 /* FakeLog.swift in Sources */,
+				66E0667B2A6E5C9700BE3751 /* LogRecordView.swift in Sources */,
+				66E066862A6E632D00BE3751 /* LogTitleSelectionViewModel.swift in Sources */,
+				66E066812A6E5CDF00BE3751 /* LogListView.swift in Sources */,
+				66E0667F2A6E5CCE00BE3751 /* LogTitleSelectionView.swift in Sources */,
+				66E0667D2A6E5CA400BE3751 /* MainTabView.swift in Sources */,
+				66D1765D2A6F557800194690 /* LogDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		66D176AB2A6F773400194690 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66D176962A6F773300194690 /* iOSWidgetExtension */;
+			targetProxy = 66D176AA2A6F773400194690 /* PBXContainerItemProxy */;
+		};
 		AFEFF5D02A67D002004AFD1A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AFEFF5C32A67D001004AFD1A /* DetectiveLogWatch Watch App */;
@@ -476,6 +775,65 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		66D176AE2A6F773400194690 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8R3N359429;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iOSWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iOSWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kozi.DetectiveLog.iOSWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		66D176AF2A6F773400194690 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8R3N359429;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iOSWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iOSWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kozi.DetectiveLog.iOSWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		AFEFF5BB2A67CFD4004AFD1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -595,7 +953,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DetectiveLog/Preview Content\"";
-				DEVELOPMENT_TEAM = 8R3N359429;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -677,7 +1035,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DetectiveLogWatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 8R3N359429;
+				DEVELOPMENT_TEAM = ULM4SQD73B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = DetectiveLogWatch;
@@ -704,6 +1062,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "DetectiveLogWatch Watch App/DetectiveLogWatch Watch AppRelease.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DetectiveLogWatch Watch App/Preview Content\"";
@@ -733,6 +1092,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		66D176AD2A6F773400194690 /* Build configuration list for PBXNativeTarget "iOSWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66D176AE2A6F773400194690 /* Debug */,
+				66D176AF2A6F773400194690 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AFEFF5A42A67CFD3004AFD1A /* Build configuration list for PBXProject "DetectiveLog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
