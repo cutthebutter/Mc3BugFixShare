@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		663E38192A756B1C00BDE5DB /* LogRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663E38182A756B1C00BDE5DB /* LogRecordViewModel.swift */; };
 		66BD95F12A739D65007253F2 /* TempDetail in Resources */ = {isa = PBXBuildFile; fileRef = 66BD95F02A739D65007253F2 /* TempDetail */; };
 		AF0115E62A6FE7670021E462 /* TempDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0115E52A6FE7670021E462 /* TempDetailView.swift */; };
 		AF0115EA2A6FE7BE0021E462 /* OpinionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0115E92A6FE7BE0021E462 /* OpinionCell.swift */; };
@@ -16,7 +17,6 @@
 		AF37212E2A710D01007DC9B0 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37212D2A710D01007DC9B0 /* MemoCell.swift */; };
 		AF3721302A7113E8007DC9B0 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37212F2A7113E8007DC9B0 /* DateCell.swift */; };
 		66D1764E2A6E964200194690 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5DD2A67F436004AFD1A /* Log.swift */; };
-		66D176502A6E97DE00194690 /* FakeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1764F2A6E97DE00194690 /* FakeLog.swift */; };
 		66D176592A6F507D00194690 /* FakeEachLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176582A6F507D00194690 /* FakeEachLog.swift */; };
 		66D1765B2A6F526200194690 /* LogListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1765A2A6F526200194690 /* LogListViewModel.swift */; };
 		66D1765D2A6F557800194690 /* LogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D1765C2A6F557800194690 /* LogDetailView.swift */; };
@@ -130,6 +130,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		663E38182A756B1C00BDE5DB /* LogRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRecordViewModel.swift; sourceTree = "<group>"; };
 		66BD95F02A739D65007253F2 /* TempDetail */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TempDetail; sourceTree = "<group>"; };
 		AF0115E32A6FA5830021E462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AF0115E52A6FE7670021E462 /* 
@@ -224,6 +225,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		663E38152A756AED00BDE5DB /* LogRecordView */ = {
+			isa = PBXGroup;
+			children = (
+				663E38172A756B0900BDE5DB /* View */,
+				663E38162A756AFC00BDE5DB /* ViewModel */,
+			);
+			path = LogRecordView;
+			sourceTree = "<group>";
+		};
+		663E38162A756AFC00BDE5DB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				663E38182A756B1C00BDE5DB /* LogRecordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		663E38172A756B0900BDE5DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66E0667A2A6E5C9700BE3751 /* LogRecordView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 
 		AF0115E42A6FC42F0021E462 /* TempDetail */ = {
 			isa = PBXGroup;
@@ -311,19 +337,10 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		66E066702A6E4D1100BE3751 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				66D1764F2A6E97DE00194690 /* FakeLog.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		66E066792A6E5C8400BE3751 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				66E0667C2A6E5CA400BE3751 /* MainTabView.swift */,
-				66E0667A2A6E5C9700BE3751 /* LogRecordView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -331,7 +348,6 @@
 		66E066822A6E612800BE3751 /* LogTitleSelection */ = {
 			isa = PBXGroup;
 			children = (
-				66E066702A6E4D1100BE3751 /* Model */,
 				66E066832A6E613C00BE3751 /* ViewModel */,
 				66D176512A6E984B00194690 /* View */,
 			);
@@ -519,13 +535,14 @@
 		AFEFF5C52A67D001004AFD1A /* DetectiveLogWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				663E38152A756AED00BDE5DB /* LogRecordView */,
 				66D176542A6F4FED00194690 /* LogList */,
-				66E066872A6E6F0D00BE3751 /* DetectiveLogWatch Watch AppRelease.entitlements */,
 				66E066822A6E612800BE3751 /* LogTitleSelection */,
 				66E066792A6E5C8400BE3751 /* View */,
 				AFEFF5C62A67D001004AFD1A /* DetectiveLogWatchApp.swift */,
 				AFEFF5C82A67D001004AFD1A /* ContentView.swift */,
 				AFEFF5CA2A67D002004AFD1A /* Assets.xcassets */,
+				66E066872A6E6F0D00BE3751 /* DetectiveLogWatch Watch AppRelease.entitlements */,
 				AFEFF5CC2A67D002004AFD1A /* Preview Content */,
 			);
 			path = "DetectiveLogWatch Watch App";
@@ -746,16 +763,24 @@
 			files = (
 				AFEFF5C92A67D001004AFD1A /* ContentView.swift in Sources */,
 				AFEFF5C72A67D001004AFD1A /* DetectiveLogWatchApp.swift in Sources */,
+				66BD95FE2A73A3B5007253F2 /* CloudKitManager+Create.swift in Sources */,
 				66D176592A6F507D00194690 /* FakeEachLog.swift in Sources */,
 				66D1765B2A6F526200194690 /* LogListViewModel.swift in Sources */,
+				66BD95FD2A73A3B0007253F2 /* CloudKitManagerInterface.swift in Sources */,
 				66D1764E2A6E964200194690 /* Log.swift in Sources */,
-				66D176502A6E97DE00194690 /* FakeLog.swift in Sources */,
+				66BD95FA2A73A3A6007253F2 /* CloudKitManager+Read.swift in Sources */,
+				663E38192A756B1C00BDE5DB /* LogRecordViewModel.swift in Sources */,
+				66BD96002A73A3BE007253F2 /* LogMemo.swift in Sources */,
 				66E0667B2A6E5C9700BE3751 /* LogRecordView.swift in Sources */,
 				66E066862A6E632D00BE3751 /* LogTitleSelectionViewModel.swift in Sources */,
+				66BD95FF2A73A3BA007253F2 /* LogOpinion.swift in Sources */,
 				66E066812A6E5CDF00BE3751 /* LogListView.swift in Sources */,
+				66BD96012A73A40A007253F2 /* CloudKitManager.swift in Sources */,
 				66E0667F2A6E5CCE00BE3751 /* LogTitleSelectionView.swift in Sources */,
 				66E0667D2A6E5CA400BE3751 /* MainTabView.swift in Sources */,
 				66D1765D2A6F557800194690 /* LogDetailView.swift in Sources */,
+				66BD95FB2A73A3AA007253F2 /* CloudKitManager+Update.swift in Sources */,
+				66BD95FC2A73A3AD007253F2 /* CloudKitManager+Delete.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

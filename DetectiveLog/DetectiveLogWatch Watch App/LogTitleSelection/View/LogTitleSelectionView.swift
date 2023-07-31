@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LogTitleSelectionView: View {
-    @Binding var selectedTitle: String?
+    @Binding var selectedLog: Log?
     
     @ObservedObject var viewModel = LogTitleSelectionViewModel()
     
@@ -21,20 +21,17 @@ struct LogTitleSelectionView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.fakeLog){ item in
+                ForEach(viewModel.log) { item in
                     Button{
-                        selectedTitle = item.title
+                        selectedLog = item
                         dismiss()
                     } label: {
                         Text(item.title)
                     }
                     
                 }
-                
-                //TODO: 사건추가하기 뷰 적층구조 해결해야 함
-                
                 Button{
-                    selectedTitle = presentTextInput()
+                    viewModel.cloudKitManager.createLogRecord(log: Log(id: nil, category:.inProgress, title: "\(viewModel.log.count + 1) 번째 사건일지", latestMemo: nil, isBookmarked: 0, isLocked: 0, isPinned: 0, createdAt: Date(), updatedAt: Date(), logMemoDates: nil, logMemoId: nil))
                     
                 } label: {
                     HStack{

@@ -9,6 +9,7 @@ import Foundation
 
 class LogListViewModel: ObservableObject {
     
+    
     @Published var fakeEachLog = [FakeEachLog]()
     //TODO: 클라우드킷 들어오면 바꿔야 할 곳 
     init() {

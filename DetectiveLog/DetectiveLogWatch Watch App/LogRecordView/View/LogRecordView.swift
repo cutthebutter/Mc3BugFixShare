@@ -10,7 +10,8 @@ import SwiftUI
 struct LogRecordView: View {
     @State private var temporaryDictation : String = "None"
     @State private var showLogTitleSelectionView = false
-    @State private var selectedTitle : String?
+    @State private var selectedLog : String?
+    @ObservedObject var viewModel = LogRecordViewModel()
     
     @Environment(\.scenePhase) private var scenePhase
     
@@ -45,13 +46,12 @@ struct LogRecordView: View {
             
             
             .sheet(isPresented: $showLogTitleSelectionView) {
-                LogTitleSelectionView(selectedTitle: $selectedTitle)
+                LogTitleSelectionView(selectedLog: $selectedLog)
                     .onDisappear {
-                        if let selectedtitle = selectedTitle{
-                            //TODO: Log 데이터로 포맷팅 해줘야 함.
-//                            let memo = Memo(category: category, content: temporaryDictation)
-//                            saveMemo(memo)
-                            print("@Log: \(temporaryDictation), \(selectedtitle)")
+                        if let selectedLog = selectedLog{
+                            //TODO: CKRecord.ID들 해결해야 함
+                            let newLogmMemo = LogMemo(id: CKRecord.ID, referenceId: CKRecord.Reference?, memo: temporaryDictation, logMemoDate: Date(), createdAt: Date())
+                            saveLogMemo(selectedLog: selectedLog, newLogMemo: newLogmMemo)
                         }
                     }
             }
@@ -75,9 +75,24 @@ struct LogRecordView: View {
         }
     }
     
-    func saveLog(){
+    func saveLogMemo(selectedLog : Log, newLogMemo : LogMemo){
         print("@log : saveLog()")
-        //TODO: 여기서 코어데이터에 데이터를 보내는 걸 구현해줘야 함 
+        var selectedLogList = viewModel.fetchLogMemo(selectedLog: selectedLog)
+        if selectedLogList.count == 0 {
+            CloudKitManager.shared.createLogMemoRecord(log: selectedLog, logMemo: newLogMemo)
+            let defaultOpinion = "사견을 작성해주세요"
+        //TODO: CKRecord.ID들 해결해야 함
+            let emptyLogOpinion = LogOpinion(id: CKRecord.ID, referenceId: CKRecord.Reference, opinion: defaultOpinion, createdAt: Date())
+            CloudKitManager.shared.createdLogOpinionRecord(log: selectedLog, logOpinion: emptyLogOpinion)
+            //TODO: 저기 latestMemo에는 뭘 적지?
+            CloudKitManager.shared.updateLogRecord(log: selectedLog, latestMemo: [String], updatedAt: Date())
+        } else{
+            CloudKitManager.shared.createLogMemoRecord(log: selectedLog, logMemo: newLogMemo)
+            let defaultOpinion = "사견을 작성해주세요"
+            //TODO: 저기 latestMemo에는 뭘 적지?
+            CloudKitManager.shared.updateLogRecord(log: selectedLog, latestMemo: [String], updatedAt: Date())
+            
+        }
     }
 }
 
