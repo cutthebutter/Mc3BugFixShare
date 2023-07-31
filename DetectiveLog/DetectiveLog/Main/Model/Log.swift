@@ -11,7 +11,7 @@ import CloudKit
 struct Log: Identifiable, Equatable {
     let id: CKRecord.ID?
     var category: LogCategory
-    let title: String
+    let title: String //사건명
     let latestMemo: [String]?
     let isBookmarked: Int // 0 == false <-> 1 == true
     let isLocked: Int

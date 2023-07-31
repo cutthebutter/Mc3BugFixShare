@@ -9,7 +9,7 @@ import Foundation
 
 class SearchTestViewModel : ObservableObject {
     @Published var logMemoList = [FakeLogMemo]()
-    @Published var logCommentList = [FakeLogComment]()
+//    @Published var logCommentList = [FakeLogComment]()
     @Published var logMemoDate = [Date]()
     
     init() {
@@ -39,16 +39,16 @@ class SearchTestViewModel : ObservableObject {
         ]
         logMemoList.sort{ $0.date < $1.date }
         
-        logCommentList = [
-            FakeLogComment(comment: "사견 1", date: Date.now - TimeInterval(3600*70)),
-            FakeLogComment(comment: "사견 2", date: Date.now - TimeInterval(3600*69)),
-            FakeLogComment(comment: "사견 3", date: Date.now - TimeInterval(3600*48)),
-            FakeLogComment(comment: "사견 4", date: Date.now - TimeInterval(3600*45)),
-            FakeLogComment(comment: "사견 5", date: Date.now - TimeInterval(3600*43)),
-            FakeLogComment(comment: "사견 6", date: Date.now - TimeInterval(3600*22)),
-            FakeLogComment(comment: "사견 7", date: Date.now - TimeInterval(3600*20))
-            
-        ]
+//        logCommentList = [
+//            FakeLogComment(comment: "사견 1", date: Date.now - TimeInterval(3600*70)),
+//            FakeLogComment(comment: "사견 2", date: Date.now - TimeInterval(3600*69)),
+//            FakeLogComment(comment: "사견 3", date: Date.now - TimeInterval(3600*48)),
+//            FakeLogComment(comment: "사견 4", date: Date.now - TimeInterval(3600*45)),
+//            FakeLogComment(comment: "사견 5", date: Date.now - TimeInterval(3600*43)),
+//            FakeLogComment(comment: "사견 6", date: Date.now - TimeInterval(3600*22)),
+//            FakeLogComment(comment: "사견 7", date: Date.now - TimeInterval(3600*20))
+//
+//        ]
     }
     
     /// 로그메모에서 날짜만 추출

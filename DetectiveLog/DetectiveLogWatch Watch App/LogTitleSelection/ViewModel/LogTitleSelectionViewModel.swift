@@ -9,17 +9,21 @@ import Foundation
 
 class LogTitleSelectionViewModel: ObservableObject {
     
-    //TODO: 클라우드킷과 연결 필요함 : log를 불러와야 함
+    let cloudKitManager = CloudKitManager.shared
     
-    @Published var fakeLog : [FakeLog] = []
+    @Published var log : [Log] = []
     
     init() {
-        fakeLog = [
-        FakeLog(title: "가나"),
-        FakeLog(title: "사나"),
-        FakeLog(title: "다라")
-        ]
-        
+        fetchLog()
     }
+    
+    func fetchLog() {
+        cloudKitManager.fetchLogRecord { log in
+            DispatchQueue.main.async {
+                self.log = log.sorted(by: { $0.isPinned > $1.isPinned })
+            }
+        }
+    }
+
     
 }

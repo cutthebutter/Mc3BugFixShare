@@ -11,13 +11,6 @@ final class LogViewModel: ObservableObject {
     
     let cloudKitManager = CloudKitManager.shared
     
-    //AppIntents, Shortcuts을 위한 코드
-    static let shared = LogViewModel()
-    @Published var path : [Log] = []
-    func navigateToMain() {
-        path = []
-    }
-    
     @Published var log: [Log] = []
     @Published var logForCategoryChange: [Log] = []
     
