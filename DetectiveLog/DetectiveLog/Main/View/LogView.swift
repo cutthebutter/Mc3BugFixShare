@@ -144,9 +144,9 @@ struct LogView: View {
                 viewModel.logForCategoryChange = []
                 for selection in multiSelection {
                     print("@Log - \(selection)")
-                    viewModel.logForCategoryChange.append(
-                        viewModel.log[viewModel.log.firstIndex(where: { $0.id == selection })!]
-                    )
+                    if let index = viewModel.log.firstIndex(where: { $0.id == selection }) {
+                        viewModel.logForCategoryChange.append(viewModel.log[index])
+                    }
                 }
                 self.isPresented.toggle()
             } label: {
@@ -229,7 +229,7 @@ struct LogView: View {
         return Button {
             viewModel.updateIsLocked(selectedLog: log)
         } label: {
-            Text("메모 잠그기")
+            Text(log.isLocked == 0 ? "메모 잠그기" : "메모 잠금해제")
         }
     }
     
