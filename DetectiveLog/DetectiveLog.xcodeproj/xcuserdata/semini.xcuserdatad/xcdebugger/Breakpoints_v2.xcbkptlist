@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7952BE85-A34D-4E9F-850F-83BB04973395"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DetectiveLogWatch Watch App/View/LogTitleSelection/LogTitleSelectionView.swift"
@@ -322,6 +322,683 @@
             endingLineNumber = "54"
             landmarkName = "availableMonths"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F838CB8F-D0B7-4F91-B11B-8B9B2F15BFD0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/WatchConnect/WatchSessionManagerIOS.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "saveLogAndMemo(log:logMemo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C8F4EDA-B76E-4F2F-A0ED-EE4FB1C26995"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/WatchConnect/WatchSessionManagerIOS.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "saveLogAndMemo(log:logMemo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D795857D-6E02-4DE4-BD77-02B24A6A8B3A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/WatchConnect/WatchSessionManagerIOS.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "saveLogAndMemo(log:logMemo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "58AFF70C-2EB3-46FF-B39E-247A91CBF981"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/WatchConnect/WatchSessionManagerIOS.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "saveLogAndMemo(log:logMemo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EB67E9E6-1804-4D9C-8D24-84A2A68C099D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/WatchConnect/WatchSessionManagerIOS.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "saveLogAndMemo(log:logMemo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "02427CDB-903F-4FC7-8B9E-28050933D7F5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/WatchConnect/WatchSessionManagerIOS.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "saveLogAndMemo(log:logMemo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16CC7FA5-5FEC-47C0-AE7B-91ECFE38DBC3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/WatchConnect/WatchSessionManagerIOS.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "saveLogAndMemo(log:logMemo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D6303659-59AE-4772-82E9-E1D045E1D878"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLog/WatchConnect/WatchSessionManagerIOS.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "saveLogAndMemo(log:logMemo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A6A5A024-6B91-4580-87C7-1C9FB5384496"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLogWatch Watch App/LogTitleSelection/View/LogTitleSelectionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "A6A5A024-6B91-4580-87C7-1C9FB5384496 - 9ef467060a62b36e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "592">
+               </Location>
+               <Location
+                  uuid = "A6A5A024-6B91-4580-87C7-1C9FB5384496 - 16c3c6e5725ae34"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "A6A5A024-6B91-4580-87C7-1C9FB5384496 - 9ef467060a62b36e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "628">
+               </Location>
+               <Location
+                  uuid = "A6A5A024-6B91-4580-87C7-1C9FB5384496 - 9ef467060a62b34d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "1156">
+               </Location>
+               <Location
+                  uuid = "A6A5A024-6B91-4580-87C7-1C9FB5384496 - 16c3c6e5725ae55"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "21B20D33-A437-4887-A4CE-65190C987384"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLogWatch Watch App/LogTitleSelection/View/LogTitleSelectionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "21B20D33-A437-4887-A4CE-65190C987384 - 16c3c6e5725ae34"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "21B20D33-A437-4887-A4CE-65190C987384 - 16c3c6e5725ae55"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3840C4F-08C4-4F7C-B733-E91EF8CF452A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLogWatch Watch App/LogTitleSelection/View/LogTitleSelectionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "D3840C4F-08C4-4F7C-B733-E91EF8CF452A - 9ef467060a62b32c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "1116">
+               </Location>
+               <Location
+                  uuid = "D3840C4F-08C4-4F7C-B733-E91EF8CF452A - 16c3c6e5725ae55"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "416">
+               </Location>
+               <Location
+                  uuid = "D3840C4F-08C4-4F7C-B733-E91EF8CF452A - 9b2dd0e6c998ac80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; () in closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "D3840C4F-08C4-4F7C-B733-E91EF8CF452A - 9ef467060a62b32c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "1176">
+               </Location>
+               <Location
+                  uuid = "D3840C4F-08C4-4F7C-B733-E91EF8CF452A - 9ef467060a62b30b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "1464">
+               </Location>
+               <Location
+                  uuid = "D3840C4F-08C4-4F7C-B733-E91EF8CF452A - 16c3c6e5725ae72"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "416">
+               </Location>
+               <Location
+                  uuid = "D3840C4F-08C4-4F7C-B733-E91EF8CF452A - 9b2dd0e6c998ac61"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; () in closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CF8D3824-81D5-49DB-88B7-FA55C7BA1C61"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLogWatch Watch App/LogTitleSelection/View/LogTitleSelectionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "CF8D3824-81D5-49DB-88B7-FA55C7BA1C61 - 9b2dd0e6c998ac80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; () in closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "CF8D3824-81D5-49DB-88B7-FA55C7BA1C61 - 9b2dd0e6c998ac61"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; () in closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2158E2F-C8C4-48D6-81E0-CD54ACE69018"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLogWatch Watch App/LogTitleSelection/View/LogTitleSelectionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "F2158E2F-C8C4-48D6-81E0-CD54ACE69018 - 9b2dd0e6c998ac61"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; () in closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "568">
+               </Location>
+               <Location
+                  uuid = "F2158E2F-C8C4-48D6-81E0-CD54ACE69018 - 9b2dd0e6c998ac23"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; () in closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "61FE37F4-F53F-4DC1-91F1-7D370714C09B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLogWatch Watch App/LogTitleSelection/View/LogTitleSelectionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "61FE37F4-F53F-4DC1-91F1-7D370714C09B - 9ef467060a62b28f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "504">
+               </Location>
+               <Location
+                  uuid = "61FE37F4-F53F-4DC1-91F1-7D370714C09B - 9ef467060a62b28f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "540">
+               </Location>
+               <Location
+                  uuid = "61FE37F4-F53F-4DC1-91F1-7D370714C09B - 9ef467060a62b36e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "1072">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C359ACB-5A5D-4049-966D-08D8075A59DF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLogWatch Watch App/LogTitleSelection/View/LogTitleSelectionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "7C359ACB-5A5D-4049-966D-08D8075A59DF - 9ef467060a62b3a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1264">
+               </Location>
+               <Location
+                  uuid = "7C359ACB-5A5D-4049-966D-08D8075A59DF - 9ef467060a62b3a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1812">
+               </Location>
+               <Location
+                  uuid = "7C359ACB-5A5D-4049-966D-08D8075A59DF - 9ef467060a62ac76"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "2108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4653EB1A-11DE-409F-A82B-BC44881A47F2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DetectiveLogWatch Watch App/LogTitleSelection/View/LogTitleSelectionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "4653EB1A-11DE-409F-A82B-BC44881A47F2 - 9ef467060a62b3a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1264">
+               </Location>
+               <Location
+                  uuid = "4653EB1A-11DE-409F-A82B-BC44881A47F2 - 9ef467060a62b3c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "1340">
+               </Location>
+               <Location
+                  uuid = "4653EB1A-11DE-409F-A82B-BC44881A47F2 - 9ef467060a62b397"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (DetectiveLogWatch_Watch_App.Log) -&gt; SwiftUI.Button&lt;SwiftUI.Text&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.ForEach&lt;Swift.Array&lt;DetectiveLogWatch_Watch_App.Log&gt;, Foundation.UUID, SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitleDisplayMode(SwiftUI.NavigationBarItem.TitleDisplayMode) -&gt; some&gt;&gt;.0 in DetectiveLogWatch_Watch_App.LogTitleSelectionView.body.getter : some"
+                  moduleName = "DetectiveLogWatch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/semini/WorkSpace/MC3-Team17-Modera/DetectiveLog/DetectiveLogWatch%20Watch%20App/LogTitleSelection/View/LogTitleSelectionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "1628">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

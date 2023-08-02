@@ -7,17 +7,19 @@
 
 import SwiftUI
 
-@available(iOS 16.0, *)
 @main
-@available(iOS 16.0, *)
 struct DetectiveLogApp: App {
     let persistenceController = PersistenceController.shared
+    
+    init() {
+        WatchSessionManagerIOS.shared.startSession()
+    }
 
     var body: some Scene {
         WindowGroup {
 //            CategoryView()
-            //LogView()
-            SearchTestView()
+            LogView()
+//            SearchTestView()
 //            CalendarView()
         }
     }

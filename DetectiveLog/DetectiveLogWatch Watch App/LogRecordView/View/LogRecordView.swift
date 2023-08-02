@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import WatchConnectivity
+import WatchKit
 
 struct LogRecordView: View {
-    @State private var temporaryDictation : String = "None"
-    @State private var showLogTitleSelectionView = false
-    @State private var selectedLog : String?
     @ObservedObject var viewModel = LogRecordViewModel()
+    @State var temporaryDictation : String = "None"
+    @State var showLogTitleSelectionView = false
+    @State var reachable = "No"
     
     @Environment(\.scenePhase) private var scenePhase
     
@@ -33,6 +35,18 @@ struct LogRecordView: View {
                     .buttonStyle(PlainButtonStyle())
                     
                     Text("기록시작")
+                    //MARK: reachable을 확인하기 위해 만들
+                    Text("Reachable \(reachable)")
+                    Button(action: {
+                        if WatchSessionManagerWatch.shared.isWatchReachable{
+                            self.reachable = "Yes"
+                        }
+                        else{
+                            self.reachable = "No"
+                        }
+                    }) {
+                        Text("Update")
+                    }
                 }
                 .onChange(of: scenePhase) { (phase) in
                     switch phase {
@@ -46,14 +60,15 @@ struct LogRecordView: View {
             
             
             .sheet(isPresented: $showLogTitleSelectionView) {
-                LogTitleSelectionView(selectedLog: $selectedLog)
-                    .onDisappear {
-                        if let selectedLog = selectedLog{
-                            //TODO: CKRecord.ID들 해결해야 함
-                            let newLogmMemo = LogMemo(id: CKRecord.ID, referenceId: CKRecord.Reference?, memo: temporaryDictation, logMemoDate: Date(), createdAt: Date())
-                            saveLogMemo(selectedLog: selectedLog, newLogMemo: newLogmMemo)
-                        }
-                    }
+//                TestView()
+                LogTitleSelectionView(viewModel: WatchSessionManagerWatch.shared.logTitleSelectionViewModel, temporaryDictation : $temporaryDictation)
+//                    .onDisappear {
+//                        if let selectedLog = selectedLog{
+//                            TODO: CKRecord.ID들 해결해야 함
+//                            let newLogmMemo = LogMemo(id:nil, referenceId: CKRecord.Reference?, memo: temporaryDictation, logMemoDate: Date(), createdAt: Date())
+//                            saveLogMemo(selectedLog: selectedLog, newLogMemo: newLogmMemo)
+//                        }
+//                    }
             }
             
         }
@@ -75,25 +90,25 @@ struct LogRecordView: View {
         }
     }
     
-    func saveLogMemo(selectedLog : Log, newLogMemo : LogMemo){
-        print("@log : saveLog()")
-        var selectedLogList = viewModel.fetchLogMemo(selectedLog: selectedLog)
-        if selectedLogList.count == 0 {
-            CloudKitManager.shared.createLogMemoRecord(log: selectedLog, logMemo: newLogMemo)
-            let defaultOpinion = "사견을 작성해주세요"
-        //TODO: CKRecord.ID들 해결해야 함
-            let emptyLogOpinion = LogOpinion(id: CKRecord.ID, referenceId: CKRecord.Reference, opinion: defaultOpinion, createdAt: Date())
-            CloudKitManager.shared.createdLogOpinionRecord(log: selectedLog, logOpinion: emptyLogOpinion)
-            //TODO: 저기 latestMemo에는 뭘 적지?
-            CloudKitManager.shared.updateLogRecord(log: selectedLog, latestMemo: [String], updatedAt: Date())
-        } else{
-            CloudKitManager.shared.createLogMemoRecord(log: selectedLog, logMemo: newLogMemo)
-            let defaultOpinion = "사견을 작성해주세요"
-            //TODO: 저기 latestMemo에는 뭘 적지?
-            CloudKitManager.shared.updateLogRecord(log: selectedLog, latestMemo: [String], updatedAt: Date())
-            
-        }
-    }
+//    func saveLogMemo(selectedLog : Log, newLogMemo : LogMemo){
+//        print("@log : saveLog()")
+//        var selectedLogList = viewModel.fetchLogMemo(selectedLog: selectedLog)
+//        if selectedLogList.count == 0 {
+//            CloudKitManager.shared.createLogMemoRecord(log: selectedLog, logMemo: newLogMemo)
+//            let defaultOpinion = "사견을 작성해주세요"
+//        //TODO: CKRecord.ID들 해결해야 함
+//            let emptyLogOpinion = LogOpinion(id: , referenceId: CKRecord.Reference, opinion: defaultOpinion, createdAt: Date())
+//            CloudKitManager.shared.createdLogOpinionRecord(log: selectedLog, logOpinion: emptyLogOpinion)
+//            //TODO: 저기 latestMemo에는 뭘 적지?
+//            CloudKitManager.shared.updateLogRecord(log: selectedLog, latestMemo: [String], updatedAt: Date())
+//        } else{
+//            CloudKitManager.shared.createLogMemoRecord(log: selectedLog, logMemo: newLogMemo)
+//            let defaultOpinion = "사견을 작성해주세요"
+//            //TODO: 저기 latestMemo에는 뭘 적지?
+//            CloudKitManager.shared.updateLogRecord(log: selectedLog, latestMemo: [String], updatedAt: Date())
+//
+//        }
+//    }
 }
 
 struct MemoRecordView_Previews: PreviewProvider {

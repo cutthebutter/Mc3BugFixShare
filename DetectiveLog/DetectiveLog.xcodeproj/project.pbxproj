@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6620F8512A79010F007244B1 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5DB2A67D765004AFD1A /* CloudKitManager.swift */; };
+		6620F8522A790112007244B1 /* CloudKitManager+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA402A6EFB7000213DBE /* CloudKitManager+Create.swift */; };
+		6620F8532A790115007244B1 /* CloudKitManager+Read.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA422A6EFBB300213DBE /* CloudKitManager+Read.swift */; };
+		6620F8542A790118007244B1 /* CloudKitManager+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA442A6EFBF300213DBE /* CloudKitManager+Update.swift */; };
+		6620F8552A79011B007244B1 /* CloudKitManager+Delete.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA462A6EFC2800213DBE /* CloudKitManager+Delete.swift */; };
+		6620F8562A79011D007244B1 /* CloudKitManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73FA3C2A6EF4BE00213DBE /* CloudKitManagerInterface.swift */; };
+		6620F8572A790145007244B1 /* DetailLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0579F22A779ABA004577E7 /* DetailLog.swift */; };
+		6620F8582A790147007244B1 /* LogOpinion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0579F32A779ABA004577E7 /* LogOpinion.swift */; };
+		6620F8592A790149007244B1 /* LogMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0579F42A779ABA004577E7 /* LogMemo.swift */; };
+		6620F85C2A7921B9007244B1 /* WatchSessionManagerIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6620F85B2A7921B9007244B1 /* WatchSessionManagerIOS.swift */; };
+		6620F85F2A792326007244B1 /* WatchSessionMangerWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6620F85E2A792326007244B1 /* WatchSessionMangerWatch.swift */; };
+		6620F8612A792A80007244B1 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6620F8602A792A80007244B1 /* TestView.swift */; };
 		663E38192A756B1C00BDE5DB /* LogRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663E38182A756B1C00BDE5DB /* LogRecordViewModel.swift */; };
 		66D1764E2A6E964200194690 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEFF5DD2A67F436004AFD1A /* Log.swift */; };
 		66D176592A6F507D00194690 /* FakeEachLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D176582A6F507D00194690 /* FakeEachLog.swift */; };
@@ -129,6 +141,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6620F85B2A7921B9007244B1 /* WatchSessionManagerIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionManagerIOS.swift; sourceTree = "<group>"; };
+		6620F85E2A792326007244B1 /* WatchSessionMangerWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionMangerWatch.swift; sourceTree = "<group>"; };
+		6620F8602A792A80007244B1 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		663E38182A756B1C00BDE5DB /* LogRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRecordViewModel.swift; sourceTree = "<group>"; };
 		66D176582A6F507D00194690 /* FakeEachLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeEachLog.swift; sourceTree = "<group>"; };
 		66D1765A2A6F526200194690 /* LogListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListViewModel.swift; sourceTree = "<group>"; };
@@ -219,11 +234,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6620F85A2A792176007244B1 /* WatchConnect */ = {
+			isa = PBXGroup;
+			children = (
+				6620F85B2A7921B9007244B1 /* WatchSessionManagerIOS.swift */,
+			);
+			path = WatchConnect;
+			sourceTree = "<group>";
+		};
+		6620F85D2A792310007244B1 /* WatchConnect */ = {
+			isa = PBXGroup;
+			children = (
+				6620F85E2A792326007244B1 /* WatchSessionMangerWatch.swift */,
+			);
+			path = WatchConnect;
+			sourceTree = "<group>";
+		};
 		663E38152A756AED00BDE5DB /* LogRecordView */ = {
 			isa = PBXGroup;
 			children = (
-				663E38172A756B0900BDE5DB /* View */,
 				663E38162A756AFC00BDE5DB /* ViewModel */,
+				663E38172A756B0900BDE5DB /* View */,
 			);
 			path = LogRecordView;
 			sourceTree = "<group>";
@@ -510,6 +541,7 @@
 				AF0115E32A6FA5830021E462 /* Info.plist */,
 				AFEFF5B72A67CFD4004AFD1A /* DetectiveLog.entitlements */,
 				AFEFF5B02A67CFD3004AFD1A /* DetectiveLog.xcdatamodeld */,
+				6620F85A2A792176007244B1 /* WatchConnect */,
 				AFEFF5B82A67CFD4004AFD1A /* Preview Content */,
 			);
 			path = DetectiveLog;
@@ -526,15 +558,17 @@
 		AFEFF5C52A67D001004AFD1A /* DetectiveLogWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				6620F85D2A792310007244B1 /* WatchConnect */,
+				66E066822A6E612800BE3751 /* LogTitleSelection */,
 				663E38152A756AED00BDE5DB /* LogRecordView */,
 				66D176542A6F4FED00194690 /* LogList */,
-				66E066822A6E612800BE3751 /* LogTitleSelection */,
 				66E066792A6E5C8400BE3751 /* View */,
 				AFEFF5C62A67D001004AFD1A /* DetectiveLogWatchApp.swift */,
 				AFEFF5C82A67D001004AFD1A /* ContentView.swift */,
 				AFEFF5CA2A67D002004AFD1A /* Assets.xcassets */,
 				66E066872A6E6F0D00BE3751 /* DetectiveLogWatch Watch AppRelease.entitlements */,
 				AFEFF5CC2A67D002004AFD1A /* Preview Content */,
+				6620F8602A792A80007244B1 /* TestView.swift */,
 			);
 			path = "DetectiveLogWatch Watch App";
 			sourceTree = "<group>";
@@ -721,6 +755,7 @@
 				AF73FA432A6EFBB300213DBE /* CloudKitManager+Read.swift in Sources */,
 				AFEFF5AD2A67CFD3004AFD1A /* DetectiveLogApp.swift in Sources */,
 				66D176C92A6FE82300194690 /* SearchTestView.swift in Sources */,
+				6620F85C2A7921B9007244B1 /* WatchSessionManagerIOS.swift in Sources */,
 				66D176F72A70F4DC00194690 /* CalendarView.swift in Sources */,
 				AF057A052A779ABA004577E7 /* MemoCell.swift in Sources */,
 				66D176CB2A6FE95E00194690 /* SearchTestViewModel.swift in Sources */,
@@ -753,16 +788,27 @@
 			files = (
 				AFEFF5C92A67D001004AFD1A /* ContentView.swift in Sources */,
 				AFEFF5C72A67D001004AFD1A /* DetectiveLogWatchApp.swift in Sources */,
+				6620F8562A79011D007244B1 /* CloudKitManagerInterface.swift in Sources */,
 				66D176592A6F507D00194690 /* FakeEachLog.swift in Sources */,
 				66D1765B2A6F526200194690 /* LogListViewModel.swift in Sources */,
+				6620F8572A790145007244B1 /* DetailLog.swift in Sources */,
 				66D1764E2A6E964200194690 /* Log.swift in Sources */,
 				663E38192A756B1C00BDE5DB /* LogRecordViewModel.swift in Sources */,
 				66E0667B2A6E5C9700BE3751 /* LogRecordView.swift in Sources */,
+				6620F8582A790147007244B1 /* LogOpinion.swift in Sources */,
 				66E066862A6E632D00BE3751 /* LogTitleSelectionViewModel.swift in Sources */,
+				6620F8592A790149007244B1 /* LogMemo.swift in Sources */,
+				6620F85F2A792326007244B1 /* WatchSessionMangerWatch.swift in Sources */,
 				66E066812A6E5CDF00BE3751 /* LogListView.swift in Sources */,
+				6620F8532A790115007244B1 /* CloudKitManager+Read.swift in Sources */,
+				6620F8552A79011B007244B1 /* CloudKitManager+Delete.swift in Sources */,
 				66E0667F2A6E5CCE00BE3751 /* LogTitleSelectionView.swift in Sources */,
 				66E0667D2A6E5CA400BE3751 /* MainTabView.swift in Sources */,
 				66D1765D2A6F557800194690 /* LogDetailView.swift in Sources */,
+				6620F8612A792A80007244B1 /* TestView.swift in Sources */,
+				6620F8522A790112007244B1 /* CloudKitManager+Create.swift in Sources */,
+				6620F8512A79010F007244B1 /* CloudKitManager.swift in Sources */,
+				6620F8542A790118007244B1 /* CloudKitManager+Update.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

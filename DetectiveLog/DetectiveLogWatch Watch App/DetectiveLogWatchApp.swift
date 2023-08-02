@@ -9,6 +9,12 @@ import SwiftUI
 
 @main
 struct DetectiveLogWatch_Watch_AppApp: App {
+    
+    init() {
+        WatchSessionManagerWatch.shared.startSession()
+    }
+
+    
     var body: some Scene {
         WindowGroup {
             MainTabView()

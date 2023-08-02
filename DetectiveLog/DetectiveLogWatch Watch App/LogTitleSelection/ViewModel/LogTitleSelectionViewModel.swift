@@ -9,21 +9,23 @@ import Foundation
 
 class LogTitleSelectionViewModel: ObservableObject {
     
-    let cloudKitManager = CloudKitManager.shared
-    
-    @Published var log : [Log] = []
+    @Published var logList: [Log] = []
     
     init() {
-        fetchLog()
+//        fetchLog()
     }
     
-    func fetchLog() {
-        cloudKitManager.fetchLogRecord { log in
-            DispatchQueue.main.async {
-                self.log = log.sorted(by: { $0.isPinned > $1.isPinned })
-            }
-        }
+    func updateLogList(logList: [Log]) {
+        self.logList = logList
     }
+    
+//    func fetchLog() {
+//        cloudKitManager.fetchLogRecord { log in
+//            DispatchQueue.main.async {
+//                self.log = log.sorted(by: { $0.isPinned > $1.isPinned })
+//            }
+//        }
+//    }
 
     
 }

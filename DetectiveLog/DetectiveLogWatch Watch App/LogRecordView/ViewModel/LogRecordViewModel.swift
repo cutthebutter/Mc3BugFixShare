@@ -8,17 +8,16 @@
 import Foundation
 
 class LogRecordViewModel: ObservableObject {
-    let cloudKitManager = CloudKitManager.shared
     @Published var selectedLogList: [LogMemo] = []
 
     init(){
-        
+
     }
-    
-    func fetchLogMemo(selectedLog : Log) -> [LogMemo] {
-        cloudKitManager.fetchLogMemoRecord(log: selectedLog, { logMemo in
-            self.selectedLogList = logMemo
-        })
-        return selectedLogList
-    }
+
+//    func fetchLogMemo(selectedLog : Log) -> [LogMemo] {
+//        cloudKitManager.fetchLogMemoRecord(log: selectedLog, { logMemo in
+//            self.selectedLogList = logMemo
+//        })
+//        return selectedLogList
+//    }
 }

@@ -12,8 +12,8 @@ struct MainTabView: View {
         TabView{
             LogRecordView()
                 .tag(0)
-            LogListView(viewModel: LogListViewModel())
-                .tag(1)
+//            LogListView(viewModel: LogListViewModel())
+//                .tag(1)
         }
 
     }

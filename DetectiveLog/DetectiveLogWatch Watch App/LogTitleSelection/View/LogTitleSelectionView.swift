@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import WatchConnectivity
 
 struct LogTitleSelectionView: View {
-    @Binding var selectedLog: Log?
-    
-    @ObservedObject var viewModel = LogTitleSelectionViewModel()
+    //    @Binding var selectedLog: Log?
+    @ObservedObject var viewModel : LogTitleSelectionViewModel
+    @Binding var temporaryDictation : String
     
     @Environment(\.dismiss) var dismiss
     
@@ -21,17 +22,41 @@ struct LogTitleSelectionView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.log) { item in
+                ForEach(viewModel.logList) { log in
                     Button{
-                        selectedLog = item
-                        dismiss()
+                        let logDictionary = log.toDictionary()
+                        let newLogMemo: [String: Any] = [
+                            "selectLog": logDictionary,
+                            "temporaryDictation": temporaryDictation
+                        ]
+                        print("@Log_watch Sending message: \(newLogMemo)")
+                        
+                        // iOS로 메시지 보내기
+                        if WCSession.default.isReachable {
+                            WCSession.default.sendMessage(newLogMemo, replyHandler: {_ in
+                                print("@Log_watch 데이터 감-repyHandelr\(newLogMemo)")
+                            }, errorHandler: { error in
+                                print("@Log_watch Error sending message to iOS: \(error)")
+                                print("@Log_watch Error details: \(error.localizedDescription)")
+                            })
+                            print("@Log_watch 데이터 감\(newLogMemo)")
+                            dismiss()
+                        }
+                        
+                //        ["request": "requestLog"]
+//                        if message["request"] as? String == "requestLog" {
+//                            print("@Log_iOS: if message [request] as? String == requestLog")
+//                            sendLogListToWatch()
+//                        }
+
+//                        dismiss()
                     } label: {
-                        Text(item.title)
+                        Text(log.title)
                     }
                     
                 }
                 Button{
-                    $viewModel.cloudKitManager.createLogRecord(log: Log(id: nil, recordId: nil, category:.inProgress, title: "\(viewModel.log.count + 1) 번째 사건일지", latestMemo: nil, isBookmarked: 0, isLocked: 0, isPinned: 0, createdAt: Date(), updatedAt: Date(), logMemoDates: nil, logMemoId: nil))
+                    //                    $viewModel.cloudKitManager.createLogRecord(log: Log(id: nil, recordId: nil, category:.inProgress, title: "\(viewModel.log.count + 1) 번째 사건일지", latestMemo: nil, isBookmarked: 0, isLocked: 0, isPinned: 0, createdAt: Date(), updatedAt: Date(), logMemoDates: nil, logMemoId: nil))
                     
                 } label: {
                     HStack{
@@ -43,6 +68,9 @@ struct LogTitleSelectionView: View {
             }
             .navigationTitle("사건 선택")
             .navigationBarTitleDisplayMode(.inline)
+        }
+        .onAppear{
+            WatchSessionManagerWatch.shared.requestLogFromiOS()
         }
     }
     
@@ -57,7 +85,7 @@ struct LogTitleSelectionView: View {
         return temprorySpeach
     }
 }
-    
+
 
 //struct LogTitleSelectionView_Previews: PreviewProvider {
 //    static var previews: some View {

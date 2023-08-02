@@ -20,12 +20,26 @@ struct LogView: View {
     @State var multiSelection = Set<UUID>()
     var category = ["진행 중", "완결", "미완결"]
     let faceIDManager = FaceIDManager()
+    @State var reachable = "No"
     
     @ObservedObject var viewModel = LogViewModel()
     
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
+                //MARK: 워치커넥티비티 테스트를 위해
+                Text("Reachable \(reachable)")
+                Button(action: {
+                    if WatchSessionManagerIOS.shared.isWatchReachable{
+                        self.reachable = "Yes"
+                    }
+                    else{
+                        self.reachable = "No"
+                    }
+                }) {
+                    Text("Update")
+                }
+                
                 title
                 categoryPickerView
                     .onChange(of: selection) { _ in
